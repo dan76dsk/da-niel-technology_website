@@ -98,7 +98,7 @@ export default function Navbar() {
             >
             <span className="text-terminal-accent">&gt;</span> {t('whoami')}
             </Link>
-            <div className="pt-3 border-t border-terminal-border">
+            <div className="pt-3 border-t border-terminal-border flex justify-start">
             <LanguageSwitcher />
             </div>
             </div>
