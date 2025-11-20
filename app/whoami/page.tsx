@@ -44,11 +44,11 @@ export default function WhoamiPage() {
         <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
         <span className="text-terminal-accent">&gt;</span> {t('whoamiSkills')}
         </h2>
-        <div className="space-y-6">
+        <div className="space-y-3 text-sm text-terminal-muted">
         {/* DevSecOps & Automation */}
-        <div>
-        <h3 className="text-sm font-medium text-white mb-3">{t('skillsDevSecOps')}</h3>
-        <ul className="text-sm text-terminal-muted space-y-2">
+        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+        <p className="font-medium text-white mb-2">{t('skillsDevSecOps')}</p>
+        <ul className="text-xs space-y-1">
         <li>• {t('devsecops1')}</li>
         <li>• {t('devsecops2')}</li>
         <li>• {t('devsecops3')}</li>
@@ -57,18 +57,18 @@ export default function WhoamiPage() {
         </div>
 
         {/* IT Security */}
-        <div>
-        <h3 className="text-sm font-medium text-white mb-3">{t('skillsSecurity')}</h3>
-        <ul className="text-sm text-terminal-muted space-y-2">
+        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+        <p className="font-medium text-white mb-2">{t('skillsSecurity')}</p>
+        <ul className="text-xs space-y-1">
         <li>• {t('security1')}</li>
         <li>• {t('security2')}</li>
         </ul>
         </div>
 
         {/* Development */}
-        <div>
-        <h3 className="text-sm font-medium text-white mb-3">{t('skillsDev')}</h3>
-        <ul className="text-sm text-terminal-muted space-y-2">
+        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+        <p className="font-medium text-white mb-2">{t('skillsDev')}</p>
+        <ul className="text-xs space-y-1">
         <li>• {t('dev1')}</li>
         <li>• {t('dev2')}</li>
         <li>• {t('dev3')}</li>
@@ -76,18 +76,18 @@ export default function WhoamiPage() {
         </div>
 
         {/* Networks & Systems */}
-        <div>
-        <h3 className="text-sm font-medium text-white mb-3">{t('skillsNetwork')}</h3>
-        <ul className="text-sm text-terminal-muted space-y-2">
+        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+        <p className="font-medium text-white mb-2">{t('skillsNetwork')}</p>
+        <ul className="text-xs space-y-1">
         <li>• {t('network1')}</li>
         <li>• {t('network2')}</li>
         </ul>
         </div>
 
         {/* Cross-domain / Innovation */}
-        <div>
-        <h3 className="text-sm font-medium text-white mb-3">{t('skillsCross')}</h3>
-        <ul className="text-sm text-terminal-muted space-y-2">
+        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+        <p className="font-medium text-white mb-2">{t('skillsCross')}</p>
+        <ul className="text-xs space-y-1">
         <li>• {t('cross1')}</li>
         <li>• {t('cross2')}</li>
         <li>• {t('cross3')}</li>
