@@ -21,11 +21,8 @@ export default function WhoamiPage() {
         <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
         <span className="text-terminal-accent">&gt;</span> {t('whoamiBio')}
         </h2>
-        <div className="space-y-4 text-terminal-muted leading-relaxed">
-        <p>{t('bioPara1')}</p>
-        <p>{t('bioPara2')}</p>
-        <p>{t('bioPara3')}</p>
-        <p>{t('bioPara4')}</p>
+        <div className="text-terminal-muted leading-relaxed whitespace-pre-line">
+        {t('bioPara1')}
         </div>
         </section>
 
@@ -34,11 +31,12 @@ export default function WhoamiPage() {
         <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
         <span className="text-terminal-accent">&gt;</span> {t('whoamiMindset')}
         </h2>
-        <div className="space-y-4 text-terminal-muted leading-relaxed">
-        <p>{t('mindsetPara1')}</p>
-        <p>{t('mindsetPara2')}</p>
-        <p>{t('mindsetPara3')}</p>
-        </div>
+        <ul className="space-y-3 text-terminal-muted leading-relaxed">
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('mindsetPara1')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('mindsetPara2')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('mindsetPara3')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('mindsetPara4')}</span></li>
+        </ul>
         </section>
 
         {/* Skills */}
@@ -46,26 +44,24 @@ export default function WhoamiPage() {
         <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
         <span className="text-terminal-accent">&gt;</span> {t('whoamiSkills')}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Security */}
+        <div className="space-y-6">
+        {/* DevSecOps & Automation */}
+        <div>
+        <h3 className="text-sm font-medium text-white mb-3">{t('skillsDevSecOps')}</h3>
+        <ul className="text-sm text-terminal-muted space-y-2">
+        <li>• {t('devsecops1')}</li>
+        <li>• {t('devsecops2')}</li>
+        <li>• {t('devsecops3')}</li>
+        <li>• {t('devsecops4')}</li>
+        </ul>
+        </div>
+
+        {/* IT Security */}
         <div>
         <h3 className="text-sm font-medium text-white mb-3">{t('skillsSecurity')}</h3>
         <ul className="text-sm text-terminal-muted space-y-2">
         <li>• {t('security1')}</li>
         <li>• {t('security2')}</li>
-        <li>• {t('security3')}</li>
-        <li>• {t('security4')}</li>
-        </ul>
-        </div>
-
-        {/* Infrastructure */}
-        <div>
-        <h3 className="text-sm font-medium text-white mb-3">{t('skillsInfra')}</h3>
-        <ul className="text-sm text-terminal-muted space-y-2">
-        <li>• {t('infra1')}</li>
-        <li>• {t('infra2')}</li>
-        <li>• {t('infra3')}</li>
-        <li>• {t('infra4')}</li>
         </ul>
         </div>
 
@@ -76,8 +72,25 @@ export default function WhoamiPage() {
         <li>• {t('dev1')}</li>
         <li>• {t('dev2')}</li>
         <li>• {t('dev3')}</li>
-        <li>• {t('dev4')}</li>
-        <li>• {t('dev5')}</li>
+        </ul>
+        </div>
+
+        {/* Networks & Systems */}
+        <div>
+        <h3 className="text-sm font-medium text-white mb-3">{t('skillsNetwork')}</h3>
+        <ul className="text-sm text-terminal-muted space-y-2">
+        <li>• {t('network1')}</li>
+        <li>• {t('network2')}</li>
+        </ul>
+        </div>
+
+        {/* Cross-domain / Innovation */}
+        <div>
+        <h3 className="text-sm font-medium text-white mb-3">{t('skillsCross')}</h3>
+        <ul className="text-sm text-terminal-muted space-y-2">
+        <li>• {t('cross1')}</li>
+        <li>• {t('cross2')}</li>
+        <li>• {t('cross3')}</li>
         </ul>
         </div>
         </div>
@@ -89,41 +102,22 @@ export default function WhoamiPage() {
         <span className="text-terminal-accent">&gt;</span> {t('whoamiBackground')}
         </h2>
         <div className="space-y-3 text-sm text-terminal-muted">
-        {/* University */}
-        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-        <p className="font-medium text-white mb-1">{t('bg1Title')}</p>
-        <p className="text-xs">{t('bg1Desc')}</p>
-        </div>
-
         {/* Geometry Hustlers */}
         <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-        <p className="font-medium text-white mb-2">{t('bg2Title')}</p>
-        <ul className="text-xs space-y-1">
-        <li>• {t('bg2Item1')}</li>
-        <li>• {t('bg2Item2')}</li>
-        <li>• {t('bg2Item3')}</li>
-        </ul>
+        <p className="font-medium text-white mb-2">{t('bg1Title')}</p>
+        <p className="text-xs leading-relaxed">{t('bg1Desc')}</p>
         </div>
 
         {/* Motion Capture */}
         <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-        <p className="font-medium text-white mb-2">{t('bg3Title')}</p>
-        <ul className="text-xs space-y-1">
-        <li>• {t('bg3Item1')}</li>
-        <li>• {t('bg3Item2')}</li>
-        <li>• {t('bg3Item3')}</li>
-        <li>• {t('bg3Item4')}</li>
-        </ul>
+        <p className="font-medium text-white mb-2">{t('bg2Title')}</p>
+        <p className="text-xs leading-relaxed">{t('bg2Desc')}</p>
         </div>
 
-        {/* Cross-domain */}
+        {/* University */}
         <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-        <p className="font-medium text-white mb-2">{t('bg4Title')}</p>
-        <ul className="text-xs space-y-1">
-        <li>• {t('bg4Item1')}</li>
-        <li>• {t('bg4Item2')}</li>
-        <li>• {t('bg4Item3')}</li>
-        </ul>
+        <p className="font-medium text-white mb-1">{t('bg3Title')}</p>
+        <p className="text-xs">{t('bg3Desc')}</p>
         </div>
         </div>
         </section>
@@ -149,6 +143,14 @@ export default function WhoamiPage() {
         className="text-terminal-muted hover:text-terminal-accent transition-colors"
         >
         hackthebox
+        </a>
+        <a
+        href="https://www.linkedin.com/in/daniel-litwin/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-terminal-muted hover:text-terminal-accent transition-colors"
+        >
+        linkedin
         </a>
         <a
         href="mailto:d@niel.technology"

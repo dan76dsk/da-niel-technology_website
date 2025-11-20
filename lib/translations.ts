@@ -36,57 +36,50 @@ export const translations = {
     whoamiBackground: 'Background',
     whoamiLinks: 'Links',
 
-    // Bio paragraphs
-    bioPara1: 'Self-taught with an unconventional background: motion capture → 3D printing automation → cybersecurity.',
-    bioPara2: 'Technology enthusiast - it\'s always been my natural language of thinking and creating. A space where I combine creativity with engineering, turning ideas into tangible results.',
-    bioPara3: 'Founder of Geometry Hustlers - built an automated 3D printing quotation system (React + Node.js), self-hosted on my own homelab. It\'s a space where I merge technology with business, developing entrepreneurial skills. Currently advancing technically towards DevSecOps - penetration testing (HackTheBox), infrastructure administration, networking, and security.',
-    bioPara4: 'I\'m fascinated by building systems from scratch - whether it\'s a full motion capture pipeline (Vicon+Manus+Faceware) or managing infrastructure in Proxmox. I reach flow state during pentesting and automation.',
+    // Bio paragraph
+    bioPara1: 'Practitioner with interdisciplinary experience - DevSecOps Engineer with an entrepreneurial mindset.\n\nFor years, I\'ve been building end-to-end systems - from prototype, through automation and security, to deployment on my own infrastructure. Running my own business allowed me to understand real entrepreneurial challenges - I know how to automate, secure, and genuinely support company growth through technology. This experience taught me work organization and creating repeatable processes that translate into tangible results. I take full responsibility for the entire process - I automate, optimize, identify and eliminate bottlenecks and security gaps before they become costly problems. I\'m looking for projects where technology genuinely improves, secures, and develops business.',
 
-    // Mindset paragraphs
-    mindsetPara1: 'Growth mindset - constantly testing where the limits of my potential lie. Everything can be learned - every skill is a matter of systematic work and iteration.',
-    mindsetPara2: 'Autonomy > hierarchy. Building > consuming. Systems thinking > quick fixes.',
-    mindsetPara3: 'Learning by doing - all skills acquired through action, not theory. Test → iterate → scale. Automation over manual work. Systems running in the background.',
+    // Mindset bullets
+    mindsetPara1: 'I believe that repeatable processes and systematic iterations deliver stable results and predictability, eliminating chaos in work and business.',
+    mindsetPara2: 'I translate systems thinking into practical solutions - I build automations and systems that minimize errors and save team time.',
+    mindsetPara3: 'Everything I know comes from practice: I test ideas, iterate quickly, and implement what actually works instead of theorizing.',
+    mindsetPara4: 'Trust in the process and continuous improvement ensure that implemented systems genuinely enhance efficiency, security, and company scalability.',
 
     // Skills sections
-    skillsSecurity: 'Security',
-    skillsInfra: 'Infrastructure',
+    skillsDevSecOps: 'DevSecOps & Automation',
+    skillsSecurity: 'IT Security',
     skillsDev: 'Development',
+    skillsNetwork: 'Networks & Systems',
+    skillsCross: 'Cross-domain / Innovation',
 
-    security1: 'Penetration testing (HackTheBox CTF)',
-    security2: 'Web application security',
-    security3: 'Exploit development and writeups',
-    security4: 'Hardware hacking (badUSB project)',
+    devsecops1: 'Infrastructure built from scratch and protected (Ubuntu, Proxmox, Docker)',
+    devsecops2: 'Production systems monitoring (Grafana, Prometheus, ntopng)',
+    devsecops3: 'Business process automation (n8n, API integrations)',
+    devsecops4: 'Git workflows, CI/CD pipeline, deployment management',
 
-    infra1: 'Self-hosted production (homelab Ubuntu)',
-    infra2: 'Proxmox virtualization / Docker containers',
-    infra3: 'Monitoring (Grafana + Prometheus + Loki)',
-    infra4: 'Git workflows and deployment pipelines',
+    security1: 'Pentesting (Hack The Box, CTF)',
+    security2: 'Infrastructure and web application vulnerability analysis',
 
-    dev1: 'Full-stack automation (React, Node.js, TypeScript)',
-    dev2: 'CI/CD pipelines (Git workflows, automated deployment)',
-    dev3: 'Bash scripts, C++, Python',
-    dev4: 'API integration and process automation (n8n)',
-    dev5: 'Payment system integration (Przelewy24)',
+    dev1: 'Full-stack web (React, Node.js, TypeScript) - AI-assisted workflow',
+    dev2: 'Bash, Python, C++ scripts',
+    dev3: 'API integrations, 3D printing quotation system implementation project',
+
+    network1: 'Network configuration (IP addressing, firewalls, routing)',
+    network2: 'Linux and Windows server administration, monitoring',
+
+    cross1: 'Complete workflow: from hardware, through software, to integration and deployment',
+    cross2: 'Motion capture: Vicon/Manus/Faceware pipeline, 3D and VR experience',
+    cross3: 'Electronics design: PCB, microcontrollers, hardware/software integration',
 
     // Background sections
-    bg1Title: 'Silesian University of Technology',
-    bg1Desc: 'Telecommunications (BSc)',
+    bg1Title: 'Geometry Hustlers (Founder, 2022-present)',
+    bg1Desc: 'Full responsibility for automated 3D printing quotation system - backend, frontend, own infrastructure, business integrations (n8n, CRM, payments). This experience taught me to run IT projects from scratch, automate processes, and solve real entrepreneurial challenges.',
 
-    bg2Title: 'Geometry Hustlers (Founder, 2022-present)',
-    bg2Item1: 'Automated 3D printing quotation system',
-    bg2Item2: 'Full-stack: React + Node.js + self-hosted infrastructure',
-    bg2Item3: 'Business automation: n8n workflow, CRM, payment integration',
+    bg2Title: 'Motion Capture & 3D Graphics (2017-2021)',
+    bg2Desc: 'Work on R&D projects at the intersection of hardware and software (Vicon, Manus, Faceware, streaming to Unity/Unreal). Working in an interdisciplinary R&D environment taught me to create unconventional solutions and handle complex processes.',
 
-    bg3Title: 'Motion Capture & 3D Graphics (2017-2021)',
-    bg3Item1: 'Work on R&D projects',
-    bg3Item2: 'Full performance capture pipeline: Vicon + Manus gloves + Faceware',
-    bg3Item3: 'Mastered MotionBuilder (no tutorials = trial and error method)',
-    bg3Item4: 'Real-time streaming to Unity/Unreal',
-
-    bg4Title: 'Cross-domain competencies',
-    bg4Item1: '3D modeling and texturing (Blender, Substance Painter)',
-    bg4Item2: 'Photogrammetry and 3D scanning (RealityCapture)',
-    bg4Item3: 'Hardware electronics (PCB design, soldering, microcontrollers)',
+    bg3Title: 'Silesian University of Technology',
+    bg3Desc: 'Telecommunications (BSc)',
 
     // Footer
     footerCopyright: '© 2025 d@niel.technology',
@@ -128,57 +121,50 @@ export const translations = {
     whoamiBackground: 'Tło',
     whoamiLinks: 'Linki',
 
-    // Bio paragraphs
-    bioPara1: 'Samouk z nietypowym backgroundem: motion capture → automatyzacja druku 3D → cybersecurity.',
-    bioPara2: 'Pasjonat technologii - od zawsze był to dla mnie naturalny język myślenia i tworzenia. Przestrzeń, w której łączę kreatywność z inżynierią, a pomysły przekuwam w realne efekty.',
-    bioPara3: 'Założyciel Geometry Hustlers - zbudowałem automatyczny system wyceny druku 3D (React + Node.js), self-hostowany na własnym homelabie. To przestrzeń, w której łączę technologię z biznesem, rozwijając kompetencje przedsiębiorcze. Obecnie rozwijam się technicznie w kierunku DevSecOps - penetration testing (HackTheBox), administracja infrastrukturą, sieci i bezpieczeństwo.',
-    bioPara4: 'Fascynuje mnie tworzenie systemów od zera - czy to pełny pipeline motion capture (Vicon+Manus+Faceware), czy zarządzanie infrastrukturą w Proxmox. Stan flow osiągam przy pentestingu i automatyzacji.',
+    // Bio paragraph
+    bioPara1: 'Praktyk z interdyscyplinarnym doświadczeniem - DevSecOps Engineer z mindsetem przedsiębiorcy.\n\nOd lat buduję systemy end-to-end - od prototypu, przez automatyzację i bezpieczeństwo, po wdrożenie na własnej infrastrukturze. Prowadzenie własnego biznesu pozwoliło mi zrozumieć prawdziwe wyzwania przedsiębiorców - wiem, jak automatyzować, zabezpieczać i realnie wspierać rozwój firmy dzięki technologii. To doświadczenie nauczyło mnie organizacji pracy i układania powtarzalnych procesów, które przekładają się na konkretne wyniki. Przejmuję odpowiedzialność za całość procesu – automatyzuję, optymalizuję, wyszukuję i eliminuję wąskie gardła oraz luki bezpieczeństwa, zanim staną się kosztownym problemem. Szukam projektów, w których technologia realnie usprawnia, zabezpiecza i rozwija biznes.',
 
-    // Mindset paragraphs
-    mindsetPara1: 'Nastawienie na rozwój - nieustannie sprawdzam gdzie leży granica mojego potencjału. Wszystkiego można się nauczyć - każda umiejętność to kwestia systematycznej pracy i iteracji.',
-    mindsetPara2: 'Autonomia > hierarchia. Budowanie > konsumpcja. Myślenie systemowe > rozwiązania doraźne.',
-    mindsetPara3: 'Nauka przez praktykę - wszystkie umiejętności nabyte przez działanie, nie teorię. Testuj → iteruj → skaluj. Automatyzacja zamiast pracy ręcznej. Systemy działające w tle.',
+    // Mindset bullets
+    mindsetPara1: 'Wierzę, że powtarzalny proces i systematyczne iteracje dają stabilne efekty i przewidywalność, eliminując chaos w pracy i biznesie.',
+    mindsetPara2: 'Myślenie systemowe przekładam na praktyczne rozwiązania – buduję automatyzacje i systemy, które same minimalizują błędy oraz oszczędzają czas zespołu.',
+    mindsetPara3: 'Wszystko, co umiem, wynika z praktyki: testuję pomysły, szybko iteruję i wdrażam to, co faktycznie działa, zamiast teoretyzować.',
+    mindsetPara4: 'Zaufanie do procesu i nieustanne doskonalenie sprawiają, że wdrażane systemy realnie podnoszą efektywność, bezpieczeństwo i skalowalność firmy.',
 
     // Skills sections
-    skillsSecurity: 'Security',
-    skillsInfra: 'Infrastruktura',
+    skillsDevSecOps: 'DevSecOps & Automatyzacja',
+    skillsSecurity: 'Bezpieczeństwo IT',
     skillsDev: 'Development',
+    skillsNetwork: 'Sieci i systemy',
+    skillsCross: 'Cross-domain / Innowacje',
 
-    security1: 'Penetration testing (HackTheBox CTF)',
-    security2: 'Bezpieczeństwo aplikacji webowych',
-    security3: 'Tworzenie exploitów i writeupów',
-    security4: 'Hardware hacking (projekt badUSB)',
+    devsecops1: 'Budowa od podstaw i ochrona infrastruktury (Ubuntu, Proxmox, Docker)',
+    devsecops2: 'Monitoring produkcyjnych systemów (Grafana, Prometheus, ntopng)',
+    devsecops3: 'Automatyzacja procesów biznesowych (n8n, integracje API)',
+    devsecops4: 'Workflow Git, CI/CD pipeline, zarządzanie deploymentem',
 
-    infra1: 'Self-hosted production (homelab Ubuntu)',
-    infra2: 'Wirtualizacja Proxmox / kontenery Docker',
-    infra3: 'Monitoring (Grafana + Prometheus + Loki)',
-    infra4: 'Workflow Git i pipelines deploymentowe',
+    security1: 'Pentesting (Hack The Box, CTF)',
+    security2: 'Analiza podatności infrastruktury i aplikacji webowych',
 
-    dev1: 'Automatyzacja full-stack (React, Node.js, TypeScript)',
-    dev2: 'CI/CD pipelines (Git workflows, automated deployment)',
-    dev3: 'Skrypty Bash, C++, Python',
-    dev4: 'Integracja API i automatyzacja procesów (n8n)',
-    dev5: 'Integracja systemów płatności (Przelewy24)',
+    dev1: 'Full-stack web (React, Node.js, TypeScript) - AI-assisted workflow',
+    dev2: 'Skrypty Bash, Python, C++',
+    dev3: 'Integracje API, projekt wdrożenia systemu wyceny druku 3D',
+
+    network1: 'Konfiguracja sieci (adresacja IP, firewalle, routing)',
+    network2: 'Administracja serwerami Linux i Windows, monitoring',
+
+    cross1: 'Kompletne workflow: od hardware, przez software, po integrację i wdrożenie',
+    cross2: 'Motion capture: Vicon/Manus/Faceware pipeline, doświadczenie z 3D i VR',
+    cross3: 'Projektowanie elektroniki: PCB, mikrokontrolery, hardware/software integration',
 
     // Background sections
-    bg1Title: 'Politechnika Śląska',
-    bg1Desc: 'Teleinformatyka (Inż.)',
+    bg1Title: 'Geometry Hustlers (Założyciel, 2022-obecnie)',
+    bg1Desc: 'Pełna odpowiedzialność za system do automatycznej wyceny druku 3D – backend, frontend, własna infrastruktura, integracje biznesowe (n8n, CRM, płatności). To doświadczenie nauczyło mnie prowadzić projekty IT od zera, automatyzować procesy i rozwiązywać realne wyzwania przedsiębiorców.',
 
-    bg2Title: 'Geometry Hustlers (Założyciel, 2022-obecnie)',
-    bg2Item1: 'Automatyczny system wyceny druku 3D',
-    bg2Item2: 'Full-stack: React + Node.js + self-hosted infrastructure',
-    bg2Item3: 'Automatyzacja biznesowa: workflow n8n, CRM, integracja płatności',
+    bg2Title: 'Motion Capture i grafika 3D (2017-2021)',
+    bg2Desc: 'Praca w projektach badawczo-rozwojowych na styku hardware i software (Vicon, Manus, Faceware, streaming do Unity/Unreal). Działanie w interdyscyplinarnym środowisku R&D nauczyło mnie tworzyć nietypowe rozwiązania i ogarniać złożone procesy.',
 
-    bg3Title: 'Motion Capture i grafika 3D (2017-2021)',
-    bg3Item1: 'Praca w projektach badawczo-rozwojowych',
-    bg3Item2: 'Pełen pipeline performance capture: Vicon + rękawice Manus + Faceware',
-    bg3Item3: 'Opanowanie MotionBuilder (brak tutoriali = metoda prób i błędów)',
-    bg3Item4: 'Streaming real-time do Unity/Unreal',
-
-    bg4Title: 'Kompetencje cross-domain',
-    bg4Item1: 'Modelowanie i teksturowanie 3D (Blender, Substance Painter)',
-    bg4Item2: 'Fotogrametria i skanowanie 3D (RealityCapture)',
-    bg4Item3: 'Elektronika hardware (projektowanie PCB, lutowanie, mikrokontrolery)',
+    bg3Title: 'Politechnika Śląska',
+    bg3Desc: 'Teleinformatyka (Inż.)',
 
     // Footer
     footerCopyright: '© 2025 d@niel.technology',

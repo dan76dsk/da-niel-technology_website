@@ -39,6 +39,7 @@ export default function HomeClient({ data }: { data: ContentData }) {
     <a
     href="https://github.com/dan76dsk"
     target="_blank"
+    rel="noopener noreferrer"
     className="text-terminal-muted hover:text-white transition-colors"
     >
     github
@@ -46,9 +47,18 @@ export default function HomeClient({ data }: { data: ContentData }) {
     <a
     href="https://app.hackthebox.com/users/98349"
     target="_blank"
+    rel="noopener noreferrer"
     className="text-terminal-muted hover:text-white transition-colors"
     >
     hackthebox
+    </a>
+    <a
+    href="https://www.linkedin.com/in/daniel-litwin/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-terminal-muted hover:text-white transition-colors"
+    >
+    linkedin
     </a>
     <Link
     href="/writeups"
