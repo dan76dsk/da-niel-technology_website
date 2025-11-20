@@ -18,7 +18,7 @@ const config: Config = {
                     'bg-hover': '#1f1f1f',
                     border: '#2a2a2a',
                     text: '#e0e0e0',
-                    accent: '#00d9ff',
+                    accent: '#a78bfa',
                     muted: '#6b7280',
                 }
             },

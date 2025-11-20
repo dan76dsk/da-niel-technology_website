@@ -19,7 +19,7 @@ html {
 }
 
 ::selection {
-  background-color: #00d9ff;
+  background-color: #a78bfa;
   color: #0a0a0a;
 }
 
@@ -40,7 +40,7 @@ pre {
 code {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.9em;
-  color: #00d9ff;
+  color: #a78bfa;
 }
 
 /* Markdown prose */
@@ -65,14 +65,14 @@ code {
 }
 
 .prose a {
-  color: #00d9ff;
+  color: #a78bfa;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s;
 }
 
 .prose a:hover {
-  border-bottom-color: #00d9ff;
+  border-bottom-color: #a78bfa;
 }
 
 .prose strong {

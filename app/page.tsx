@@ -39,11 +39,17 @@ export default function Home() {
     >
     hackthebox
     </a>
+    <Link
+    href="/writeups"
+    className="text-terminal-muted hover:text-white transition-colors"
+    >
+    writeups
+    </Link>
     <a
     href="mailto:d@niel.technology"
     className="text-terminal-muted hover:text-white transition-colors"
     >
-    email
+    d@niel.technology
     </a>
     </div>
     </div>
