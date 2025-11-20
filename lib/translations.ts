@@ -36,6 +36,7 @@ export const translations = {
     whoamiSkills: 'Skills',
     whoamiBackground: 'Background',
     whoamiLinks: 'Links',
+    whoamiContact: 'Contact',
 
     // Bio paragraph
     bioPara1: 'Practitioner with interdisciplinary experience - DevSecOps Engineer with an entrepreneurial mindset.\n\nFor years, I\'ve been building end-to-end systems - from prototype, through automation and security, to deployment on my own infrastructure. Running my own business allowed me to understand real entrepreneurial challenges - I know how to automate, secure, and genuinely support company growth through technology. This experience taught me work organization and creating repeatable processes that translate into tangible results. I take full responsibility for the entire process - I automate, optimize, identify and eliminate bottlenecks and security gaps before they become costly problems. I\'m looking for projects where technology genuinely improves, secures, and develops business.',
@@ -122,6 +123,7 @@ export const translations = {
     whoamiSkills: 'Umiejętności',
     whoamiBackground: 'Tło',
     whoamiLinks: 'Linki',
+    whoamiContact: 'Kontakt',
 
     // Bio paragraph
     bioPara1: 'Praktyk z interdyscyplinarnym doświadczeniem - DevSecOps Engineer z mindsetem przedsiębiorcy.\n\nOd lat buduję systemy end-to-end - od prototypu, przez automatyzację i bezpieczeństwo, po wdrożenie na własnej infrastrukturze. Prowadzenie własnego biznesu pozwoliło mi zrozumieć prawdziwe wyzwania przedsiębiorców - wiem, jak automatyzować, zabezpieczać i realnie wspierać rozwój firmy dzięki technologii. To doświadczenie nauczyło mnie organizacji pracy i układania powtarzalnych procesów, które przekładają się na konkretne wyniki. Przejmuję odpowiedzialność za całość procesu – automatyzuję, optymalizuję, wyszukuję i eliminuję wąskie gardła oraz luki bezpieczeństwa, zanim staną się kosztownym problemem. Szukam projektów, w których technologia realnie usprawnia, zabezpiecza i rozwija biznes.',

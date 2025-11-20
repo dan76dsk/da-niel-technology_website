@@ -23,7 +23,7 @@ export default function WriteupClient({ writeupEn, writeupPl }: Props) {
     <article className="max-w-3xl mx-auto px-6 py-16">
     <Link
     href="/writeups"
-    className="inline-flex items-center gap-2 mb-8 text-sm text-terminal-muted hover:text-terminal-accent transition-colors"
+    className="inline-flex items-center gap-2 mb-8 text-xl text-terminal-muted hover:text-terminal-accent transition-colors"
     >
     <span className="text-terminal-accent">$</span> cd ..
     </Link>

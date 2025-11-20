@@ -2,6 +2,25 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
+import hljs from 'highlight.js';
+
+// Configure marked renderer to use highlight.js
+const renderer = new marked.Renderer();
+
+renderer.code = function({ text, lang }) {
+    if (lang && hljs.getLanguage(lang)) {
+        try {
+            const highlighted = hljs.highlight(text, { language: lang }).value;
+            return `<pre><code class="hljs language-${lang}">${highlighted}</code></pre>`;
+        } catch (err) {
+            console.error('Highlight.js error:', err);
+        }
+    }
+    const autoHighlighted = hljs.highlightAuto(text);
+    return `<pre><code class="hljs">${autoHighlighted.value}</code></pre>`;
+};
+
+marked.setOptions({ renderer });
 
 const postsDirectory = path.join(process.cwd(), 'content/posts');
 const projectsDirectory = path.join(process.cwd(), 'content/projects');

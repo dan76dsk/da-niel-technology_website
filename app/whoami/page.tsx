@@ -129,12 +129,12 @@ export default function WhoamiPage() {
         </h2>
         <div className="flex gap-4 text-sm">
         <a
-        href="https://github.com/dan76dsk"
+        href="https://www.linkedin.com/in/daniel-litwin/"
         target="_blank"
         rel="noopener noreferrer"
         className="text-terminal-muted hover:text-terminal-accent transition-colors"
         >
-        github
+        linkedin
         </a>
         <a
         href="https://app.hackthebox.com/users/98349"
@@ -145,13 +145,22 @@ export default function WhoamiPage() {
         hackthebox
         </a>
         <a
-        href="https://www.linkedin.com/in/daniel-litwin/"
+        href="https://github.com/dan76dsk"
         target="_blank"
         rel="noopener noreferrer"
         className="text-terminal-muted hover:text-terminal-accent transition-colors"
         >
-        linkedin
+        github
         </a>
+        </div>
+        </section>
+
+        {/* Contact */}
+        <section>
+        <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+        <span className="text-terminal-accent">&gt;</span> {t('whoamiContact')}
+        </h2>
+        <div className="text-sm">
         <a
         href="mailto:d@niel.technology"
         className="text-terminal-muted hover:text-terminal-accent transition-colors"
