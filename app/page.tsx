@@ -7,6 +7,8 @@ export default function Home() {
   const projectsPl = getAllContent('projects', 'pl');
   const postsEn = getAllContent('posts', 'en');
   const postsPl = getAllContent('posts', 'pl');
+  const writeupsEn = getAllContent('writeups', 'en');
+  const writeupsPl = getAllContent('writeups', 'pl');
 
-  return <HomeClient data={{ projectsEn, projectsPl, postsEn, postsPl }} />;
+  return <HomeClient data={{ projectsEn, projectsPl, postsEn, postsPl, writeupsEn, writeupsPl }} />;
 }

@@ -2,6 +2,7 @@ export const translations = {
   en: {
     // Navbar
     projects: 'projects',
+    writeups: 'writeups',
     blog: 'blog',
     whoami: 'whoami',
 
@@ -87,6 +88,7 @@ export const translations = {
   pl: {
     // Navbar
     projects: 'projekty',
+    writeups: 'writeups',
     blog: 'blog',
     whoami: 'whoami',
 

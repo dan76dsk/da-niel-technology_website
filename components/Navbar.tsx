@@ -19,6 +19,9 @@ export default function Navbar() {
         <Link href="/projects" className="text-terminal-muted hover:text-terminal-accent transition-colors px-3 py-1 rounded-md hover:bg-terminal-bg-card">
         {t('projects')}
         </Link>
+        <Link href="/writeups" className="text-terminal-muted hover:text-terminal-accent transition-colors px-3 py-1 rounded-md hover:bg-terminal-bg-card">
+        {t('writeups')}
+        </Link>
         <Link href="/blog" className="text-terminal-muted hover:text-terminal-accent transition-colors px-3 py-1 rounded-md hover:bg-terminal-bg-card">
         {t('blog')}
         </Link>

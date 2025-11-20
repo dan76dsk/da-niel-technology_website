@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import ProjectCard from '@/components/ProjectCard';
 import BlogCard from '@/components/BlogCard';
+import WriteupCard from '@/components/WriteupCard';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getTranslation } from '@/lib/translations';
 
@@ -11,6 +12,8 @@ type ContentData = {
   projectsPl: any[];
   postsEn: any[];
   postsPl: any[];
+  writeupsEn: any[];
+  writeupsPl: any[];
 };
 
 export default function HomeClient({ data }: { data: ContentData }) {
@@ -19,6 +22,7 @@ export default function HomeClient({ data }: { data: ContentData }) {
 
   const projects = (language === 'pl' ? data.projectsPl : data.projectsEn).slice(0, 3);
   const posts = (language === 'pl' ? data.postsPl : data.postsEn).slice(0, 3);
+  const writeups = (language === 'pl' ? data.writeupsPl : data.writeupsEn).slice(0, 3);
 
   return (
     <main className="min-h-screen">
@@ -35,14 +39,22 @@ export default function HomeClient({ data }: { data: ContentData }) {
     {t('heroBio')}
     </p>
 
-    <div className="flex gap-4 text-sm">
+    <Link
+    href="/whoami"
+    className="inline-flex items-center gap-2 mb-6 text-sm text-terminal-muted hover:text-terminal-accent transition-colors"
+    >
+    <span className="text-terminal-accent">&gt;</span> whoami
+    </Link>
+
+    <div className="space-y-2 text-sm">
+    <div className="flex gap-4">
     <a
-    href="https://github.com/dan76dsk"
+    href="https://www.linkedin.com/in/daniel-litwin/"
     target="_blank"
     rel="noopener noreferrer"
     className="text-terminal-muted hover:text-white transition-colors"
     >
-    github
+    linkedin
     </a>
     <a
     href="https://app.hackthebox.com/users/98349"
@@ -53,19 +65,15 @@ export default function HomeClient({ data }: { data: ContentData }) {
     hackthebox
     </a>
     <a
-    href="https://www.linkedin.com/in/daniel-litwin/"
+    href="https://github.com/dan76dsk"
     target="_blank"
     rel="noopener noreferrer"
     className="text-terminal-muted hover:text-white transition-colors"
     >
-    linkedin
+    github
     </a>
-    <Link
-    href="/writeups"
-    className="text-terminal-muted hover:text-white transition-colors"
-    >
-    writeups
-    </Link>
+    </div>
+    <div>
     <a
     href="mailto:d@niel.technology"
     className="text-terminal-muted hover:text-white transition-colors"
@@ -74,6 +82,25 @@ export default function HomeClient({ data }: { data: ContentData }) {
     </a>
     </div>
     </div>
+    </div>
+    </section>
+
+    {/* Writeups */}
+    <section className="max-w-3xl mx-auto px-6 py-16 border-t border-terminal-border">
+    <h2 className="text-sm uppercase tracking-wider text-terminal-muted mb-8">
+    {t('writeupsTitle')}
+    </h2>
+    <div className="space-y-6">
+    {writeups.map(writeup => (
+      <WriteupCard key={writeup.slug} writeup={writeup} />
+    ))}
+    </div>
+    <Link
+    href="/writeups"
+    className="inline-block mt-8 text-sm text-terminal-muted hover:text-white transition-colors"
+    >
+    {t('viewAll')} →
+    </Link>
     </section>
 
     {/* Projects */}
