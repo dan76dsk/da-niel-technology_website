@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dniel-website
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+    # Jeśli będziesz używał analytics/logging
+    # volumes:
+    #   - ./logs:/app/logs
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
