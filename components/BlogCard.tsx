@@ -13,7 +13,7 @@ export default function BlogCard({ post }: { post: Post }) {
     return (
         <Link
         href={`/blog/${post.slug}`}
-        className="block group"
+        className="block group bg-[#1a1a1a] border border-[#2a2a2a] rounded-md p-5 transition-all duration-300 hover:bg-[#1f1f1f] hover:border-[#00d9ff]"
         >
         <div className="flex justify-between items-baseline mb-2">
         <h3 className="text-lg font-medium text-white group-hover:text-[#00d9ff] transition-colors">

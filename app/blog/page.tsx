@@ -1,24 +1,20 @@
 import { getAllContent } from '@/lib/markdown';
-import Link from 'next/link';
+import BlogCard from '@/components/BlogCard';
 
 export default function BlogPage() {
     const posts = getAllContent('posts');
 
     return (
-        <main className="min-h-screen p-8">
-        <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl mb-8">&gt; cat blog</h1>
-        <div className="space-y-4">
+        <main className="min-h-screen">
+        <div className="max-w-3xl mx-auto px-6 py-16">
+        <div className="border-l-2 border-[#00d9ff] pl-6 mb-12">
+        <h1 className="text-3xl font-semibold text-white mb-3">Writing</h1>
+        <p className="text-[#6b7280]">Technical insights, tutorials, and lessons learned</p>
+        </div>
+
+        <div className="space-y-6">
         {posts.map(post => (
-            <Link
-            key={post.slug}
-            href={`/blog/${post.slug}`}
-            className="block border border-green-500 p-4 hover:bg-green-500/10"
-            >
-            <h2 className="text-2xl mb-2">{post.data.title}</h2>
-            <p className="text-green-500/70">{post.data.date}</p>
-            <p className="mt-2">{post.data.excerpt}</p>
-            </Link>
+            <BlogCard key={post.slug} post={post} />
         ))}
         </div>
         </div>

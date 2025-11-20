@@ -11,6 +11,7 @@ export default function Home() {
     <main className="min-h-screen">
     {/* Hero */}
     <section className="max-w-3xl mx-auto px-6 py-24">
+    <div className="border-l-2 border-[#00d9ff] pl-6">
     <h1 className="text-4xl font-semibold mb-6 text-white">
     Daniel Litwin
     </h1>
@@ -44,6 +45,7 @@ export default function Home() {
     >
     email
     </a>
+    </div>
     </div>
     </section>
 

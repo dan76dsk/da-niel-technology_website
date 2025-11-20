@@ -9,12 +9,14 @@ export default async function BlogPost({ params }: Props) {
     const post = getContentBySlug(slug, 'posts');
 
     return (
-        <main className="min-h-screen p-8">
-        <article className="max-w-4xl mx-auto">
-        <h1 className="text-4xl mb-4">{post.data.title}</h1>
-        <p className="text-green-500/70 mb-8">{post.data.date}</p>
+        <main className="min-h-screen">
+        <article className="max-w-3xl mx-auto px-6 py-16">
+        <div className="border-l-2 border-[#00d9ff] pl-6 mb-12">
+        <h1 className="text-3xl font-semibold text-white mb-3">{post.data.title}</h1>
+        <p className="text-xs text-[#6b7280]">{post.data.date}</p>
+        </div>
         <div
-        className="prose prose-invert prose-green max-w-none"
+        className="prose prose-invert max-w-none"
         dangerouslySetInnerHTML={{ __html: post.content }}
         />
         </article>

@@ -1,23 +1,20 @@
 import { getAllContent } from '@/lib/markdown';
-import Link from 'next/link';
+import ProjectCard from '@/components/ProjectCard';
 
 export default function ProjectsPage() {
     const projects = getAllContent('projects');
 
     return (
-        <main className="min-h-screen p-8">
-        <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl mb-8">&gt; ls projects</h1>
-        <div className="space-y-4">
+        <main className="min-h-screen">
+        <div className="max-w-3xl mx-auto px-6 py-16">
+        <div className="border-l-2 border-[#00d9ff] pl-6 mb-12">
+        <h1 className="text-3xl font-semibold text-white mb-3">Projects</h1>
+        <p className="text-[#6b7280]">Case studies and technical explorations</p>
+        </div>
+
+        <div className="space-y-6">
         {projects.map(project => (
-            <Link
-            key={project.slug}
-            href={`/projects/${project.slug}`}
-            className="block border border-green-500 p-4 hover:bg-green-500/10"
-            >
-            <h2 className="text-2xl mb-2">{project.data.title}</h2>
-            <p className="mt-2">{project.data.excerpt}</p>
-            </Link>
+            <ProjectCard key={project.slug} project={project} />
         ))}
         </div>
         </div>
