@@ -7,8 +7,8 @@ export const translations = {
 
     // Homepage
     heroTitle: 'Daniel Litwin',
-    heroTagline: 'Security engineer focused on automation, infrastructure, and breaking things ethically.',
-    heroBio: 'Self-taught pentester with a background in 3D printing automation and motion capture. Currently building homelab setups, solving HackTheBox challenges, and pivoting into cybersecurity full-time.',
+    heroTagline: 'Security & DevOps - driving business advantage through technology, automation, and security.',
+    heroBio: 'DevSecOps practitioner - combining technology, automation, and security. Experience spanning from running my own 3D printing business, through motion capture projects, to building a custom homelab and HackTheBox challenges. Looking for projects where technology translates into real business value.',
 
     // Sections
     sectionProjects: 'Projects',
@@ -92,8 +92,8 @@ export const translations = {
 
     // Homepage
     heroTitle: 'Daniel Litwin',
-    heroTagline: 'Security engineer specjalizujący się w automatyzacji, infrastrukturze i etycznym łamaniu zabezpieczeń.',
-    heroBio: 'Samouczek pentester z doświadczeniem w automatyzacji druku 3D i motion capture. Obecnie buduję homelab, rozwiązuję wyzwania HackTheBox i pełnoetatowo przechodzę do cybersecurity.',
+    heroTagline: 'Security & DevOps - napędzam przewagę biznesu technologią, automatyzacją i bezpieczeństwem.',
+    heroBio: 'Praktyk DevSecOps - łączę technologię, automatyzację i bezpieczeństwo. Mam doświadczenie od własnego biznesu druku 3D, przez projekty motion capture, po budowę autorskiego homelabu i wyzwania HackTheBox. Szukam projektów, w których technologia przekłada się na realną wartość dla biznesu.',
 
     // Sections
     sectionProjects: 'Projekty',
