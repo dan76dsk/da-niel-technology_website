@@ -1,4 +1,5 @@
 import { getContentBySlug } from '@/lib/markdown';
+import PostClient from '@/components/PostClient';
 
 type Props = {
     params: Promise<{ slug: string }>;
@@ -6,20 +7,10 @@ type Props = {
 
 export default async function BlogPost({ params }: Props) {
     const { slug } = await params;
-    const post = getContentBySlug(slug, 'posts');
 
-    return (
-        <main className="min-h-screen">
-        <article className="max-w-3xl mx-auto px-6 py-16">
-        <div className="border-l-2 border-terminal-accent pl-6 mb-12">
-        <h1 className="text-3xl font-semibold text-white mb-3">{post.data.title}</h1>
-        <p className="text-xs text-terminal-muted">{post.data.date}</p>
-        </div>
-        <div
-        className="prose prose-invert max-w-none"
-        dangerouslySetInnerHTML={{ __html: post.content }}
-        />
-        </article>
-        </main>
-    );
+    // Load both languages
+    const postEn = getContentBySlug(slug, 'posts', 'en');
+    const postPl = getContentBySlug(slug, 'posts', 'pl');
+
+    return <PostClient postEn={postEn} postPl={postPl} />;
 }
