@@ -11,14 +11,14 @@ export default function Home() {
     <main className="min-h-screen">
     {/* Hero */}
     <section className="max-w-3xl mx-auto px-6 py-24">
-    <div className="border-l-2 border-[#00d9ff] pl-6">
+    <div className="border-l-2 border-terminal-accent pl-6">
     <h1 className="text-4xl font-semibold mb-6 text-white">
     Daniel Litwin
     </h1>
-    <p className="text-xl text-[#6b7280] mb-8 leading-relaxed">
+    <p className="text-xl text-terminal-muted mb-8 leading-relaxed">
     Security engineer focused on automation, infrastructure, and breaking things ethically.
     </p>
-    <p className="text-[#6b7280] leading-relaxed mb-8">
+    <p className="text-terminal-muted leading-relaxed mb-8">
     Self-taught pentester with a background in 3D printing automation and motion capture.
     Currently building homelab setups, solving HackTheBox challenges, and pivoting into
     cybersecurity full-time.
@@ -28,20 +28,20 @@ export default function Home() {
     <a
     href="https://github.com/dan76dsk"
     target="_blank"
-    className="text-[#6b7280] hover:text-white transition-colors"
+    className="text-terminal-muted hover:text-white transition-colors"
     >
     github
     </a>
     <a
     href="https://app.hackthebox.com/users/98349"
     target="_blank"
-    className="text-[#6b7280] hover:text-white transition-colors"
+    className="text-terminal-muted hover:text-white transition-colors"
     >
     hackthebox
     </a>
     <a
     href="mailto:d@niel.technology"
-    className="text-[#6b7280] hover:text-white transition-colors"
+    className="text-terminal-muted hover:text-white transition-colors"
     >
     email
     </a>
@@ -50,8 +50,8 @@ export default function Home() {
     </section>
 
     {/* Projects */}
-    <section className="max-w-3xl mx-auto px-6 py-16 border-t border-[#2a2a2a]">
-    <h2 className="text-sm uppercase tracking-wider text-[#6b7280] mb-8">
+    <section className="max-w-3xl mx-auto px-6 py-16 border-t border-terminal-border">
+    <h2 className="text-sm uppercase tracking-wider text-terminal-muted mb-8">
     Projects
     </h2>
     <div className="space-y-6">
@@ -61,15 +61,15 @@ export default function Home() {
     </div>
     <Link
     href="/projects"
-    className="inline-block mt-8 text-sm text-[#6b7280] hover:text-white transition-colors"
+    className="inline-block mt-8 text-sm text-terminal-muted hover:text-white transition-colors"
     >
     View all →
     </Link>
     </section>
 
     {/* Blog */}
-    <section className="max-w-3xl mx-auto px-6 py-16 border-t border-[#2a2a2a]">
-    <h2 className="text-sm uppercase tracking-wider text-[#6b7280] mb-8">
+    <section className="max-w-3xl mx-auto px-6 py-16 border-t border-terminal-border">
+    <h2 className="text-sm uppercase tracking-wider text-terminal-muted mb-8">
     Writing
     </h2>
     <div className="space-y-6">
@@ -79,7 +79,7 @@ export default function Home() {
     </div>
     <Link
     href="/blog"
-    className="inline-block mt-8 text-sm text-[#6b7280] hover:text-white transition-colors"
+    className="inline-block mt-8 text-sm text-terminal-muted hover:text-white transition-colors"
     >
     View all →
     </Link>

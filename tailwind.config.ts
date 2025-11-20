@@ -14,11 +14,16 @@ const config: Config = {
             colors: {
                 terminal: {
                     bg: '#0a0a0a',
+                    'bg-card': '#1a1a1a',
+                    'bg-hover': '#1f1f1f',
                     border: '#2a2a2a',
                     text: '#e0e0e0',
                     accent: '#00d9ff',
                     muted: '#6b7280',
                 }
+            },
+            borderRadius: {
+                'md': '6px',
             }
         },
     },
