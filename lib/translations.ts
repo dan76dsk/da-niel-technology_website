@@ -83,6 +83,22 @@ export const translations = {
     bg3Title: 'Silesian University of Technology',
     bg3Desc: 'Telecommunications (BSc)',
 
+    // Meta tags
+    metaHomeTitle: 'd@niel.technology | Security & DevOps Engineer',
+    metaHomeDesc: 'Security & DevOps - driving business advantage through technology, automation, and security. DevSecOps practitioner with experience in infrastructure, pentesting, and business process automation.',
+
+    metaProjectsTitle: 'Projects | d@niel.technology',
+    metaProjectsDesc: 'Case studies and technical explorations - from 3D printing automation to homelab infrastructure and integrations.',
+
+    metaBlogTitle: 'Writing | d@niel.technology',
+    metaBlogDesc: 'Technical insights, tutorials, and lessons learned from DevSecOps and security engineering practice.',
+
+    metaWriteupsTitle: 'Writeups | d@niel.technology',
+    metaWriteupsDesc: 'HackTheBox, TryHackMe, and CTF solutions - detailed pentesting walkthroughs and security challenges.',
+
+    metaWhoamiTitle: 'whoami | d@niel.technology',
+    metaWhoamiDesc: 'Daniel Litwin - Security-focused DevOps Engineer. DevSecOps practitioner with interdisciplinary experience: from running 3D printing business to motion capture projects and homelab infrastructure.',
+
     // Footer
     footerCopyright: '© 2025 d@niel.technology',
   },
@@ -169,6 +185,22 @@ export const translations = {
 
     bg3Title: 'Politechnika Śląska',
     bg3Desc: 'Teleinformatyka (Inż.)',
+
+    // Meta tags
+    metaHomeTitle: 'd@niel.technology | Security & DevOps Engineer',
+    metaHomeDesc: 'Security & DevOps - napędzam przewagę biznesu technologią, automatyzacją i bezpieczeństwem. Praktyk DevSecOps z doświadczeniem w infrastrukturze, pentestingu i automatyzacji procesów biznesowych.',
+
+    metaProjectsTitle: 'Projekty | d@niel.technology',
+    metaProjectsDesc: 'Case studies i eksploracje techniczne - od automatyzacji druku 3D po infrastrukturę homelab i integracje.',
+
+    metaBlogTitle: 'Wpisy | d@niel.technology',
+    metaBlogDesc: 'Techniczne insights, tutoriale i wnioski z praktyki DevSecOps i inżynierii bezpieczeństwa.',
+
+    metaWriteupsTitle: 'Writeups | d@niel.technology',
+    metaWriteupsDesc: 'Rozwiązania HackTheBox, TryHackMe i CTF - szczegółowe walkthroughy pentestingowe i wyzwania bezpieczeństwa.',
+
+    metaWhoamiTitle: 'whoami | d@niel.technology',
+    metaWhoamiDesc: 'Daniel Litwin - Security-focused DevOps Engineer. Praktyk DevSecOps z interdyscyplinarnym doświadczeniem: od prowadzenia biznesu druku 3D, przez projekty motion capture, po infrastrukturę homelab.',
 
     // Footer
     footerCopyright: '© 2025 d@niel.technology',
