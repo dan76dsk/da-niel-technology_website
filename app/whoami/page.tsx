@@ -21,12 +21,24 @@ export default function WhoamiPage() {
         <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
         <span className="text-terminal-accent">&gt;</span> {t('whoamiBio')}
         </h2>
-        <p className="text-terminal-muted leading-relaxed mb-4">
-        {t('heroTagline')}
-        </p>
-        <p className="text-terminal-muted leading-relaxed">
-        {t('heroBio')}
-        </p>
+        <div className="space-y-4 text-terminal-muted leading-relaxed">
+        <p>{t('bioPara1')}</p>
+        <p>{t('bioPara2')}</p>
+        <p>{t('bioPara3')}</p>
+        <p>{t('bioPara4')}</p>
+        </div>
+        </section>
+
+        {/* Mindset & Approach */}
+        <section>
+        <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+        <span className="text-terminal-accent">&gt;</span> {t('whoamiMindset')}
+        </h2>
+        <div className="space-y-4 text-terminal-muted leading-relaxed">
+        <p>{t('mindsetPara1')}</p>
+        <p>{t('mindsetPara2')}</p>
+        <p>{t('mindsetPara3')}</p>
+        </div>
         </section>
 
         {/* Skills */}
@@ -34,21 +46,38 @@ export default function WhoamiPage() {
         <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
         <span className="text-terminal-accent">&gt;</span> {t('whoamiSkills')}
         </h2>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Security */}
         <div>
-        <h3 className="text-sm font-medium text-white mb-2">{t('skillsSecurity')}</h3>
-        <ul className="text-sm text-terminal-muted space-y-1">
-        <li>• {t('securityPentest')}</li>
-        <li>• {t('securityWebApp')}</li>
-        <li>• {t('securityCTF')}</li>
+        <h3 className="text-sm font-medium text-white mb-3">{t('skillsSecurity')}</h3>
+        <ul className="text-sm text-terminal-muted space-y-2">
+        <li>• {t('security1')}</li>
+        <li>• {t('security2')}</li>
+        <li>• {t('security3')}</li>
+        <li>• {t('security4')}</li>
         </ul>
         </div>
+
+        {/* Infrastructure */}
         <div>
-        <h3 className="text-sm font-medium text-white mb-2">{t('skillsInfra')}</h3>
-        <ul className="text-sm text-terminal-muted space-y-1">
-        <li>• {t('infraProxmox')}</li>
-        <li>• {t('infraLinux')}</li>
-        <li>• {t('infraAutomation')}</li>
+        <h3 className="text-sm font-medium text-white mb-3">{t('skillsInfra')}</h3>
+        <ul className="text-sm text-terminal-muted space-y-2">
+        <li>• {t('infra1')}</li>
+        <li>• {t('infra2')}</li>
+        <li>• {t('infra3')}</li>
+        <li>• {t('infra4')}</li>
+        </ul>
+        </div>
+
+        {/* Development */}
+        <div>
+        <h3 className="text-sm font-medium text-white mb-3">{t('skillsDev')}</h3>
+        <ul className="text-sm text-terminal-muted space-y-2">
+        <li>• {t('dev1')}</li>
+        <li>• {t('dev2')}</li>
+        <li>• {t('dev3')}</li>
+        <li>• {t('dev4')}</li>
+        <li>• {t('dev5')}</li>
         </ul>
         </div>
         </div>
@@ -60,17 +89,41 @@ export default function WhoamiPage() {
         <span className="text-terminal-accent">&gt;</span> {t('whoamiBackground')}
         </h2>
         <div className="space-y-3 text-sm text-terminal-muted">
+        {/* University */}
         <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-        <p className="font-medium text-white mb-1">{t('bgPolishUniversity')}</p>
-        <p className="text-xs">{t('bgTelecom')}</p>
+        <p className="font-medium text-white mb-1">{t('bg1Title')}</p>
+        <p className="text-xs">{t('bg1Desc')}</p>
         </div>
+
+        {/* Geometry Hustlers */}
         <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-        <p className="font-medium text-white mb-1">{t('bg3DPrinting')}</p>
-        <p className="text-xs">{t('bg3DPrintingDesc')}</p>
+        <p className="font-medium text-white mb-2">{t('bg2Title')}</p>
+        <ul className="text-xs space-y-1">
+        <li>• {t('bg2Item1')}</li>
+        <li>• {t('bg2Item2')}</li>
+        <li>• {t('bg2Item3')}</li>
+        </ul>
         </div>
+
+        {/* Motion Capture */}
         <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-        <p className="font-medium text-white mb-1">{t('bgMotionCap')}</p>
-        <p className="text-xs">{t('bgMotionCapDesc')}</p>
+        <p className="font-medium text-white mb-2">{t('bg3Title')}</p>
+        <ul className="text-xs space-y-1">
+        <li>• {t('bg3Item1')}</li>
+        <li>• {t('bg3Item2')}</li>
+        <li>• {t('bg3Item3')}</li>
+        <li>• {t('bg3Item4')}</li>
+        </ul>
+        </div>
+
+        {/* Cross-domain */}
+        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+        <p className="font-medium text-white mb-2">{t('bg4Title')}</p>
+        <ul className="text-xs space-y-1">
+        <li>• {t('bg4Item1')}</li>
+        <li>• {t('bg4Item2')}</li>
+        <li>• {t('bg4Item3')}</li>
+        </ul>
         </div>
         </div>
         </section>
@@ -84,6 +137,7 @@ export default function WhoamiPage() {
         <a
         href="https://github.com/dan76dsk"
         target="_blank"
+        rel="noopener noreferrer"
         className="text-terminal-muted hover:text-terminal-accent transition-colors"
         >
         github
@@ -91,6 +145,7 @@ export default function WhoamiPage() {
         <a
         href="https://app.hackthebox.com/users/98349"
         target="_blank"
+        rel="noopener noreferrer"
         className="text-terminal-muted hover:text-terminal-accent transition-colors"
         >
         hackthebox

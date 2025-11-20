@@ -18,7 +18,7 @@ function getDirectory(type: ContentType): string {
     }
 }
 
-export function getContentBySlug(slug: string, type: ContentType, language: Language = 'en') {
+export function getContentBySlug(slug: string, type: ContentType, language: Language = 'en'): { data: any; content: string; slug: string } {
     const dir = getDirectory(type);
     const langDir = path.join(dir, language);
     const fullPath = path.join(langDir, `${slug}.md`);
@@ -35,7 +35,7 @@ export function getContentBySlug(slug: string, type: ContentType, language: Lang
 
     const fileContents = fs.readFileSync(finalPath, 'utf8');
     const { data, content } = matter(fileContents);
-    const htmlContent = marked(content);
+    const htmlContent = marked.parse(content) as string;
 
     return { data, content: htmlContent, slug };
 }
