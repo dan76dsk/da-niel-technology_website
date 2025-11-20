@@ -1,11 +1,18 @@
+'use client';
+
 import Link from 'next/link';
 import ProjectCard from '@/components/ProjectCard';
 import BlogCard from '@/components/BlogCard';
 import { getAllContent } from '@/lib/markdown';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { getTranslation } from '@/lib/translations';
 
 export default function Home() {
-  const projects = getAllContent('projects').slice(0, 3);
-  const posts = getAllContent('posts').slice(0, 3);
+  const { language } = useLanguage();
+  const t = (key: any) => getTranslation(language, key);
+
+  const projects = getAllContent('projects', language).slice(0, 3);
+  const posts = getAllContent('posts', language).slice(0, 3);
 
   return (
     <main className="min-h-screen">
@@ -13,15 +20,13 @@ export default function Home() {
     <section className="max-w-3xl mx-auto px-6 py-24">
     <div className="border-l-2 border-terminal-accent pl-6">
     <h1 className="text-4xl font-semibold mb-6 text-white">
-    Daniel Litwin
+    {t('heroTitle')}
     </h1>
     <p className="text-xl text-terminal-muted mb-8 leading-relaxed">
-    Security engineer focused on automation, infrastructure, and breaking things ethically.
+    {t('heroTagline')}
     </p>
     <p className="text-terminal-muted leading-relaxed mb-8">
-    Self-taught pentester with a background in 3D printing automation and motion capture.
-    Currently building homelab setups, solving HackTheBox challenges, and pivoting into
-    cybersecurity full-time.
+    {t('heroBio')}
     </p>
 
     <div className="flex gap-4 text-sm">
@@ -58,7 +63,7 @@ export default function Home() {
     {/* Projects */}
     <section className="max-w-3xl mx-auto px-6 py-16 border-t border-terminal-border">
     <h2 className="text-sm uppercase tracking-wider text-terminal-muted mb-8">
-    Projects
+    {t('sectionProjects')}
     </h2>
     <div className="space-y-6">
     {projects.map(project => (
@@ -69,14 +74,14 @@ export default function Home() {
     href="/projects"
     className="inline-block mt-8 text-sm text-terminal-muted hover:text-white transition-colors"
     >
-    View all →
+    {t('viewAll')} →
     </Link>
     </section>
 
     {/* Blog */}
     <section className="max-w-3xl mx-auto px-6 py-16 border-t border-terminal-border">
     <h2 className="text-sm uppercase tracking-wider text-terminal-muted mb-8">
-    Writing
+    {t('sectionWriting')}
     </h2>
     <div className="space-y-6">
     {posts.map(post => (
@@ -87,7 +92,7 @@ export default function Home() {
     href="/blog"
     className="inline-block mt-8 text-sm text-terminal-muted hover:text-white transition-colors"
     >
-    View all →
+    {t('viewAll')} →
     </Link>
     </section>
     </main>
