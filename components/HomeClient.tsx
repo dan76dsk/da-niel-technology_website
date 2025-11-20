@@ -41,7 +41,7 @@ export default function HomeClient({ data }: { data: ContentData }) {
 
     <Link
     href="/whoami"
-    className="inline-flex items-center gap-2 mb-6 text-sm text-terminal-muted hover:text-terminal-accent transition-colors"
+    className="inline-flex items-center gap-2 mb-6 text-xl text-terminal-muted hover:text-terminal-accent transition-colors"
     >
     <span className="text-terminal-accent">&gt;</span> whoami
     </Link>
