@@ -1,29 +1,9 @@
-'use client';
-
 import { getAllContent } from '@/lib/markdown';
-import ProjectCard from '@/components/ProjectCard';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { getTranslation } from '@/lib/translations';
+import ProjectsClient from '@/components/ProjectsClient';
 
 export default function ProjectsPage() {
-    const { language } = useLanguage();
-    const t = (key: any) => getTranslation(language, key);
-    const projects = getAllContent('projects', language);
+    const projectsEn = getAllContent('projects', 'en');
+    const projectsPl = getAllContent('projects', 'pl');
 
-    return (
-        <main className="min-h-screen">
-        <div className="max-w-3xl mx-auto px-6 py-16">
-        <div className="border-l-2 border-terminal-accent pl-6 mb-12">
-        <h1 className="text-3xl font-semibold text-white mb-3">{t('projectsTitle')}</h1>
-        <p className="text-terminal-muted">{t('projectsSubtitle')}</p>
-        </div>
-
-        <div className="space-y-6">
-        {projects.map(project => (
-            <ProjectCard key={project.slug} project={project} />
-        ))}
-        </div>
-        </div>
-        </main>
-    );
+    return <ProjectsClient projectsEn={projectsEn} projectsPl={projectsPl} />;
 }
