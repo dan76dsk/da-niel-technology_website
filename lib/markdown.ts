@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
 import hljs from 'highlight.js';
+import { notFound } from 'next/navigation';
 
 // Configure marked renderer to use highlight.js
 const renderer = new marked.Renderer();
@@ -49,7 +50,7 @@ export function getContentBySlug(slug: string, type: ContentType, language: Lang
     }
 
     if (!fs.existsSync(finalPath)) {
-        throw new Error(`Content not found: ${slug}`);
+        notFound();
     }
 
     const fileContents = fs.readFileSync(finalPath, 'utf8');
