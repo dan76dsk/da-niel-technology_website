@@ -1,15 +1,17 @@
+import { siteConfig } from './config';
+
 export function generateWebsiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'd@niel.technology',
+    name: siteConfig.name,
     description: 'Security & DevOps Engineer - Portfolio and Technical Blog',
-    url: 'https://d@niel.technology',
+    url: siteConfig.url,
     author: {
       '@type': 'Person',
-      name: 'Daniel Litwin',
+      name: siteConfig.author,
       jobTitle: 'Security & DevOps Engineer',
-      url: 'https://d@niel.technology/whoami',
+      url: `${siteConfig.url}/whoami`,
       sameAs: [
         'https://www.linkedin.com/in/daniel-litwin/',
         'https://github.com/dan76dsk',
@@ -23,10 +25,10 @@ export function generatePersonSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Daniel Litwin',
+    name: siteConfig.author,
     jobTitle: 'Security & DevOps Engineer',
     description: 'DevSecOps practitioner with interdisciplinary experience in security, automation, and infrastructure',
-    url: 'https://d@niel.technology',
+    url: siteConfig.url,
     email: 'd@niel.technology',
     sameAs: [
       'https://www.linkedin.com/in/daniel-litwin/',
@@ -52,8 +54,7 @@ export function generateArticleSchema(
   slug: string,
   type: 'blog' | 'writeup' | 'project'
 ) {
-  const baseUrl = 'https://d@niel.technology';
-  const url = `${baseUrl}/${type === 'blog' ? 'blog' : type === 'writeup' ? 'writeups' : 'projects'}/${slug}`;
+  const url = `${siteConfig.url}/${type === 'blog' ? 'blog' : type === 'writeup' ? 'writeups' : 'projects'}/${slug}`;
 
   // Określ typ artykułu
   let articleType: 'BlogPosting' | 'TechArticle' = 'BlogPosting';
@@ -71,13 +72,13 @@ export function generateArticleSchema(
     dateModified: date,
     author: {
       '@type': 'Person',
-      name: 'Daniel Litwin',
-      url: 'https://d@niel.technology/whoami',
+      name: siteConfig.author,
+      url: `${siteConfig.url}/whoami`,
     },
     publisher: {
       '@type': 'Person',
-      name: 'Daniel Litwin',
-      url: 'https://d@niel.technology',
+      name: siteConfig.author,
+      url: siteConfig.url,
     },
     mainEntityOfPage: {
       '@type': 'WebPage',

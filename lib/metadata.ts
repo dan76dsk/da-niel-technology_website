@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import { translations, Language } from './translations';
-
-const baseUrl = 'https://d@niel.technology';
+import { siteConfig } from './config';
 
 export function generateMetadata(
   page: 'home' | 'projects' | 'blog' | 'writeups' | 'whoami',
@@ -53,8 +52,8 @@ export function generateMetadata(
     openGraph: {
       title: ogTitle,
       description: ogDescription,
-      url: baseUrl,
-      siteName: 'd@niel.technology',
+      url: siteConfig.url,
+      siteName: siteConfig.name,
       locale: language === 'pl' ? 'pl_PL' : 'en_US',
       type: 'website',
     },
@@ -74,8 +73,8 @@ export function generateArticleMetadata(
   type: 'blog' | 'writeup' | 'project',
   language: Language = 'en'
 ): Metadata {
-  const fullTitle = `${title} | d@niel.technology`;
-  const url = `${baseUrl}/${type === 'blog' ? 'blog' : type === 'writeup' ? 'writeups' : 'projects'}/${slug}`;
+  const fullTitle = `${title} | ${siteConfig.name}`;
+  const url = `${siteConfig.url}/${type === 'blog' ? 'blog' : type === 'writeup' ? 'writeups' : 'projects'}/${slug}`;
 
   return {
     title: fullTitle,
@@ -84,7 +83,7 @@ export function generateArticleMetadata(
       title,
       description: excerpt,
       url,
-      siteName: 'd@niel.technology',
+      siteName: siteConfig.name,
       locale: language === 'pl' ? 'pl_PL' : 'en_US',
       type: 'article',
       publishedTime: date,

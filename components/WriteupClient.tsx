@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
+import ReadingProgress from './ReadingProgress';
+import { useCodeCopy } from '@/hooks/useCodeCopy';
 
 type WriteupData = {
   data: any;
@@ -17,8 +19,11 @@ type Props = {
 export default function WriteupClient({ writeupEn, writeupPl }: Props) {
   const { language } = useLanguage();
   const writeup = language === 'pl' ? writeupPl : writeupEn;
+  useCodeCopy();
 
   return (
+    <>
+    <ReadingProgress />
     <main className="min-h-screen">
     <article className="max-w-3xl mx-auto px-6 py-16">
     <Link
@@ -51,5 +56,6 @@ export default function WriteupClient({ writeupEn, writeupPl }: Props) {
     />
     </article>
     </main>
+    </>
   );
 }

@@ -1,8 +1,8 @@
 import { MetadataRoute } from 'next';
 import { getAllContent } from '@/lib/markdown';
+import { siteConfig } from '@/lib/config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://d@niel.technology';
   const currentDate = new Date();
 
   // Get all content
@@ -20,31 +20,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Static pages
   const staticPages = [
     {
-      url: baseUrl,
+      url: siteConfig.url,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 1,
     },
     {
-      url: `${baseUrl}/whoami`,
+      url: `${siteConfig.url}/whoami`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/projects`,
+      url: `${siteConfig.url}/projects`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog`,
+      url: `${siteConfig.url}/blog`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/writeups`,
+      url: `${siteConfig.url}/writeups`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
@@ -53,7 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Dynamic pages - projects
   const projectPages = projects.map((project) => ({
-    url: `${baseUrl}/projects/${project.slug}`,
+    url: `${siteConfig.url}/projects/${project.slug}`,
     lastModified: parseDate(project.data.date),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
@@ -61,7 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Dynamic pages - blog posts
   const blogPages = posts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
+    url: `${siteConfig.url}/blog/${post.slug}`,
     lastModified: parseDate(post.data.date),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
@@ -69,7 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Dynamic pages - writeups
   const writeupPages = writeups.map((writeup) => ({
-    url: `${baseUrl}/writeups/${writeup.slug}`,
+    url: `${siteConfig.url}/writeups/${writeup.slug}`,
     lastModified: parseDate(writeup.data.date),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
