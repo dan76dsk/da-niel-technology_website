@@ -15,9 +15,3 @@ services:
     # Jeśli będziesz używał analytics/logging
     # volumes:
     #   - ./logs:/app/logs
-    networks:
-      - web
-
-networks:
-  web:
-    external: true
