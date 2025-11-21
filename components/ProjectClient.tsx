@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ReadingProgress from './ReadingProgress';
+import { useLightbox } from '@/hooks/useLightbox';
 
 type ProjectData = {
   data: any;
@@ -18,6 +19,7 @@ type Props = {
 export default function ProjectClient({ projectEn, projectPl }: Props) {
   const { language } = useLanguage();
   const project = language === 'pl' ? projectPl : projectEn;
+  useLightbox();
 
   return (
     <>

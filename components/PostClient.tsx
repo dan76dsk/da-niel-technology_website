@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ReadingProgress from './ReadingProgress';
+import { useLightbox } from '@/hooks/useLightbox';
 
 type PostData = {
   data: any;
@@ -18,6 +19,7 @@ type Props = {
 export default function PostClient({ postEn, postPl }: Props) {
   const { language } = useLanguage();
   const post = language === 'pl' ? postPl : postEn;
+  useLightbox();
 
   return (
     <>
