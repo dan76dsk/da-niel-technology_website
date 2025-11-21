@@ -66,7 +66,7 @@ Kluczowe odkrycie:
     - Anonimowy dostęp do FTP.
     - W katalogu leży `backup.zip` (2533 bytes).
         
-        ![2 ftp-min.jpg](attachment:f219a750-a782-41fb-b1cf-9a465eb8d199:2_ftp-min.jpg)
+    ![2 ftp-min.jpg](/images/writeups/htb-vaccine/2_ftp-min.jpg)
         
 
 ---
@@ -89,7 +89,7 @@ Kluczowe odkrycie:
 - Kluczowe:
     - Hasło do archiwum ZIP to: **`741852963`**.
         
-        ![3 john-min.jpg](attachment:b8b56d31-9fc7-4b4e-af2c-0e023d2be56e:3_john-min.jpg)
+    ![3 john-min.jpg](/images/writeups/htb-vaccine/3_john-min.jpg)
         
 
 ---
@@ -117,7 +117,7 @@ Kluczowe odkrycie:
     
 - Hash hasła admina (MD5):`2cb42f8734ea607eefed3b70af13bbd3`
     
-    ![4 indexphp-min.jpg](attachment:5b566b7b-58b4-4f70-ba7a-e311534e0efd:4_indexphp-min.jpg)
+    ![4 indexphp-min.jpg](/images/writeups/htb-vaccine/4_indexphp-min.jpg)
     
 
 ---
@@ -170,7 +170,7 @@ Kluczowe odkrycie:
 - Po zalogowaniu:
     - Strona `dashboard.php` z tabelą “MegaCorp Car Catalogue” + pole `Search`.
         
-        ![5 admin panel-min.jpg](attachment:6c84a268-d165-43f7-9f08-67cf6b77885a:5_admin_panel-min.jpg)
+    ![5 admin panel-min.jpg](/images/writeups/htb-vaccine/5_admin_panel-min.jpg)
         
 
 ---
@@ -238,7 +238,7 @@ Kluczowe odkrycie:
         - potwierdzić uprawnienia DBA,
         - skorzystać z `COPY ... FROM PROGRAM ...` do zdalnego uruchamiania komend systemowych.
         
-        ![6 sqlmap-min.jpg](attachment:109d57cc-90ff-40c4-a76e-b9ea21cda961:6_sqlmap-min.jpg)
+        ![6 sqlmap-min.jpg](/images/writeups/htb-vaccine/6_sqlmap-min.jpg)
         
 
 ---
@@ -295,7 +295,7 @@ Kluczowe odkrycie:
 - Kluczowe:
     - Mamy normalny shell jako `postgres` przez TCP (niezależny od sqlmap, żyje mimo timeoutów sqlmapa).
     
-    ![7 reverse shell-min.jpg](attachment:14f5a08b-35ca-40d1-8567-14742bc3d494:7_reverse_shell-min.jpg)
+    ![7 reverse shell-min.jpg](/images/writeups/htb-vaccine/7_reverse shell-min.jpg)
     
 
 ---
@@ -348,7 +348,7 @@ Kluczowe odkrycie:
 - Kluczowe:
     - Hasło do DB (i systemowego konta): **`P@s5w0rd!`**[tu wstaw screenshot: fragment dashboard.php z connection stringiem]
     
-    ![8 haslo-min.jpg](attachment:fc42940f-8373-45e5-9edf-3a9547259d00:8_haslo-min.jpg)
+    ![8 haslo-min.jpg](/images/writeups/htb-vaccine/8_haslo-min.jpg)
     
 
 ---
@@ -375,7 +375,7 @@ Kluczowe odkrycie:
     - Użytkownik `postgres` może uruchomić **/bin/vi** na `/etc/postgresql/11/main/pg_hba.conf` z użyciem `sudo` (czyli jako root).
     - To jest odpowiedź na Task 7: program → **`vi` (/bin/vi)**.
         
-        ![9 sudo -l-min.jpg](attachment:58f65243-9649-4a7d-9459-7011a76c7ea2:9_sudo_-l-min.jpg)
+        ![9 sudo -l-min.jpg](/images/writeups/htb-vaccine/9_sudo -l-min.jpg)
         
 
 ---
@@ -412,9 +412,8 @@ Kluczowe odkrycie:
     - `vi` odpalone przez `sudo` działa jako root,
     - `:!bash` uruchamia basha z uprawnieniami roota → pełny root shell.
         
-        ![10 root-min.jpg](attachment:9e28f3dc-9baa-4af4-b9e1-ebf3914043f3:10_root-min.jpg)
+        ![10 root-min.jpg](/images/writeups/htb-vaccine/10_root-min.jpg)
         
-
 ---
 
 ## 15. Root flag
