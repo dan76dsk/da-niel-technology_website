@@ -43,10 +43,11 @@ export function getContentBySlug(slug: string, type: ContentType, language: Lang
     const langDir = path.join(dir, language);
     const fullPath = path.join(langDir, `${slug}.md`);
 
-    // Fallback to English if translation doesn't exist
+    // Fallback: if requested language doesn't exist, try the other one
     let finalPath = fullPath;
-    if (!fs.existsSync(fullPath) && language === 'pl') {
-        finalPath = path.join(dir, 'en', `${slug}.md`);
+    if (!fs.existsSync(fullPath)) {
+        const fallbackLang = language === 'pl' ? 'en' : 'pl';
+        finalPath = path.join(dir, fallbackLang, `${slug}.md`);
     }
 
     if (!fs.existsSync(finalPath)) {
