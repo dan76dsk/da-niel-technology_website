@@ -21,6 +21,16 @@ renderer.code = function({ text, lang }) {
     return `<pre><code class="hljs">${autoHighlighted.value}</code></pre>`;
 };
 
+renderer.image = function({ href, title, text }) {
+    if (title) {
+        return `<figure class="image-figure">
+            <img src="${href}" alt="${text || ''}" />
+            <figcaption>${title}</figcaption>
+        </figure>`;
+    }
+    return `<img src="${href}" alt="${text || ''}" />`;
+};
+
 marked.setOptions({ renderer });
 
 const postsDirectory = path.join(process.cwd(), 'content/posts');
