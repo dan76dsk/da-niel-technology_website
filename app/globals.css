@@ -100,3 +100,23 @@ code {
   border-top: 1px solid #3a3a3a;
   margin: 3rem 0 2rem 0;
 }
+
+.prose img {
+  margin: 2rem 0;
+  border-radius: 6px;
+}
+
+.prose .image-figure {
+  margin: 2rem 0;
+}
+
+.prose .image-figure img {
+  margin: 0 0 0.5rem 0;
+}
+
+.prose .image-figure figcaption {
+  font-size: 0.85em;
+  font-style: italic;
+  color: #888;
+  text-align: center;
+}
