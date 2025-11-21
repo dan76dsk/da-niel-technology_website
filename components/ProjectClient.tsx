@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ReadingProgress from './ReadingProgress';
-import { useCodeCopy } from '@/hooks/useCodeCopy';
 
 type ProjectData = {
   data: any;
@@ -19,7 +18,6 @@ type Props = {
 export default function ProjectClient({ projectEn, projectPl }: Props) {
   const { language } = useLanguage();
   const project = language === 'pl' ? projectPl : projectEn;
-  useCodeCopy();
 
   return (
     <>
