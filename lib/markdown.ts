@@ -65,17 +65,8 @@ export function getAllContent(type: ContentType, language: Language = 'en') {
     const dir = getDirectory(type);
     const langDir = path.join(dir, language);
 
-    if (!fs.existsSync(langDir)) {
-        // Fallback to English if language folder doesn't exist
-        const enDir = path.join(dir, 'en');
-        if (!fs.existsSync(enDir)) return [];
-
-        const slugs = fs.readdirSync(enDir).filter(file => file.endsWith('.md'));
-        return slugs.map(slug => {
-            const realSlug = slug.replace(/\.md$/, '');
-            return getContentBySlug(realSlug, type, 'en');
-        });
-    }
+    // Only return content that exists in the requested language
+    if (!fs.existsSync(langDir)) return [];
 
     const slugs = fs.readdirSync(langDir).filter(file => file.endsWith('.md'));
     return slugs.map(slug => {
