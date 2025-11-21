@@ -48,6 +48,12 @@ export default function WriteupClient({ writeupEn, writeupPl }: Props) {
         <span>{writeup.data.difficulty}</span>
         </>
     )}
+    {writeup.data.solveTime && (
+        <>
+        <span>•</span>
+        <span>{language === 'pl' ? 'Czas rozwiązania' : 'Solve time'}: {writeup.data.solveTime}</span>
+        </>
+    )}
     </div>
     </div>
     <div

@@ -4,6 +4,7 @@ date: "2025-11-18"
 excerpt: "Klasyczna ścieżka: IDOR → manipulacja cookies → upload PHP → RCE → SUID + PATH hijack. Dobra maszyna do utrwalenia reverse shella i SUID."
 platform: "HackTheBox"
 difficulty: "Bardzo Łatwa"
+solveTime: "1h 55min"
 ---
 
 ## Narzędzia/techniki

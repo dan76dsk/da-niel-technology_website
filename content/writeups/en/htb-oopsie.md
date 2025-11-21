@@ -11,6 +11,8 @@ platform: "HackTheBox"
 
 difficulty: "Very Easy"
 
+solveTime: "1h 55min"
+
 ---
 
 
