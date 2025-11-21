@@ -69,8 +69,15 @@ export function getAllContent(type: ContentType, language: Language = 'en') {
     if (!fs.existsSync(langDir)) return [];
 
     const slugs = fs.readdirSync(langDir).filter(file => file.endsWith('.md'));
-    return slugs.map(slug => {
+    const content = slugs.map(slug => {
         const realSlug = slug.replace(/\.md$/, '');
         return getContentBySlug(realSlug, type, language);
+    });
+
+    // Sort by date, newest first
+    return content.sort((a, b) => {
+        const dateA = new Date(a.data.date || 0).getTime();
+        const dateB = new Date(b.data.date || 0).getTime();
+        return dateB - dateA;
     });
 }
