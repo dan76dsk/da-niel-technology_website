@@ -63,24 +63,14 @@ export function getContentBySlug(slug: string, type: ContentType, language: Lang
 
 export function getAllContent(type: ContentType, language: Language = 'en') {
     const dir = getDirectory(type);
-    const enDir = path.join(dir, 'en');
-    const plDir = path.join(dir, 'pl');
+    const langDir = path.join(dir, language);
 
-    // Collect all unique slugs from both language folders
-    const allSlugs = new Set<string>();
+    // Only return content that exists in the requested language
+    if (!fs.existsSync(langDir)) return [];
 
-    if (fs.existsSync(enDir)) {
-        fs.readdirSync(enDir)
-            .filter(file => file.endsWith('.md'))
-            .forEach(file => allSlugs.add(file.replace(/\.md$/, '')));
-    }
-
-    if (fs.existsSync(plDir)) {
-        fs.readdirSync(plDir)
-            .filter(file => file.endsWith('.md'))
-            .forEach(file => allSlugs.add(file.replace(/\.md$/, '')));
-    }
-
-    // Load each slug with fallback support
-    return Array.from(allSlugs).map(slug => getContentBySlug(slug, type, language));
+    const slugs = fs.readdirSync(langDir).filter(file => file.endsWith('.md'));
+    return slugs.map(slug => {
+        const realSlug = slug.replace(/\.md$/, '');
+        return getContentBySlug(realSlug, type, language);
+    });
 }
