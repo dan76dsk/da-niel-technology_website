@@ -20,15 +20,12 @@ solveTime: "1h 35min"
 - `python3 -m http.server` (ściąganie plików z maszyny)
 - klasyczne linuksowe (`cat`, `find`, `sudo`, `vi`, `id`, `whoami`)
 
----
 
 ## Podsumowanie
 
 Maszyna Vaccine opiera się na słabym zarządzaniu hasłami i błędnym ustawieniu uprawnień:
 
 zaczynamy od anonimowego FTP z backupem aplikacji, łamiemy hasła ZIP-a i MD5, logujemy się do panelu WWW, wykorzystujemy SQLi w parametrze `search` i `sqlmap --os-shell` do uzyskania shella jako `postgres`, z pliku `dashboard.php` wyciągamy hasło do DB/System, a następnie przez `sudo /bin/vi ...` + `:!bash` eskalujemy do roota.
-
----
 
 
 ## 1. Skan portów
@@ -48,7 +45,6 @@ Kluczowe odkrycie:
     
     ![1 nmap-min.jpg](/images/writeups/htb-vaccine/1_nmap-min.jpg)
 
----
 
 ## 2. FTP – pobranie backupu
 
@@ -68,8 +64,6 @@ Kluczowe odkrycie:
         
     ![2 ftp-min.jpg](/images/writeups/htb-vaccine/2_ftp-min.jpg)
         
-
----
 
 ## 3. Łamanie hasła do backup.zip (zip2john + john)
 
@@ -91,8 +85,6 @@ Kluczowe odkrycie:
         
     ![3 john-min.jpg](/images/writeups/htb-vaccine/3_john-min.jpg)
         
-
----
 
 ## 4. Analiza backupu i hash MD5 z index.php
 
@@ -119,8 +111,6 @@ Kluczowe odkrycie:
     
     ![4 indexphp-min.jpg](/images/writeups/htb-vaccine/4_indexphp-min.jpg)
     
-
----
 
 ## 5. Identyfikacja i łamanie MD5 admina
 
@@ -154,7 +144,6 @@ Kluczowe odkrycie:
 - Kluczowe:
     - Hasło użytkownika `admin` na stronie: **`qwerty789`**.
 
----
 
 ## 6. Logowanie do panelu WWW
 
@@ -172,8 +161,6 @@ Kluczowe odkrycie:
         
     ![5 admin panel-min.jpg](/images/writeups/htb-vaccine/5_admin_panel-min.jpg)
         
-
----
 
 ## 7. Identyfikacja podatnego parametru `search`
 
@@ -197,7 +184,6 @@ Kluczowe odkrycie:
 - Wniosek:
     - Parametr `search` (GET) jest kandydatem do SQLi.
 
----
 
 ## 8. sqlmap – SQLi + `-os-shell` (PostgreSQL RCE)
 
@@ -241,8 +227,6 @@ Kluczowe odkrycie:
         ![6 sqlmap-min.jpg](/images/writeups/htb-vaccine/6_sqlmap-min.jpg)
         
 
----
-
 ## 9. OS-shell (sqlmap) → identyfikacja użytkownika
 
 - Komendy w os-shell:
@@ -260,8 +244,6 @@ Kluczowe odkrycie:
     
 - Kluczowe:
     - Wykonujemy komendy jako użytkownik systemowy **`postgres`** w katalogu danych PostgreSQL.
-
----
 
 ## 10. Reverse shell z os-shell sqlmapa
 
@@ -298,8 +280,6 @@ Kluczowe odkrycie:
     ![7 reverse shell-min.jpg](/images/writeups/htb-vaccine/7_reverse shell-min.jpg)
     
 
----
-
 ## 11. Szukanie user flag
 
 - Szybka enumeracja:
@@ -322,7 +302,6 @@ Kluczowe odkrycie:
 - Kluczowe odkrycie:
     - **user flag**: `ec9b13ca4d6229cd5cc1e09980965bf7`
 
----
 
 ## 12. Wyciągnięcie hasła do `postgres` z dashboard.php
 
@@ -351,7 +330,6 @@ Kluczowe odkrycie:
     ![8 haslo-min.jpg](/images/writeups/htb-vaccine/8_haslo-min.jpg)
     
 
----
 
 ## 13. `sudo -l` jako postgres
 
@@ -377,8 +355,6 @@ Kluczowe odkrycie:
         
         ![9 sudo -l-min.jpg](/images/writeups/htb-vaccine/9_sudo -l-min.jpg)
         
-
----
 
 ## 14. Eskalacja na roota przez `vi` (GTFOBins)
 
@@ -414,8 +390,6 @@ Kluczowe odkrycie:
         
         ![10 root-min.jpg](/images/writeups/htb-vaccine/10_root-min.jpg)
         
----
-
 ## 15. Root flag
 
 - Komendy:
@@ -431,8 +405,6 @@ Kluczowe odkrycie:
     
 - Kluczowe odkrycie:
     - **root flag**: `dd6e058e814260bc70e9bbdef2715849`
-
----
 
 ## Wnioski / czego się nauczyłem
 
