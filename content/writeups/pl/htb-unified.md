@@ -36,7 +36,14 @@ Eksploatacja maszyny Unified opiera się na podatnym UniFi Network 6.4.54: Log4S
 
 ## 1. Skan portów
 
-### Komenda
+Na początku próbowałem pełnego skanu:
+
+```bash
+┌──(kali㉿kali)-[~/Desktop/hack the box/unified]
+└─$ nmap -sC -sV -p- 10.129.23.138
+```
+
+Ten wariant (`-sC -sV` na wszystkich 65535 portach) skanował **bardzo długo** i praktycznie “zawisł” w okolicach ~27%, więc przerwałem (`Ctrl+C`) i zmodyfikowałem komendę na szybszy, czysto portowy SYN-scan bez skryptów:
 
 ```bash
 ┌──(kali㉿kali)-[~/Desktop/hack the box/unified]
@@ -58,8 +65,6 @@ PORT     STATE SERVICE
   - 22/tcp – SSH
   - 8080 / 8443 – typowe dla UniFi
   - 6789 – później potwierdzone jako `unifi.throughput.port` w konfiguracji
-
-![1_portscan_nmap](/images/writeups/htb-unified/1_portscan_nmap.jpg "Pełny skan portów nmap")
 
 ---
 
@@ -87,8 +92,6 @@ PORT     STATE SERVICE         VERSION
 
 - Tytuł aplikacji na 8443 (Task 2): **UniFi Network**
 - Cert i `http-title` jednoznacznie wskazują na UniFi Controller/Network.
-
-![2_nmap_8443](/images/writeups/htb-unified/2_nmap_8443.jpg "Skan wersji usługi na porcie 8443")
 
 ### 2.2. Panel UniFi w przeglądarce
 
@@ -118,7 +121,8 @@ Znalezione m.in.:
 
 ![4_research_unifi_cve](/images/writeups/htb-unified/4_research_unifi_cve.jpg "Research CVE-2021-44228 dla UniFi 6.4.54")
 
-Dodatkowy fragment POC/analizy exploitation `/api/login`:
+Dodatkowy fragment POC/analizy exploitation `/api/login:`  
+(źródło: `https://www.sprocketsecurity.com/blog/another-log4j-on-the-fire-unifi`)
 
 ![5_exploitation](/images/writeups/htb-unified/5_exploitation.jpg "Fragment opisu exploitation pola remember w /api/login")
 
@@ -255,8 +259,8 @@ unifi         69  ... bin/mongod --dbpath /usr/lib/unifi/data/db --port 27117 ..
 ### 4.2. Konfiguracja system.properties
 
 ```bash
-unifi@unified:/usr/lib/unifi$ cd /usr/lib/unifi/data
-unifi@unified:/usr/lib/unifi/data$ cat system.properties
+cd /usr/lib/unifi/data
+cat system.properties
 ## controller UI / API
 # unifi.https.port=8443
 ...
@@ -272,7 +276,7 @@ unifi@unified:/usr/lib/unifi/data$ cat system.properties
 ### 4.3. Połączenie do Mongo i enumeracja DB (Task 9)
 
 ```bash
-unifi@unified:/usr/lib/unifi$ mongo --port 27117
+mongo --port 27117
 MongoDB shell version v3.6.3
 connecting to: mongodb://127.0.0.1:27117/
 MongoDB server version: 3.6.3
@@ -314,8 +318,6 @@ user
 ```
 
 - Funkcja do enumeracji użytkowników (Task 10): **`find()`**, np. `db.admin.find()`.
-
-![10_mongo_admin_find](/images/writeups/htb-unified/10_mongo_admin_find.jpg "Enumeracja kolekcji admin w bazie ace")
 
 Dostępne metody (esencja):
 
@@ -448,11 +450,6 @@ e50bc93c75b634e4b272d2f771c33681
 
 - **Root flag:** `e50bc93c75b634e4b272d2f771c33681`
 
-[tu wstaw screenshot] – np. `15_root_flag.jpg` jeśli go zrobisz:
-
-```md
-![15_root_flag](/images/writeups/htb-unified/15_root_flag.jpg "Odczyt root.txt jako root")
-```
 
 ---
 
