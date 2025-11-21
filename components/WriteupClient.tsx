@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ReadingProgress from './ReadingProgress';
+import { useLightbox } from '@/hooks/useLightbox';
 
 type WriteupData = {
   data: any;
@@ -18,6 +19,7 @@ type Props = {
 export default function WriteupClient({ writeupEn, writeupPl }: Props) {
   const { language } = useLanguage();
   const writeup = language === 'pl' ? writeupPl : writeupEn;
+  useLightbox();
 
   return (
     <>
