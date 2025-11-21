@@ -1,5 +1,5 @@
 ---
-title: "HackTheBox - Vaccine"
+title: "HackTheBox - Vaccine (Starting Point)"
 date: "2025-11-19"
 excerpt: "Compact path: FTP → zip2john → MD5 → SQLi → sqlmap --os-shell → PostgreSQL RCE → sudo vi → root. Worth remembering sqlmap --os-shell and escalation via vi with GTFOBins."
 platform: "HackTheBox"
