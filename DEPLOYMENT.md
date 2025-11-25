@@ -1,4 +1,4 @@
-# 🚀🚀 Deployment Guide - d@niel.technology
+# 🚀🚀🚀 Deployment Guide - d@niel.technology
 
 ## Przed wdrożeniem
 
