@@ -1,7 +1,7 @@
 ---
 
 
-title: "HackTheBox - Oopsie (Starting Point)"
+title: "HackTheBox - Oopsie (Starting Point - tier 2)"
 
 date: "2025-11-18"
 

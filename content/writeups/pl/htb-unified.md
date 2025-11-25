@@ -1,5 +1,5 @@
 ---
-title: "HackTheBox - Unified (Starting Point)"
+title: "HackTheBox - Unified (Starting Point - tier 2)"
 date: "2025-11-21"
 excerpt: "Eksploatacja Log4Shell (CVE-2021-44228) w UniFi Network 6.4.54 oraz przejęcie instancji przez MongoDB i panel UniFi."
 platform: "HackTheBox"
