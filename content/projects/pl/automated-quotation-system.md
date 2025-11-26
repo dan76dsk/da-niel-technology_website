@@ -105,9 +105,22 @@ Jeśli na etapie weryfikacji geometrii system wykryje, że model przekracza dopu
 
 Po kilku sekundach (w zależności od złożoności modelu), wycena jest gotowa, pozycja odblokowuje się do dalszej konfiguracji, a przycisk przejścia do podsumowania staje się dostępny.
 
-Po pierwszym poprawnym uploadzie i utworzeniu pozycji klient może w dowolnym momencie dograć kolejne pliki - zostaną one dodane jako nowe pozycje do tej samej wyceny i przejdą dokładnie ten sam proces przetwarzania.
+Po pierwszym poprawnym uploadzie i utworzeniu pozycji klient może w dowolnym momencie dograć kolejne pliki - zostaną one dodane jako nowe pozycje do tej samej sesji wyceny i przejdą dokładnie ten sam proces przetwarzania. 
+
+W momencie, gdy w konfiguratorze pojawi się pierwsza wyceniona pozycja, system wyświetla kafelek z podsumowaniem zamówienia z automatycznie wyliczonym czasem realizacji, listą elementów oraz przyciskiem "złóż zamówienie" przekierowującym do strony podsumowania. Do listy podsumowania są dodawane wyłącznie pozycje z modelami, które nie przekraczają rozmiarów lub nie mają innych błędów przetwarzania.
+
+![konfigurator_jedna_pozycja](/images/projects/automated-quotation-system/konfigurator_jedna_pozycja.jpg "Wygląd konfiguratora z jedną wycenioną pozycją")
 
 ### Konfiguracja wyceny
+
+Konfigurację wyceny można rozpocząć po wciśnięciu buttona "dostosuj konfigurację". Wówczas rozwinie się konfigurator wraz z infoboxem, będącym przewodnikiem dla użytkownika.
+
+![konfigurowana_pozycja](/images/projects/automated-quotation-system/konfigurowana_pozycja.jpg "Wygląd konfigurowanej pozycji wraz z informacjami dla użytkownika")
+
+opcje do wyboru
+
+infobox - informacje, tolerancje, klasa cenowa, odnośnik do strony po więcej informacji dla dociekliwych szczegółów + grafika 
+przykładowe informacje 
 
 
 
