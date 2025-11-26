@@ -43,9 +43,9 @@ System z zewnątrz wygląda jak prosta i wygodna wyceniarka online, ale pod spod
   - automatyczne przypisanie wyceny do konta po rejestracji/logowaniu
 
 - **Panel administracyjny dla firmy**
-  - zarządzanie zamówieniami (statusy, filtrowanie, pobieranie plików)
-  - podgląd modeli, konfiguracji i miniaturek,
-  - automatyczne generowanie faktur i przypisywanie do zamówienia
+  - zarządzanie zamówieniami (zmiany statusów, podgląd szczegółów i pobieranie plików)
+  - automatyczna wysyłka maili z info. o zmianie statusu
+  - automatyczne generowanie faktur
 
 ## Biznesowe podejście do rozwiązania
 
@@ -85,7 +85,7 @@ Proces dla klienta został zaprojektowany tak, żeby przypominał klasyczny kosz
 
 ### Upload pliku/ów
 
-Klient przechodzi na podstronę wyceny (np. z menu głównego lub call-to-action na stronie) i od razu widzi panel do wrzucenia plików oraz krótki opis, co się zaraz wydarzy: „wrzuć model, wybierz parametry, poznaj cenę”. Użytkownik może przeciągnąć pliki STL/STEP na dropzone lub wybrać je z dysku - pojedynczo lub kilka naraz, bez konieczności logowania.
+Klient przechodzi na podstronę wyceny https://geometryhustlers.pl/quote/ (np. z menu głównego lub call-to-action na stronie) i od razu widzi panel do wrzucenia plików oraz krótki opis, co się zaraz wydarzy: „wrzuć model, wybierz parametry, poznaj cenę”. Użytkownik może przeciągnąć pliki STL/STEP na dropzone lub wybrać je z dysku - pojedynczo lub kilka naraz, bez konieczności logowania.
 
 ![strona_glowna_konfiguratora](/images/projects/automated-quotation-system/strona_glowna_konfiguratora.jpg "Strona główna konfiguratora z dropzone do uploadu plików 3D")
 
@@ -93,7 +93,7 @@ Jeszcze przed wysłaniem plików aplikacja weryfikuje podstawowe parametry: form
 
 Jeżeli niezalogowany użytkownik uploaduje plik większy niż obowiązujący limit gościa, zostanie mu przedstawiony pop-up zachęcający do założenia konta, by przesyłać większe pliki
 
-![upload_limit_goscia](/images/projects/automated-quotation-system/upload_limit_goscia.jpg "Pop-up zachęcającu do rejestracji, by przesyłać większe pliki")
+![upload_limit_goscia](/images/projects/automated-quotation-system/upload_limit_goscia.jpg "Pop-up zachęcający do rejestracji, by przesyłać większe pliki")
 
 
 Jeśli plik przejdzie wstępną walidację, rozpoczyna się upload i przetwarzanie.
@@ -120,7 +120,7 @@ System wyceny ma zaimplementowaną minimalną kwotę zamówienia, w celu unikni�
 
 ### Konfiguracja wyceny
 
-Konfigurację wyceny można rozpocząć po wciśnięciu buttona "dostosuj konfigurację". Wówczas pod wycenianą pozycją rozwiją się dodatkowe opcje, zawierające konfigurator wraz z infoboxem, będącym przewodnikiem dla użytkownika.
+Konfigurację wyceny można rozpocząć po wciśnięciu buttona "dostosuj konfigurację". Wówczas pod wycenianą pozycją rozwijają się dodatkowe opcje, zawierające konfigurator wraz z infoboxem, będącym przewodnikiem dla użytkownika.
 
 ![konfigurowana_pozycja](/images/projects/automated-quotation-system/konfigurowana_pozycja.jpg "Wygląd konfigurowanej pozycji wraz z informacjami dla użytkownika")
 
@@ -166,7 +166,7 @@ Po kliknięciu "złóż zamówienie" zakładamy dwa zachowania:
 
 ![modal_zamowienie](/images/projects/automated-quotation-system/modal_zamowienie.jpg "Pop-up ukazujący się niezalogowanym użytkownikom")
 
-Po przejściu na stronę podsumowania widoczne są 4 sekcje + podsumowanie:
+Po przejściu na stronę podsumowania (https://geometryhustlers.pl/quote/order/) widoczne są 4 sekcje + podsumowanie:
 - Zamawiane części - lista z podsumowaniem zamawianych części, ich konfiguracją i czasem realizacji,
 - Dane do wysyłki - goście muszą uzupełnić za każdym razem, a dla zalogowanych użytkowników dane są pobierane z bazy danych. Po zaznaczeniu checkboxa "chcę fakturę na firmę" formularz rozszerzy sie o pola firmowych danych
 - Dostawa - wybór metody dostawy
@@ -179,7 +179,7 @@ Checkbox "wyświetlaj ceny brutto" zachowuje się dokładnie tak samo jak w konf
 
 **Dane do wysyłki & różnice pomiędzy gościem a zalogowanym użytkownikiem**
 
-Zalogowany użytkownik na tym etapie będzie miał pobrane z bazy danych swoje dane do wysyłki i (jeżeli zaznaczył) dane do faktury oraz informacje że realizacja wiaże się z akceptacja regulaminu (bez checkboxów, bo zgoda została wyrażona na etapie rejestracji).
+Zalogowany użytkownik na tym etapie będzie miał pobrane z bazy danych swoje dane do wysyłki i (jeżeli uzupełnił) dane do firmowej faktury oraz informacje że realizacja wiaże się z akceptacja regulaminu (bez checkboxów, bo zgoda została wyrażona na etapie rejestracji).
 
 ![podsumowanie_widok_uzytkownika](/images/projects/automated-quotation-system/podsumowanie_widok_uzytkownika.jpg "Co widzi zalogowany użytkownik")
 
@@ -188,6 +188,7 @@ Niezalogowany użytkownik na tym etapie widzi pusty formularz do uzupełnienia o
 ![podsumowanie_widok_goscia](/images/projects/automated-quotation-system/podsumowanie_widok_goscia.jpg "Co widzi niezalogowany użytkownik - gość")
 
 **Wybór metody dostawy**
+
 Do wyboru:
 - Kurier InPost
 - Paczkomat InPost
@@ -205,6 +206,7 @@ Po wybraniu paczkomatu, wyświetlą się informacje o wybranym paczkomacie:
 ![wybrany_paczkomat_podsumowanie](/images/projects/automated-quotation-system/wybrany_paczkomat_podsumowanie.jpg "Informacje o wybranym paczkomacie")
 
 **Wybór metody płatności**
+
 Płatności są obsługiwane przez Przelewy24. 
 Do wyboru:
 - Szybki przelew
@@ -221,7 +223,7 @@ Po kliknięciu "przejdź do płatności" następuje przekierowanie na stronę op
 
 ![platnosc_p24.jpg](/images/projects/automated-quotation-system/platnosc_p24.jpg "Płatność w systemie Przelewy24")
 
-Po pomyślnym zrealizowaniu płatności, nastąpi powrót na stronę https://geometryhustlers.pl/order-success, na której wyświetlany jest status płatności.
+Po pomyślnym zrealizowaniu płatności, nastąpi powrót na stronę https://geometryhustlers.pl/order-success/, na której wyświetlany jest status płatności.
 
 Podczas odczytywania statusu płątności z bazy danych, przez moment wyświetla się komunikat o sprawdzaniu statusu:
 
@@ -236,7 +238,7 @@ Statusy płatności są 3: Oczekuję, opłacono oraz błąd
 ![platnosc_problem](/images/projects/automated-quotation-system/platnosc_problem.jpg "Komunikat o problemie z płatnością")
 
 
-### Powiadomienia mailowe
+### Powiadomienia mailowe i statusy zamówień
 
 Po pomyślnie zrealizowanej płatności, realizacja trafia do systemu ze statusem "oczekuje na weryfikację techniczną" w celu weryfikacji, czy część jest w ogóle wykonalna. Klient otrzymuje wiadomość mailową z potwierdzeniem przyjęcia płatności i podsumowaniem zamówienia
 
@@ -246,31 +248,101 @@ Jeżeli klient był zarejestrowanym użytkowikiem, w panelu użytkownika będzie
 
 ![zamowienie_w_panelu](/images/projects/automated-quotation-system/zamowienie_w_panelu.jpg "Widok opłaconego zamówienia w panelu")
 
-Po zweryfikowaniu i zaakceptowaniu przez administratora zamówienia, status zamówienia zamienia się na "w realizacji" informując mailowo klienta o zmianie statusu.
+Po zweryfikowaniu i zaakceptowaniu przez administratora zamówienia, status zamówienia zamienia się na "w realizacji" informując mailowo klienta o zmianie statusu. 
+Maile do klienta są wysyłane po zmianach statusu:
+- "opłacone - weryfikacja techniczna" -> "w realizacji"
+- "w realizacji" -> "zrealizowane"
 
+## Konto użytkownika
 
-
-
-
-
-
-## Rejestracja, logowanie, panel użytkownika
+System kont użytkowników opiera się na natywnym mechanizmie WordPressa - wykorzystuje istniejącą tabelę użytkowników i logikę autoryzacji, a aplikacja wyceny komunikuje się z nią przez własne API. 
 
 ### Rejestracja i potwierdzanie konta
-### Historia zamówień
-### Kontynuacja wyceny między urządzeniami
+
+Podczas procesu rejestracji (na stronie https://geometryhustlers.pl/register) użytkownik obowiązkowo podaje imię i nazwisko, adres e‑mail i hasło (opcjonalnie też dane adresowe). Po wypełnieniu formularza rejestracji, użytkownik otrzymuje komunikat:
+
+![konto_utworzone](/images/projects/automated-quotation-system/konto_utworzone.jpg "Komunikat po rejestracji konta")
+
+ System tworzy konto i wysyła link aktywacyjny na maila. Po kliknięciu w link aktywujący, konto staje się aktywne i użytkownik zostanie przekierowany do strony logowania z komunikatem o aktywowanym koncie:
+
+![konto_aktywowane](/images/projects/automated-quotation-system/konto_aktywowane.jpg "Komunikat po aktywacji konta")
+
+### Logowanie
+
+Logowanie odbywa się klasycznie – e‑mail + hasło. Po poprawnym zalogowaniu użytkownik jest automatycznie „podpinany” pod istniejącą aktywną sesję wyceny ładowaną z bazy danych (lub sesja jest przepinana, jeśli przed zalogowaniem, w sesji przeglądarki, działał jako gość), tak aby nie tracił wprowadzonych wcześniej modeli 3D i konfiguracji. W przypadku błędnego hasła system zwraca czytelny komunikat, a odzyskiwanie dostępu odbywa się przez wysłanie linku resetującego hasło na podany adres e‑mail.
+
+Logowanie odbywa się w trzech miejscach:
+- główna strona logowania pod adresem https://geometryhustlers.pl/login,
+- pop-up który pojawia się gościom przy próbie uploadu pliku większego niż obowiązujący limit dla gości,
+- pop-up który pojawia się gościom przy przejściu do podsumowania.
+
+![logowanie](/images/projects/automated-quotation-system/logowanie.jpg "Strona główna logowania")
+
+Zalogować mogą się tylko użytkownicy, którzy aktywowali swoje konto. Podczas próby zalogowania się na nieaktywne konto, użytkownik dostanie komunikat:
+
+![konto_nieaktywowane](/images/projects/automated-quotation-system/konto_nieaktywowane.jpg "Komunikat o nieaktywnym koncie")
+
+Po zalogowaniu, użytkownik zostaje przekierowany na panel użytkownika.
+
+Na stronie logowania, klikając "zapomniałem hasła" następuje przekierowanie na stronę wysyłania linku resetującego pod adresem https://geometryhustlers.pl/forgotpass. 
+
+![resetuj_haslo](/images/projects/automated-quotation-system/resetuj_haslo.jpg "Formularz resetowania hasła")
+
+Po wpisaniu maila powiązanego z kontem, którego reset hasła dotyczy, użytkownik utrzymuje komunikat:
+
+![reset_hasla](/images/projects/automated-quotation-system/reset_hasla.jpg "Komunikat o wysłanym linku do resetowania hasła")
+
+Po kliknięciu w link resetujący hasło następuje przekierowanie do wordpressowego resetowania hasła:
+
+![wordpressowe_resetowanie_hasla](/images/projects/automated-quotation-system/wordpressowe_resetowanie_hasla.jpg "Ustawianie nowego hasła")
+
+Po ustaleniu nowego hasła użytkownik otrzymuje komunikat potwierdzający:
+
+![haslo_zmienione](/images/projects/automated-quotation-system/haslo_zmienione.jpg "Komunikat o potwierdzeniu zmienionego hasła")
+
+
+### Panel użytkownika i historia zamówień
+
+Po zalogowaniu użytkownik ma dostęp do prostego panelu, w którym widzi listę swoich zamówień z kluczowymi informacjami: datą, kwotą, statusem oraz liczbą modeli w zamówieniu. Panel użytkownika jest dostępny pod adresem https://geometryhustlers.pl/account/. Stroną główną panelu użytkownika jest zakładka z zamówieniami.
+
+W zakładce z zamówieniami można przejrzeć aktualne i archiwalne zamówienia oraz podejrzeć szczegóły zamówienia, klikając w numer zamówienia
+
+![szczegoly_zamowienia_konto_uzytkownika](/images/projects/automated-quotation-system/szczegoly_zamowienia_konto_uzytkownika.jpg "Szczegóły wybranego zamówienia")
+
+Poza historią zamówień, w panelu użytkownika jest opcja zarządzania kontem (https://geometryhustlers.pl/account/manage) na której mozna:
+- zmienić swoje dane
+- zmienić hasło
+- usunąć konto
+
+![account_manage](/images/projects/automated-quotation-system/account_manage.jpg "Panel użytkownika - zarządzanie kontem")
+
+Po kliknięciu "zmień dane" pojawia się formularz, gdzie dane można aktualizować.
+Po kliknięciu "zmień hasło" na adres mailowy użytkownika zostaje wysłany link do resetowania hasła oraz pojawia się komunikat:
+
+![komunikat_zmien_haslo](/images/projects/automated-quotation-system/komunikat_zmien_haslo.jpg "Komunikat po zmianie hasła")
+
+W celu zabezpieczenia przed masową wysyłką maili wysyłających linki do zmiany hasła, został dodany mechanizm zabezpieczający. Po ponownym kliknięciu, użytkownik dostaje komunikat, by odczekać kilka sekund przed ponownym wysłaniem maila:
+
+![komunikat_zmien_haslo_poczekaj](/images/projects/automated-quotation-system/komunikat_zmien_haslo_poczekaj.jpg "Komunikat po zbyt szybkim kliknięciu zmień hasło")
+
+Po kliknięciu "usuń konto" użytkownik zostaje poinformowany za pomocą pop-upa, że wraz z tą operacją wszelkie dane powiązane z kontem zostaną trwale usunięte z systemów teleinformatycznych:
+
+![modal_usun_konto](/images/projects/automated-quotation-system/modal_usun_konto.jpg "Pop-up ostrzegający przed usunięciem konta")
+
+### Kontynuacja wyceny między urządzeniami i czas ważności sesji
+
+Domyślnie wycena gościa jest przypisana do sesji przeglądarki - można zamknąć kartę i wrócić później na tym samym urządzeniu, bez utraty danych. Sesja gościa jest ważna przez 7 dni.
+
+Jeśli użytkownik w dowolnym momencie się zarejestruje lub zaloguje, istniejąca sesja zostaje przypisana do jego konta i przedłużony zostaje czas jej ważności do 30 dni. Dzięki temu może rozpocząć wycenę na jednym urządzeniu, a dokończyć ją na innym, widząc dokładnie te same modele i konfiguracje.
+
 
 ## Panel administracyjny
 
-Krótki opis: „co rozwiązano” dla właściciela firmy:
-
 ### Zarządzanie zamówieniami
+
 ### Zarządzanie sesjami wyceny
+
 ### Porządek w plikach i statusach
-
-
-
-
 
 
 
