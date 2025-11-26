@@ -152,7 +152,7 @@ Jak wspomniałem w sekcji "upload plików" przejście do podsumowania jest możl
 Kafelek z podsumowaniem:
 - zawiera listę z podsumowaniem wszystkich wycenianych pozycji,
 - po prawej stronie wyświetla obliczony przez system przewidywany czas realizacji,
-- ma checkbox "wyświetlaj ceny brutto". 
+- ma checkbox "wyświetlaj ceny brutto" (ułatwiający oszacowanie kosztów zarówno osobom fizycznym jak i firmom). 
 
 ![podsumowanie_div](/images/projects/automated-quotation-system/podsumowanie_div.jpg "Kafelek podsumowania")
 
@@ -166,9 +166,93 @@ Po kliknięciu "złóż zamówienie" zakładamy dwa zachowania:
 
 ![modal_zamowienie](/images/projects/automated-quotation-system/modal_zamowienie.jpg "Pop-up ukazujący się niezalogowanym użytkownikom")
 
+Po przejściu na stronę podsumowania widoczne są 4 sekcje + podsumowanie:
+- Zamawiane części - lista z podsumowaniem zamawianych części, ich konfiguracją i czasem realizacji,
+- Dane do wysyłki - goście muszą uzupełnić za każdym razem, a dla zalogowanych użytkowników dane są pobierane z bazy danych. Po zaznaczeniu checkboxa "chcę fakturę na firmę" formularz rozszerzy sie o pola firmowych danych
+- Dostawa - wybór metody dostawy
+- Płatność - wybór metody płatności
+- Podsumowanie - podliczenie wszystkich kosztów z rozbiciem na sumę części, dostawę i VAT; checkboxem "wyświetlaj ceny brutto", checkboxy z akceptacją regulaminu i polityką prywatności oraz button "przejdź do płatności"
 
+Checkbox "wyświetlaj ceny brutto" zachowuje się dokładnie tak samo jak w konfiguratorze - przekształca ceny netto<->brutto oraz zmienia komunikaty na adekwatne (czy wyświetlana kwota zawiera VAT czy też nie).
+
+![strona podsumowania](/images/projects/automated-quotation-system/strona_podsumowania.jpg "Wygląd strony podsumowania")
+
+**Dane do wysyłki & różnice pomiędzy gościem a zalogowanym użytkownikiem**
+
+Zalogowany użytkownik na tym etapie będzie miał pobrane z bazy danych swoje dane do wysyłki i (jeżeli zaznaczył) dane do faktury oraz informacje że realizacja wiaże się z akceptacja regulaminu (bez checkboxów, bo zgoda została wyrażona na etapie rejestracji).
+
+![podsumowanie_widok_uzytkownika](/images/projects/automated-quotation-system/podsumowanie_widok_uzytkownika.jpg "Co widzi zalogowany użytkownik")
+
+Niezalogowany użytkownik na tym etapie widzi pusty formularz do uzupełnienia oraz checkboxy potwierdzające zapoznanie się z regulaminem i polityką prywatności.
+
+![podsumowanie_widok_goscia](/images/projects/automated-quotation-system/podsumowanie_widok_goscia.jpg "Co widzi niezalogowany użytkownik - gość")
+
+**Wybór metody dostawy**
+Do wyboru:
+- Kurier InPost
+- Paczkomat InPost
+
+Po wybraniu paczkomaty inpost, pojawi się przycisk "wybierz paczkomat". 
+
+![dostawa_wybrany_paczkomat](/images/projects/automated-quotation-system/dostawa_wybrany_paczkomat.jpg "Wybrany Paczkomat InPost w metodzie dostawy")
+
+Należy wybrać paczkomat/paczkopunkt z mapy InPost (klik w "Wybierz paczkomat" > wyświetli się mapa paczkomatów)
+
+![mapa_inpost](/images/projects/automated-quotation-system/mapa_inpost.jpg "Mapka InPost")
+
+Po wybraniu paczkomatu, wyświetlą się informacje o wybranym paczkomacie:
+
+![wybrany_paczkomat_podsumowanie](/images/projects/automated-quotation-system/wybrany_paczkomat_podsumowanie.jpg "Informacje o wybranym paczkomacie")
+
+**Wybór metody płatności**
+Płatności są obsługiwane przez Przelewy24. 
+Do wyboru:
+- Szybki przelew
+- BLIK
+
+Obie metody płatności przekierowują na stronę przelewy24. Metoda "szybki przelew" pozwala na wybranie swojego banku lub innej metody płatności z listy płatności online. BLIK z kolei wymaga podania kodu BLIK na stronie przelewy24, do której nastąpi przekierowanie po kliknięciu "przejdź do płatności".
+
+**Przejdź do płatności**
+Przycisk "przejdź do płatności" jest aktywny (klikalny) tylko gdy wszystkie pola formularza są prawidłowo uzupełnone.
 
 ### Płatność i potwierdzenie
+
+Po kliknięciu "przejdź do płatności" następuje przekierowanie na stronę operatora płatności Przelewy24, gdzie należy opłacić zamówienie.
+
+![platnosc_p24.jpg](/images/projects/automated-quotation-system/platnosc_p24.jpg "Płatność w systemie Przelewy24")
+
+Po pomyślnym zrealizowaniu płatności, nastąpi powrót na stronę https://geometryhustlers.pl/order-success, na której wyświetlany jest status płatności.
+
+Podczas odczytywania statusu płątności z bazy danych, przez moment wyświetla się komunikat o sprawdzaniu statusu:
+
+![platnosc_sprawdzanie_statusu](/images/projects/automated-quotation-system/platnosc_sprawdzanie_statusu.jpg "Sprawniadze statusu płatności")
+
+Statusy płatności są 3: Oczekuję, opłacono oraz błąd
+
+![przetwarzanie_platnosci](/images/projects/automated-quotation-system/przetwarzanie_platnosci.jpg "Komunikat o przetwarzaniu płatności")
+
+![platnosc_sukces](/images/projects/automated-quotation-system/platnosc_sukces.jpg "Komunikat o pomyślnej płatności")
+
+![platnosc_problem](/images/projects/automated-quotation-system/platnosc_problem.jpg "Komunikat o problemie z płatnością")
+
+
+### Powiadomienia mailowe
+
+Po pomyślnie zrealizowanej płatności, realizacja trafia do systemu ze statusem "oczekuje na weryfikację techniczną" w celu weryfikacji, czy część jest w ogóle wykonalna. Klient otrzymuje wiadomość mailową z potwierdzeniem przyjęcia płatności i podsumowaniem zamówienia
+
+![email_po_zamowieniu](/images/projects/automated-quotation-system/email_po_zamowieniu.jpg "E-mail po opłaceniu zamówienia")
+
+Jeżeli klient był zarejestrowanym użytkowikiem, w panelu użytkownika będzie widoczna pozycja ze statusem "opłacone - weryfikacja techniczna":
+
+![zamowienie_w_panelu](/images/projects/automated-quotation-system/zamowienie_w_panelu.jpg "Widok opłaconego zamówienia w panelu")
+
+Po zweryfikowaniu i zaakceptowaniu przez administratora zamówienia, status zamówienia zamienia się na "w realizacji" informując mailowo klienta o zmianie statusu.
+
+
+
+
+
+
 
 ## Rejestracja, logowanie, panel użytkownika
 
