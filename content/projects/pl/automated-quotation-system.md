@@ -91,6 +91,11 @@ Klient przechodzi na podstronę wyceny (np. z menu głównego lub call-to-action
 
 Jeszcze przed wysłaniem plików aplikacja weryfikuje podstawowe parametry: format, rozmiar pliku i wymiary modelu. Limit wielkości plików zależy od typu użytkownika - gość ma niższy próg, zalogowany użytkownik może wrzucać większe modele.
 
+Jeżeli niezalogowany użytkownik uploaduje plik większy niż obowiązujący limit gościa, zostanie mu przedstawiony pop-up zachęcający do założenia konta, by przesyłać większe pliki
+
+![upload_limit_goscia](/images/projects/automated-quotation-system/upload_limit_goscia.jpg "Pop-up zachęcającu do rejestracji, by przesyłać większe pliki")
+
+
 Jeśli plik przejdzie wstępną walidację, rozpoczyna się upload i przetwarzanie.
 
 ![upload_przetwarzanie_plikow](/images/projects/automated-quotation-system/upload_przetwarzanie_plikow.jpg "Przetwarzanie uploadu pliku 3D")
@@ -109,22 +114,60 @@ Po pierwszym poprawnym uploadzie i utworzeniu pozycji klient może w dowolnym mo
 
 W momencie, gdy w konfiguratorze pojawi się pierwsza wyceniona pozycja, system wyświetla kafelek z podsumowaniem zamówienia z automatycznie wyliczonym czasem realizacji, listą elementów oraz przyciskiem "złóż zamówienie" przekierowującym do strony podsumowania. Do listy podsumowania są dodawane wyłącznie pozycje z modelami, które nie przekraczają rozmiarów lub nie mają innych błędów przetwarzania.
 
+System wyceny ma zaimplementowaną minimalną kwotę zamówienia, w celu uniknięcia przeciążenia systemu bardzo drobnymi zleceniami. Jeżeli elementy konfiguratora jej nie przekraczają, zostanie ona zastosowana w podsumowaniu z odpowiednią informacją dla użytkownika.
+
 ![konfigurator_jedna_pozycja](/images/projects/automated-quotation-system/konfigurator_jedna_pozycja.jpg "Wygląd konfiguratora z jedną wycenioną pozycją")
 
 ### Konfiguracja wyceny
 
-Konfigurację wyceny można rozpocząć po wciśnięciu buttona "dostosuj konfigurację". Wówczas rozwinie się konfigurator wraz z infoboxem, będącym przewodnikiem dla użytkownika.
+Konfigurację wyceny można rozpocząć po wciśnięciu buttona "dostosuj konfigurację". Wówczas pod wycenianą pozycją rozwiją się dodatkowe opcje, zawierające konfigurator wraz z infoboxem, będącym przewodnikiem dla użytkownika.
 
 ![konfigurowana_pozycja](/images/projects/automated-quotation-system/konfigurowana_pozycja.jpg "Wygląd konfigurowanej pozycji wraz z informacjami dla użytkownika")
 
-opcje do wyboru
+**Konfigurator**
 
-infobox - informacje, tolerancje, klasa cenowa, odnośnik do strony po więcej informacji dla dociekliwych szczegółów + grafika 
-przykładowe informacje 
+W aktualnej wersji konfiguratora, użytkownik ma możliwość dobrania takich parametrów produkcji jak:
 
+- Technologia druku 3D
+- Materiał (tworzywo sztuczne)
+- Kolor materiału (zależny od aktualnej dostępności)
+- Wypełnienie (dla technologii FDM)
+- Opcje zaawansowane - dostępne dla zalogowanych użytkowników
 
+![opcje_konfiguratora](/images/projects/automated-quotation-system/opcje_konfiguratora.jpg "Dostępne opcje konfiguracji")
+
+**Przewodnik dla użytkownika - infobox**
+
+Po najechaniu kursorem na każdą z opcji konfiguratora, zmienia się treść infoboxa. Przedstawia ona użytkownikowi podstawowe informacje o wybieranej pozycji (np. wytrzymałość, klasa cenowa, tolerancje) oraz poglądową grafikę.
+
+![infobox_material_asa_cf](/images/projects/automated-quotation-system/infobox_material_asa_cf.jpg "Przykład informacji o materiale")
+
+![infobox_wypelnienie_40](/images/projects/automated-quotation-system/infobox_wypelnienie_40.jpg "Przykład informacji o wypełnieniu")
+
+Jeżeli użytkownik ma potrzebę dowiedzenia się więcej o danej opcji, infobox w prawym górnym rogu zawiera odnośnik do strony, dokładnie opisującą daną opcje (np. strona z konkretnym tworzywem)
 
 ### Przejście do podsumowania
+Jak wspomniałem w sekcji "upload plików" przejście do podsumowania jest możliwe, jeżeli w kalkulatorze wyceny druku 3D znajduje się co najmniej jedna poprawnie wyceniona pozycja (bez błędów przetwarzania).
+
+Kafelek z podsumowaniem:
+- zawiera listę z podsumowaniem wszystkich wycenianych pozycji,
+- po prawej stronie wyświetla obliczony przez system przewidywany czas realizacji,
+- ma checkbox "wyświetlaj ceny brutto". 
+
+![podsumowanie_div](/images/projects/automated-quotation-system/podsumowanie_div.jpg "Kafelek podsumowania")
+
+Checkbox "wyświetlaj ceny brutto" domyślnie jest zaznaczony i wyświetlane są ceny brutto - zarówno w każdej pozycji, jak i w podsumowaniu. Analogicznie - jeżeli jest odznaczony, wyświetlają się ceny netto z adekwatną informacją o stawce VAT.
+
+![obsluga_netto_brutto](/images/projects/automated-quotation-system/obsluga_netto_brutto.jpg "Przedstawienie działania checkboxa wyświetlaj ceny brutto")
+
+Po kliknięciu "złóż zamówienie" zakładamy dwa zachowania:
+- dla zalogowanego użytkownika następuje przekierowanie do strony podsumowania,
+- dla gościa, zanim nastąpi przekierowanie, prezentowany jest pop-up zachęcający do założenia konta - można go pominąć, klikając "kontynuuj jako gość.
+
+![modal_zamowienie](/images/projects/automated-quotation-system/modal_zamowienie.jpg "Pop-up ukazujący się niezalogowanym użytkownikom")
+
+
+
 ### Płatność i potwierdzenie
 
 ## Rejestracja, logowanie, panel użytkownika
