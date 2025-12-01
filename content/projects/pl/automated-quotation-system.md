@@ -282,7 +282,11 @@ Zalogować mogą się tylko użytkownicy, którzy aktywowali swoje konto. Podcza
 
 ![konto_nieaktywowane](/images/projects/automated-quotation-system/konto_nieaktywowane.jpg "Komunikat o nieaktywnym koncie")
 
-Po zalogowaniu, użytkownik zostaje przekierowany na panel użytkownika.
+Po zalogowaniu, użytkownik zostaje przekierowany na panel użytkownika, a w nagłówku strony będzie się wyświetlać jego nazwa użytkownika:
+
+![zalogowany_uzytkownik](/images/projects/automated-quotation-system/zalogowany_uzytkownik.jpg "Wygląd fragmentu nagłówka dla zalogowanego użytkownika")
+
+### Resetowanie hasła
 
 Na stronie logowania, klikając "zapomniałem hasła" następuje przekierowanie na stronę wysyłania linku resetującego pod adresem https://geometryhustlers.pl/forgotpass. 
 
@@ -305,7 +309,9 @@ Po ustaleniu nowego hasła użytkownik otrzymuje komunikat potwierdzający:
 
 Po zalogowaniu użytkownik ma dostęp do prostego panelu, w którym widzi listę swoich zamówień z kluczowymi informacjami: datą, kwotą, statusem oraz liczbą modeli w zamówieniu. Panel użytkownika jest dostępny pod adresem https://geometryhustlers.pl/account/. Stroną główną panelu użytkownika jest zakładka z zamówieniami.
 
-W zakładce z zamówieniami można przejrzeć aktualne i archiwalne zamówienia oraz podejrzeć szczegóły zamówienia, klikając w numer zamówienia
+![moje_zamowienia](/images/projects/automated-quotation-system/moje_zamowienia.jpg "Lista zamówień użytkownika")
+
+W zakładce z zamówieniami można przejrzeć aktualne i archiwalne zamówienia. Każda z pozycji zamówień daje możliwość pobrania faktury VAT za zamówienie (klikając ikonę faktury w kolumnie "faktura") oraz zobaczenia szczegółów zamówienia, klikając w numer zamówienia
 
 ![szczegoly_zamowienia_konto_uzytkownika](/images/projects/automated-quotation-system/szczegoly_zamowienia_konto_uzytkownika.jpg "Szczegóły wybranego zamówienia")
 
@@ -316,8 +322,8 @@ Poza historią zamówień, w panelu użytkownika jest opcja zarządzania kontem 
 
 ![account_manage](/images/projects/automated-quotation-system/account_manage.jpg "Panel użytkownika - zarządzanie kontem")
 
-Po kliknięciu "zmień dane" pojawia się formularz, gdzie dane można aktualizować.
-Po kliknięciu "zmień hasło" na adres mailowy użytkownika zostaje wysłany link do resetowania hasła oraz pojawia się komunikat:
+- Po kliknięciu "zmień dane" pojawia się formularz, gdzie dane można aktualizować.
+- Po kliknięciu "zmień hasło" na adres mailowy użytkownika zostaje wysłany link do resetowania hasła oraz pojawia się komunikat:
 
 ![komunikat_zmien_haslo](/images/projects/automated-quotation-system/komunikat_zmien_haslo.jpg "Komunikat po zmianie hasła")
 
