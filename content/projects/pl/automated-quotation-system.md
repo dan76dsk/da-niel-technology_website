@@ -505,61 +505,159 @@ Dzięki temu pliki przesyłane w ramach wycen są przechowywane tylko przez mini
 
 
 
+---
+
+
+# Podsumowanie techniczne i doświadczenia z wdrożenia
+
+## Od zera do skalowalnej produkcyjnej platformy - świadome zarządzanie projektem
+
+Zanim napisałem pierwszą linijkę kodu, dokładnie rozpoznałem, jaki efekt biznesowy ma przynieść ta platforma - nie chodziło o samą automatykę, tylko o strategiczny wzrost firmy: redukcję pracy operacyjnej, likwidację barier zakupowych, skalowanie i eliminację błędów w procesie wycen. Od początku myślałem o całym przedsięwzięciu z poziomu firmy, nie produktu IT - odczytywałem powtarzalne miejsca pracy manualnej i wdrażałem optymalizację, która zmieniała drukarnię w “maszynę”, nad którą można teraz pracować z metapoziomu: monitorować, dokładać nowe “moduły”, automatyzować. To typowy “pracuj nad firmą, nie w firmie” - zorientowany na efektywność biznesową, a nie tylko na kod.
+
+Jednocześnie samą implementację od początku prowadziłem jak “projekt end-to-end”:  
+- Rozrysowanie całego flow (użytkownik, sesja wyceny, zamówienie, admin),  
+- Precyzyjna definicja wymagań (np. klucz: realna, nie estymowana cena wyceny = slicing G-code),  
+- Bezpieczeństwo, ergonomia, skalowalność jako wymagania nie do otwarcia (choć oznaczały pracę po stronie architektury i devopsu).
+- Wygodę użytkownika, przyszłą skalowalność oraz bezpieczeństwo traktowałem jako "must-have", co miało przełożenie zarówno na decyzje architektoniczne, jak i praktyki devopsowe.
+
+## Nauka przez praktykę, narzędzia i świadomy AI-assisted development
+
+Gdy zaczynałem projekt, miałem podstawy w JavaScript, ale Node.js i React były dla mnie nowością. Moją największą przewagą nie była więc znajomość konkretnej składni, tylko naturalna intuicja technologiczna i umiejętność wyczowania kontekstu technologicznego. Kluczowa okazała się też skuteczność w wykorzystywaniu narzędzi AI - nie traktowałem LLM jak “autopilota”, ale jak kontekstowego asystenta, którego rolą jest nie bezmyślne generowanie kodu, tylko przetwarzanie intencji i logiki projektowej, debugowanie, rozwijanie architektury i usprawnianie wdrożeń.
+
+Przez większość prac korzystałem z dwóch podejść:
+
+### Praca z Claude Sonnet 4.5 i ChatGPT 4.1 (standardowy workflow)
+
+Na początku rozwoju projektu głównym narzędziem był dla mnie Claude Sonnet 4.5, choć w codziennej pracy często wspomagałem się także ChatGPT 4.1. Wypracowałem jasny podział zadań między tymi modelami:
+
+- **Claude Sonnet 4.5** służył mi do generowania bardziej rozbudowanych fragmentów kodu - zarówno frontendowych, jak i backendowych - oraz do szybkich iteracji/refactoringu i debugowania zachowań na styku różnych komponentów. Przed każdą sesją z Claudem zawsze przygotowywałem zwięzłą, dobrze sformatowaną notatkę dokumentacyjną, zawierającą opis projektu, strukturę repozytorium oraz aktualny scope zmiany. W miarę potrzeb dostarczałem mu dodatkowo wybrane fragmenty kodu (README, kluczowe pliki), by mógł lepiej rozumieć intencje oraz zależności biznesowe i techniczne.
+
+- **ChatGPT 4.1** traktowałem natomiast jako “precyzyjne narzędzie chirurgiczne” - wykorzystywałem go do mikrooperacji, jednostkowych poprawek, testowania pojedyńczych funkcji, generowania testów jednostkowych czy rozwiązywania lokalnych bugów. Zaletą GPT była możliwość zadania bardzo precyzyjnego problemu i natychmiastowego uzyskania poprawki.
+
+Kluczowym elementem workflow była **kontrola kontekstu**:  
+– Każda istotna funkcjonalność dostawała własną, dedykowaną konwersację - po to, by nie przepalać tokenów na nieistotny kontekst,  
+– Dbałem, by w konwersacji znajdowały się tylko te informacje, które były potrzebne dla aktualnego ficzera - żadnego zbędnego szumu z innych tematów,  
+– Notatki, README i wycinki kodu ładowałem tylko w niezbędnym zakresie, stale aktualizując je przy większych zmianach,  
+– Po zamknięciu prac nad jednym ficzerem, nowy ficzer = nowa rozmowa, z czystym i aktualnym kontekstem.
+
+To podejście pozwoliło mi efektywnie korzystać z obu modeli - Claude Sonnet 4.5 do holistycznych, wieloetapowych zmian, a ChatGPT 4.1 do precyzyjnych operacji. Jednocześnie cały czas to ja byłem “dyrygentem” procesu - kontrolowałem przepływ informacji i ścieżkę kodowania, utrzymując wysoką jakość i oszczędność zarówno czasu, jak i kosztów pracy z AI.
+
+### Przełom z Claude Code (integracja z monorepo GitHub)
+
+Prawdziwy gamechanger nastąpił, gdy odkryłem Claude Code i podpiąłem do niego swoje monorepo projektu przez GitHub. To narzędzie z miejsca przejęło cały kontekst - bez konieczności każdorazowego tłumaczenia struktury, repo, zależności czy intencji.
+Wystarczyło zadbać o porządną, na bieżąco aktualizowaną dokumentację w README oraz utrzymanie spójności projektu - a Claude Code potrafił już rozumieć zmiany cross-modularnie i trzymać kontekst wszystkiego, co działo się zarówno na backendzie, frontach, jak i w plikach konfiguracyjnych.  
+Efekt?  
+- Mogłem w ciągu jednej dłuższej sesji przeprowadzić zmiany, które dotyczyły jednocześnie API, panelu admina i backendowego workflow,  
+- Znacznie zmniejszyło to potrzebę “dogrzewania” własnego kontekstu przez kopiowanie plików ręcznie,  
+- Usprawnienie developmentu synchronicznego (np. zmiany w jednym komponencie automatycznie śledzone przez kod po stronie serwera czy frontendu).
+
+W obu podejściach najważniejsze było to, że to ja nadawałem ton, ramy i porządek - AI było narzędziem, nie “czarną skrzynką”. Kod powstawał spójny i logiczny, bo prowadziłem workflow od początku do końca, stale rozumiejąc skutki każdej zmiany.
+
+Uważam, że z AI można zrealizować praktycznie każdy feature, o ile poprawnie przygotuje się grunt i ustali jasne reguły pracy (konkretna rozmowa = konkretny ficzer/proces, czyste README, ścisły kontekst) - dało mi dużą przewagę produktywności. Było też nieocenioną pomocą w nauce nowych technologii “w biegu”, np. Reacta, który musiałem wchłonąć szybko, by platforma była rzeczywiście nowoczesna i wydajna.
+
+## Architektura, stack i decyzje techniczne - inżynieria pod realne wymagania, nie hype
+
+Kluczowy wybór: cały stack miał być w pełni customowy, zero schodzenia na gotowce, które nie rozumieją branży druku 3D (np. WooCommerce, Shopify, uniwersalne kalkulatory).  
+- **Backend:** Node.js (twardsza nauka, ale pełna kontrola)  
+- **Frontend:** React (komfort oddzielenia warstwy - mogłem osobno wdrażać, testować i refaktorować, UI był doklejalny do WordPressa)  
+- **Repozytorium:** monorepo Github, 3 główne paczki (frontend użytkownika, panel admina, backend), wszystko trzymane w wersjach, z historią zmian.
+
+### Kluczowe narzędzie: PrusaSlicer  
+Wdrożenie wyceny przez realne G-code - nie szacowane objętością, tylko dane z terminalowego slicing’u - z punktu widzenia biznesu zmieniło wszystko:  
+- Precyzja wyceny,  
+- Zero zaniżania/nieprzewidywalnych kosztów (“niespodzianki” znane z innych systemów),  
+- Możliwość automatyzacji i skalowania bez poprawek “po ludzku”.
+
+Wyboru samego slicera dokonałem, bo znam PrusaSlicer doskonale z maszynowego doświadczenia - i… nie było lepszej alternatywy dającej pełne CLI, wydajność, deterministyczność wyników.
+
+### Storage S3/MinIO i strategia zarządzania plikami  
+Na początku rozważałem wybór pomiędzy klasycznym FTP a bucketem S3, który był mi wówczas obcy. Po analizie stwierdziłem, że architektura S3/MinIO idealnie odpowiada potrzebom zarządzania dużą liczbą plików w tym projekcie.
+
+Pierwsze testy pokazały, jak łatwo w tradycyjnym podejściu powstaje chaos - brak powiązania plików z sesjami wycen czy zamówieniami prowadziłby do bałaganu i problemów z retencją danych. Dlatego od razu wdrożyłem logikę wiązania plików z sesjami i zamówieniami oraz mechanizmy cache’owania, automatycznego czyszczenia i migracji plików do folderów docelowych. Te praktyki zapewniają porządek, automatyzację, zgodność z RODO i bezpieczeństwo na każdym etapie życia pliku.
+
+## DevOps, hosting, bezpieczeństwo, automatyzacja
+
+Całość hostuję na własnym **homelabie**, który specjalnie rozbudowałem (nowe CPU i RAM), by zapewnić płynność działania PrusaSlicer nawet przy wielu równoległych wycenach. Sercem środowiska jest Proxmox - każda usługa (backend, oba frontend’y, storage, MinIO, Prometheus) działa w dedykowanej VM lub kontenerze LXC/Docker. 
+
+Usługi są wystawiane na świat tylko tam, gdzie to konieczne (np. strona firmowa, backend), a pełna kontrola odbywa się przez reverse proxy (Nginx Proxy Manager) z precyzyjnie ustawionymi przekierowaniami na określone porty oraz maszyny. Dodatkowo, cała komunikacja z zewnątrz jest ściśle limitowana przez firewall na routerze - każdy przychodzący i wychodzący ruch sieciowy jest kontrolowany przez zestaw dedykowanych reguł i whitelist, co skutecznie zamyka dostęp do usług, które nie muszą być dostępne publicznie.
+
+Warstwa DNS w Cloudflare zapewnia dodatkową ochronę - rzeczywisty adres IP mojego serwera pozostaje ukryty, co eliminuje jeden z najczęstszych wektorów ataków na sieci domowe i infrastrukturę bare metal.
+
+Monitoring przy pomocy Grafany i Prometheus pozwala mi na bieżąco kontrolować zużycie zasobów, planować skalowanie maszyn wirtualnych, wdrażać automatyczne kopie zapasowe, zadania utrzymaniowe i rolling update’y usług bez ryzyka utraty kontroli nad środowiskiem produkcyjnym.
+
+![prometheus](/images/projects/automated-quotation-system/prometheus.jpg "Monitoring zasobów backendu")
+
+### Wdrażanie nowości i workflow wdrożeniowy - praktyczna nauka na żywym projekcie
+
+To była moja pierwsza aplikacja webowa tej skali, w której samodzielnie spinałem procesy przebudowy i wdrażania zarówno frontendu, jak i backendu. Naturalnie, nie znałem jeszcze narzędzi do automatycznego CI/CD ani nie miałem gotowych schematów z innych dużych zespołów. Workflow wdrożeniowy wypracowałem po prostu eksperymentując - metodą kolejnych prób, błędów i iteracji - aż znalazłem efektywny sposób, który sprawdzał się na moim homelabie.
+
+Aktualizacje wdrażałem manualnie, bo taka ścieżka była dla mnie zrozumiała i pozwalała uczyć się na bieżąco, jak działają zależności między budowanymi komponentami. Frontend wrzucałem przez własny skrypt `.sh`, który automatyzował podmianę plików builda na FTP w strukturze WordPressa, natomiast backend aktualizowałem przez `git pull`, kompilację i restart usług przez systemd po SSH.
+
+Ten manualny workflow, choć powolniejszy niż profesjonalne CI/CD, dał mi pełną świadomość zależności, nauczył dyscypliny wersjonowania oraz umożliwił szybkie wycofanie zmian (rollback), gdy coś poszło nie tak. Przy MVP i dynamicznie rozwijającym się projekcie okazał się dobrą szkołą realnej pracy z wydaniami, deployem i zarządzaniem środowiskiem produkcyjnym.
+
+### Wersjonowanie i środowiska - praktyczna ewolucja podejścia
+
+Początkowo nie przywiązywałem wagi do oddzielania środowiska deweloperskiego od produkcyjnego - skoro zaczynałem sam, a ruch na platformie był zerowy, naturalne wydawało się testowanie wszystkiego “na żywym organizmie”. Jednak w miarę szybkiego rozwoju projektu, rosnącej liczby funkcji i pojawiania się prawdziwych użytkowników, zrozumiałem, jak duże ryzyko niosą ze sobą poprawki i rozwój na produkcji. Pojawiały się nieprzewidziane konflikty, regresje oraz coraz większy stres związany z wycofywaniem nietrafionych zmian.
+
+To praktyczne doświadczenie przekonało mnie, że nawet w jednoosobowym, dynamicznym projekcie warto postawić na jasny podział środowisk: na development, staging oraz produkcję, a także zadbać o czytelną chronologię wersji i możliwość łatwego rollbacku. Od tamtego momentu workflow projektowy zaczął obejmować: testy i eksperymenty w sandboxie, staging nowości oraz świadome “flagi” bezpieczeństwa przy wdrożeniach na produkcję.
+
+Wszystko opierałem na monorepo Github, gdzie trzy główne moduły (frontend platformy wyceny, frontend panelu admina, backend) pozwalały na częściowe, niezależne wdrożenia. Branchowanie, pull requesty oraz wersjonowanie kodu nauczyły mnie proceduralnego podejścia do zmian i dały poczucie panowania nad coraz bardziej złożoną platformą.
+
+## Iteracyjny rozwój, strategie automatyzacji i feedback loop
+
+Moim codziennym rytuałem była pętla feedbacku: dzień kończyłem podsumowaniem realnego progresu, oceniając, co działa, a co jeszcze wymaga pracy. Uczyłem się strategicznego myślenia - skupiając się najpierw na rzeczach fundamentalnych, później wdrażając szczegóły. Planowanie backlogu i roadmapy nauczyło mnie łączyć perspektywę developera, biznesu i klienta końcowego.  
+ **Automatyzacja i optymalizacja** były naturalnym następstwem obserwacji na każdym etapie wdrożenia, m.in.:  
+- Zauważałem bałagan na S3 przy testach → wdrażałem powiązania plików z sesjami i porządkowanie,  
+- Testowałem slicing przy tych samych parametrach → zauważyłem niepotrzebne ponowne zużycie zasobów serwera, wdrożyłem mechanizm cache blokujący niepotrzebny load,  
+- Pojawiła się potrzeba czyszczenia plików i optymalizacji storage → powstały dedykowane narzędzia admina, mechanizmy czyszczenia, a także integracja wymuszająca porządek i retencję zgodnie z RODO.
+
+Ten organiczny rozwój pozwala mi dziś **myśleć i działać jak CTO, product owner i devops w jednej osobie** - rozumiem i wdrażam cykl build-measure-learn, stale usprawniam flow, zadaję sobie pytanie: gdzie jeszcze można odciąć powtarzalną robotę, poprawić UX, zoptymalizować biznes? Finalnie - **tylko taka postawa daje przewagę konkurencyjną każdej rozwijającej się organizacji technologicznej.**
+
+## Bezpieczeństwo, walidacje i odporność
+
+Wraz z rosnącą liczbą funkcji i integracji bezpieczeństwo systemu stawało się coraz większym wyzwaniem. Doświadczenie pokazało mi, że każdy nowy ficzer może “wysypać” nawet wcześniej dobrze przetestowane części - liczba możliwych wektorów ataku i konfliktów rośnie wykładniczo z każdą iteracją.  
+Pilnowałem:  
+- rygorystycznych walidacji na backendzie (np. walidacja uploadów, blokady na manipulacje ceną),  
+- jasnego modelu RODO (kasowanie danych, retencja, mechanizmy clean-up dla sesji i plików poza okresem przechowywania),  
+- fizycznych zabezpieczeń sieciowych (Cloudflare, reverse proxy, firewall),  
+- polityki minimalnych uprawnień i fizycznej separacji usług (każda usługa w swoim kontenerze/LXC, porty otwarte tylko tam, gdzie to konieczne).  
+**Najważniejsza lekcja:** poziom bezpieczeństwa jest odwrotnie proporcjonalny do liczby funkcji, jeśli nie towarzyszy temu kultura testowania, automatyczne walidacje, procedury rollbacku i sprawny monitoring.
+
+## Zarządzanie i optymalizacja biznesu przez technologię
+
+Ten projekt nauczył mnie patrzeć na firmę jak na dynamiczny mechanizm, który można doskonalić przez automatyzację powtarzalnych czynności - nie tylko dla przyspieszenia obsługi klienta, ale po prostu dla otwarcia nowego modelu biznesowego i wolumenu, który dawniej blokowała ręczna praca operatora.
+
+**Dzięki automatyzacji obsługi zleceń:**
+- obsługa wycen skaluje się praktycznie bezkosztowo (więcej klientów ≠ więcej godzin pracy),
+- mogę łatwo zatrudnić kolejne osoby (admin panel → czytelny, wszystko pod ręką, jasne procedury),
+- każda kolejna optymalizacja/feature nie tylko poprawia backend/front, ale daje realny wzrost operacyjny w biznesie (lepsza konwersja, mniejszy chaos, szybszy obrót gotówki).
+
+Największą satysfakcję daje mi to, że - dzięki tej platformie - moja firma przestała być zbiorem ręcznie wykonywanych, chaotycznych działań, a stała się poukładaną maszyną, która działa według zdefiniowanych reguł, procedur i automatycznych przepływów. Teraz nie “pracuję w firmie” - pracuję nad firmą: mogę usprawniać system z perspektywy całości, wdrażać kolejne automatyzacje, optymalizować, rozwijać i doskonalić model biznesowy.
+
+## Przemyślenia wdrożeniowe i potencjał optymalizacji
+
+- W kolejnej wersji rozdzieliłbym frontend jako osobne SPA pod subdomeną (np. platforma.geometryhustlers.pl), nie w ramach WordPressa - lepsza separacja odpowiedzialności, większa elastyczność i niezależne zarządzanie userami oraz bazą danych.  
+- Nie wdrażać funkcji “na wszelki wypadek” - jeśli nie ma realnej potrzeby, nie warto tracić czasu i zasobów.  
+- Częste review kodu (własne lub wspierane przez AI) i iteracyjne czyszczenie starego codebase’u zapobiega narastaniu długu technicznego.  
+- Warto postawić na monitoring od pierwszego dnia (Prometheus), wtedy łatwo skalować VM-ki, optymalizować flow i nie dopuścić do zadyszki przy rosnącym ruchu lub volume wycen.
+
+---
+
+**Podsumowując:**  
+To nie tylko projekt programistyczny - to przykład, jak wykorzystując połączenie inżynierskiej ciekawości, kompetencji dev/ops, szerokiego spojrzenia biznesowego oraz najnowszych narzędzi (AI, homelab, automatyzacja, storage), można w praktyce stworzyć firmę zarządzaną jak sprawny, skalowalny system, a nie codziennie gaszony „pożar”.
+Całość od pomysłu, przez architekturę, development, po finalne wdrożenie technologiczne powstała w duchu: szukaj miejsc do optymalizacji, automatyzuj powtarzalność, dokumentuj każdy etap decyzji i stale pracuj nad sprzężeniem zwrotnym z realnymi problemami biznesu.
+To właśnie takie podejście - stawiające na automatyzację, spięcie wszystkiego w przejrzysty system i ciągłe szukanie nowej wartości - jest według mnie kluczowe dla każdego CTO, foundera, czy managera, który myśli o rozwoju firmy odpornej na chaos i gotowej na szybkie skalowanie.
+Ten projekt pokazuje, że mając “systemowy” mindset i gotowość do eksperymentów, można - nawet w pojedynkę - zamienić firmę w samonapędzający się mechanizm, gotowy do dalszego rozwoju i efektywnej ekspansji.
+
+
+
+
+
+
+
+
 # Jak to działa pod maską (deep dive techniczny)
 
-## Architektura systemu
-### Ogólny schemat przepływu danych
-### Podział na warstwy (frontend, backend, storage, integracje)
+treść w tworzeniu
 
-## Backend: przetwarzanie i wycena modeli 3D
-### Upload i walidacja plików 3D
-### Przechowywanie plików i operacje na storage (S3/MinIO)
-### Generowanie miniaturek i analiza geometrii (Blender CLI, Three.js)
-### Slicing modeli (PrusaSlicer CLI)
-### System cache dla operacji czasochłonnych
-### Blokady i ochrona przed race conditions (slicer lock)
 
-## Algorytm cenowy i walidacja
-### Wyciąganie realnych metryk z G-code (zużycie materiału, czas druku)
-### Rabaty ilościowe i mnożniki (skala logarytmiczna, masa, supporty)
-### Kalkulacja ceny na backendzie vs weryfikacja frontendu
-### Minimalna wartość zamówienia, opłaty dodatkowe
-
-## System sesji i bezpieczeństwo
-### Model danych sesji (struktura sesji, powiązania z użytkownikiem/gościem)
-### Mechanizmy przedłużania, transferowania i wygaszania sesji
-### Ochrona dostępu do sesji i danych (JWT, autoryzacja)
-### Wymagania RODO, polityka retencji danych
-
-## Integracje z płatnościami i systemem kont
-### Płatności online (Przelewy24, obsługa webhooków)
-### Powiązanie z systemem kont WordPress (użytkownicy, autoryzacja, sesje)
-### Automatyczne powiadomienia email i generowanie faktur
-
-## Frontend: SPA i interfejs użytkownika
-### React SPA osadzone w WordPress
-### Integracja z API backendu, zarządzanie stanem, debouncing wycen
-### Komponenty: upload, konfigurator, podgląd 3D, podsumowanie, checkout
-### Reaktywność interfejsu i doświadczenie użytkownika
-
-## Panel administracyjny: operacje dla operatora
-### Architektura panelu admina
-### Operacje masowe oraz zaawansowane akcje na plikach i zamówieniach
-### Narzędzia do utrzymania porządku i raportowania
-
-## Monitoring, diagnostyka, automatyzacja
-### System logów i narzędzia analityczne
-### Cron joby i automatyczne procesy konserwacyjne
-### Utrzymanie i rozbudowa – jak projekt przewiduje rozwój
-
-## Bezpieczeństwo i odporność systemu
-### Ochrona uploadu i walidacja plików
-### Blokady mechanizmu slicera (race conditions, DoS)
-### Ochrona danych osobowych i zgodność z RODO
-### Testy penetracyjne i security review
-
-## Stack technologiczny i narzędzia developerskie
-### Wybór technologii i uzasadnienie
-### AI-assisted development: obszary wsparcia
-### Deployment i CI/CD
-### Lekcje i wyzwania architektoniczne
