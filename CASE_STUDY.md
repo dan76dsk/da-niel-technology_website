@@ -2,6 +2,8 @@
 
 > Case study projektu full-stack: od problemu biznesowego do produkcyjnego rozwiązania
 
+
+dodać: budowanie statusów z połowicznych statusów
 ---
 
 ## Spis treści

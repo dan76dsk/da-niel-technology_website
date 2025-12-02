@@ -6,7 +6,9 @@ tech: ["React", "Node.js", "Python", "JWT", "AWS S3 / MinIO", "PrusaSlicer CLI",
 
 # Opis
 
-Stworzyłem dla Geometry Hustlers system automatycznej wyceny druku 3D, który zastąpił ręczne kalkulacje operatorem i całą mailową „wymianę plików” jednym, spójnym procesem online. Z poziomu przeglądarki klient wrzuca model 3D, wybiera materiał i parametry, a aplikacja w kilka sekund wykonuje rzeczywisty slicing, liczy koszt i pokazuje czas realizacji. Składanie zamówienia odbywa się bez udziału człowieka po stronie firmy.
+Platforma zamówień druku 3D - od uploadu modelu do płatności online - w mniej niż minutę, całkowicie self-service. Od problemu biznesowego do produkcyjnego wdrożenia.
+
+Stworzyłem dla Geometry Hustlers full-stackowy system automatycznej wyceny druku 3D, który zastąpił ręczne kalkulacje operatorem i całą mailową „wymianę plików” jednym, spójnym procesem online. Z poziomu przeglądarki klient wrzuca model 3D, wybiera materiał i parametry, a aplikacja w kilka sekund wykonuje rzeczywisty slicing, liczy koszt i pokazuje czas realizacji. Składanie zamówienia odbywa się bez udziału człowieka po stronie firmy.
 
 Z punktu widzenia biznesu oznacza to skrócenie czasu odpowiedzi z kilku godzin do 30 sekund, redukcję pracę przy wycenach praktycznie do zera oraz wzrost konwersji zapytań o kilkanaście punktów procentowych. System pilnuje marży, eliminuje błędy cenowe (0% rozjazdów między wyceną a realnym kosztem) i skaluje się razem z liczbą zapytań, zamiast blokować sprzedaż dostępnością kilku osób. To przykład projektu, w którym technologia (Node.js, React, PrusaSlicer, integracja z płatnościami) jest tylko środkiem - celem było uporządkowanie procesu sprzedaży i odblokowanie wzrostu firmy.
 
@@ -72,7 +74,7 @@ Na tej bazie zdefiniowałem **konkretne cele i założenia projektu**:
 - uporządkować proces od wyceny do realizacji tak, by każdy model, plik i status miał swoje miejsce w systemie, 
 - wpiąć rozwiązanie w istniejący ekosystem WordPress, zamiast budować osobny, odizolowany byt,
 
-Rozwiązanie musi być **customowe**, bo gotowe wtyczki e‑commerce nie rozumieją domeny druku 3D (każda konfiguracja pliku 3D = osobny produkt). Cała dalsza architektura techniczna – Node.js, React, PrusaSlicer, S3/MinIO, panel admina - była już tylko konsekwencją tych biznesowych decyzji.
+Rozwiązanie musi być **customowe**, bo gotowe wtyczki e‑commerce nie rozumieją domeny druku 3D (każda konfiguracja pliku 3D = osobny produkt). Cała dalsza architektura techniczna - Node.js, React, PrusaSlicer, S3/MinIO, panel admina - była już tylko konsekwencją tych biznesowych decyzji.
 
 
 # Jak to działa w praktyce (klient i administracja)
@@ -100,7 +102,7 @@ Jeśli plik przejdzie wstępną walidację, rozpoczyna się upload i przetwarzan
 
 ![upload_przetwarzanie_plikow](/images/projects/automated-quotation-system/upload_przetwarzanie_plikow.jpg "Przetwarzanie uploadu pliku 3D")
 
-Po pomyślnym uploadzie każdy plik staje się osobną pozycją w konfiguratorze – z nazwą, miniaturką modelu 3D oraz podstawowymi parametrami. W tle uruchamiany jest silnik wyceny, który na bazie domyślnych ustawień (technologia FDM, tworzywo PLA, kolor czarny, wypełnienie 20%) oblicza czas druku i koszt. Dopóki dana pozycja jest w stanie liczenia wyceny, jej ustawienia są tymczasowo zablokowane - użytkownik widzi komunikat „obliczanie...”.
+Po pomyślnym uploadzie każdy plik staje się osobną pozycją w konfiguratorze - z nazwą, miniaturką modelu 3D oraz podstawowymi parametrami. W tle uruchamiany jest silnik wyceny, który na bazie domyślnych ustawień (technologia FDM, tworzywo PLA, kolor czarny, wypełnienie 20%) oblicza czas druku i koszt. Dopóki dana pozycja jest w stanie liczenia wyceny, jej ustawienia są tymczasowo zablokowane - użytkownik widzi komunikat „obliczanie...”.
 
 ![pozycja_w_trakcie_obliczania](/images/projects/automated-quotation-system/pozycja_w_trakcie_obliczania.jpg "Oczekiwanie na obliczenie ceny przez serwer wyceny")
 
@@ -124,6 +126,12 @@ Konfigurację wyceny można rozpocząć po wciśnięciu buttona "dostosuj konfig
 
 ![konfigurowana_pozycja](/images/projects/automated-quotation-system/konfigurowana_pozycja.jpg "Wygląd konfigurowanej pozycji wraz z informacjami dla użytkownika")
 
+**Nakład** 
+
+W konfiguratorze możesz wprowadzić liczbę sztuk (nakład) dla każdego modelu osobno. System automatycznie przelicza cenę końcową w zależności od wybranego wolumenu. Im większy nakład, tym niższa cena jednostkowa wydruku - rabat naliczany jest algorytmicznie, a wynikowy koszt jednej sztuki i sumy pozycji widoczny jest w czasie rzeczywistym przy każdej zmianie ilości. Dzięki temu klient może łatwo sprawdzić, jak zwiększenie zamawianej liczby części wpływa na cenę zamówienia. 
+
+![wplyw_nakladu_na_cene](/images/projects/automated-quotation-system/wplyw_nakladu_na_cene.jpg "Wpływ nakładu na cenę")
+
 **Konfigurator**
 
 W aktualnej wersji konfiguratora, użytkownik ma możliwość dobrania takich parametrów produkcji jak:
@@ -135,6 +143,12 @@ W aktualnej wersji konfiguratora, użytkownik ma możliwość dobrania takich pa
 - Opcje zaawansowane - dostępne dla zalogowanych użytkowników
 
 ![opcje_konfiguratora](/images/projects/automated-quotation-system/opcje_konfiguratora.jpg "Dostępne opcje konfiguracji")
+
+Na chwilę obecną jest zaimplementowana jedna opcja zaawansowana - "druk 3D bez podpór", która jest dostępna tylko dla zalogowanych użytkowników (dla gości jest "wyszarzona" i nieklikalna). Opcja jest dostępna w przypadku, gdy algorytm wychwyci fakt, że model 3D został pocięty prez slicer z podporami. Opcja jest przydatna w przypadku, gdy osoba zamawiająca wydruk 3D posiada podstawową wiedzę o druku 3D FDM i ma pewnosć, że przesłaną cześć da się wykonać bez materiału podporowego - wpływa to na cenę końcową części oraz czas realizacji. Zaznaczenie tej opcji wiążę się z koniecznością potwierdzenia wyboru, pojawi się pop-up ostrzegający:
+
+![druk_bez_podpor](/images/projects/automated-quotation-system/druk_bez_podpor.jpg "Pop-up dla zaznaczonej opcji druku bez podpór")
+
+Fakt wyrażenia zgody jest odnotowany w bazie danych z datą potwierdzenia treści pop-upa.
 
 **Przewodnik dla użytkownika - infobox**
 
@@ -179,11 +193,12 @@ Checkbox "wyświetlaj ceny brutto" zachowuje się dokładnie tak samo jak w konf
 
 **Dane do wysyłki & różnice pomiędzy gościem a zalogowanym użytkownikiem**
 
-Zalogowany użytkownik na tym etapie będzie miał pobrane z bazy danych swoje dane do wysyłki i (jeżeli uzupełnił) dane do firmowej faktury oraz informacje że realizacja wiaże się z akceptacja regulaminu (bez checkboxów, bo zgoda została wyrażona na etapie rejestracji).
+Zalogowany użytkownik na tym etapie będzie miał pobrane z bazy danych swoje dane do wysyłki i (jeżeli uzupełnił) dane do firmowej faktury oraz informację, że realizacja zamówienia wiąże się z akceptacją regulaminu. Checkboxy nie są ponownie wyświetlane - zgoda została już wyrażona podczas rejestracji i jest zapisana w systemie.
 
 ![podsumowanie_widok_uzytkownika](/images/projects/automated-quotation-system/podsumowanie_widok_uzytkownika.jpg "Co widzi zalogowany użytkownik")
 
-Niezalogowany użytkownik na tym etapie widzi pusty formularz do uzupełnienia oraz checkboxy potwierdzające zapoznanie się z regulaminem i polityką prywatności.
+Niezalogowany użytkownik na tym etapie widzi pusty formularz do uzupełnienia oraz checkboxy wymagające potwierdzenia zapoznania się z regulaminem i polityką prywatności przed przejściem do płatności.
+Wyrażenie tych zgód nie jest jedynie formalnością - podczas składania zamówienia system odnotowuje każdą akceptację, zapisując informację o wyrażeniu zgody wraz z datą i godziną do rekordu konkretnego zamówienia w bazie danych. Dzięki temu każda zgoda może być łatwo zidentyfikowana i powiązana z konkretną transakcją, co jest niezbędne dla zgodności z RODO oraz dla bezpieczeństwa prawnego procesu sprzedaży.
 
 ![podsumowanie_widok_goscia](/images/projects/automated-quotation-system/podsumowanie_widok_goscia.jpg "Co widzi niezalogowany użytkownik - gość")
 
@@ -259,7 +274,9 @@ System kont użytkowników opiera się na natywnym mechanizmie WordPressa - wyko
 
 ### Rejestracja i potwierdzanie konta
 
-Podczas procesu rejestracji (na stronie https://geometryhustlers.pl/register) użytkownik obowiązkowo podaje imię i nazwisko, adres e‑mail i hasło (opcjonalnie też dane adresowe). Po wypełnieniu formularza rejestracji, użytkownik otrzymuje komunikat:
+Podczas procesu rejestracji (na stronie https://geometryhustlers.pl/register) użytkownik obowiązkowo podaje imię i nazwisko, adres e‑mail i hasło (opcjonalnie też dane adresowe). Rejestracja wymaga także zaakceptowania Regulaminu oraz Polityki prywatności poprzez zaznaczenie odpowiednich checkboxów. Wyrażone zgody nie są jedynie technicznym warunkiem rejestracji - informacje te są trwale zapisywane w bazie danych, każda zgoda jest przypisana do konkretnego użytkownika, a system rejestruje również datę i godzinę ich wyrażenia. Dzięki temu każda akceptacja regulaminu oraz polityki prywatności może być w razie potrzeby jednoznacznie potwierdzona, co zapewnia zgodność z wymogami RODO oraz innymi przepisami dotyczącymi przetwarzania danych osobowych.
+
+Po prawidłowym wypełnieniu i przesłaniu formularza użytkownik otrzymuje komunikat:
 
 ![konto_utworzone](/images/projects/automated-quotation-system/konto_utworzone.jpg "Komunikat po rejestracji konta")
 
@@ -269,7 +286,7 @@ Podczas procesu rejestracji (na stronie https://geometryhustlers.pl/register) u�
 
 ### Logowanie
 
-Logowanie odbywa się klasycznie – e‑mail + hasło. Po poprawnym zalogowaniu użytkownik jest automatycznie „podpinany” pod istniejącą aktywną sesję wyceny ładowaną z bazy danych (lub sesja jest przepinana, jeśli przed zalogowaniem, w sesji przeglądarki, działał jako gość), tak aby nie tracił wprowadzonych wcześniej modeli 3D i konfiguracji. W przypadku błędnego hasła system zwraca czytelny komunikat, a odzyskiwanie dostępu odbywa się przez wysłanie linku resetującego hasło na podany adres e‑mail.
+Logowanie odbywa się klasycznie - e‑mail + hasło. Po poprawnym zalogowaniu użytkownik jest automatycznie „podpinany” pod istniejącą aktywną sesję wyceny ładowaną z bazy danych (lub sesja jest przepinana, jeśli przed zalogowaniem, w sesji przeglądarki, działał jako gość), tak aby nie tracił wprowadzonych wcześniej modeli 3D i konfiguracji. W przypadku błędnego hasła system zwraca czytelny komunikat, a odzyskiwanie dostępu odbywa się przez wysłanie linku resetującego hasło na podany adres e‑mail.
 
 Logowanie odbywa się w trzech miejscach:
 - główna strona logowania pod adresem https://geometryhustlers.pl/login,
@@ -344,35 +361,205 @@ Jeśli użytkownik w dowolnym momencie się zarejestruje lub zaloguje, istnieją
 
 ## Panel administracyjny
 
-### Zarządzanie zamówieniami
+Panel administracyjny to centrum operacyjne platformy, które umożliwia zespołowi Geometry Hustlers sprawne zarządzanie wszystkimi etapami obsługi zamówień - od weryfikacji nowych zleceń, przez kontrolę statusów produkcji, po porządkowanie i archiwizowanie plików 3D. Panel został zaprojektowany przede wszystkim z myślą o funkcjonalności - interfejs jest minimalistyczny i skupiony na szybkości działania oraz wygodzie pracy operatorów, nie na efektach wizualnych. Całość skonstruowana jest tak, aby ułatwić codzienną pracę i pozwalać na błyskawiczne wykonanie najważniejszych operacji administracyjnych.
 
 ### Zarządzanie sesjami wyceny
 
+To narzędzie do kontroli i monitorowania wszystkich rozpoczętych oraz zarchiwizowanych (ale jeszcze nieusuniętych) sesji wycen - zarówno od gości, jak i zarejestrowanych użytkowników. Pozwala operatorowi śledzić cały proces ofertowania i podejmować właściwe działania na etapie jeszcze przed zamówieniem.
+
+**Tabela z sesjami wyceny**
+
+Tabela zbiorcza prezentuje kluczowe informacje o każdej sesji: ID sesji, użytkownik, status (aktywna/wygasła), daty utworzenia, ostatniej aktywności oraz planowanego wygaśnięcia, łączna wartość wyceny i przewidywany lead time. Możliwe jest sortowanie i filtrowanie po dowolnej kolumnie - np. wyszukanie najnowszych czy najwyżej wycenionych ofert.
+
+![admin_panel_sesje_wyceny](/images/projects/automated-quotation-system/admin_panel_sesje_wyceny.jpg "Tabela z sesjami wyceny")
+
+Z poziomu listy administrator może:
+- usuwać pojedyncze lub grupowe sesje (np. wygasłe, testowe, generowane błędnie),
+- monitorować ścieżkę wycen - które zostały przekształcone w zamówienia, a które porzucone lub nieukończone,
+- dla sesji powiązanych z kontem użytkownika uruchomić akcję „follow-up”, która wyśle przypominającego e-maila z linkiem powrotnym do dokończenia wyceny.
+
+**Szczegóły sesji wyceny**
+
+Po kliknięciu ID lub przycisku „szczegóły” dostępny jest modal z kompletnym podsumowaniem: lista przesłanych modeli, wybrane parametry druku (materiał, kolor, wypełnienie, ilość), statusy przetwarzania każdej pozycji oraz lead time dla całej sesji.
+
+![szczegoly_sesji_wyceny](/images/projects/automated-quotation-system/szczegoly_sesji_wyceny.jpg "Szczegóły sesji wyceny")
+
+**Przypomnienia e-mail o wycenie (follow-up)**
+
+Gdy sesja wyceny jest powiązana z kontem użytkownika, operator może jednym kliknięciem wysłać automatycznego maila przypominającego o pozostawionej - ale niedokończonej - ofercie. Wiadomość zawiera indywidualny link do sesji, który pozwala wrócić bez utraty konfiguracji.
+
+![przypomnienie_o_wycenie](/images/projects/automated-quotation-system/przypomnienie_o_wycenie.jpg "Treść maila przypominająca o wycenie")
+
+### Zarządzanie zamówieniami
+
+To kluczowa funkcjonalność panelu administracyjnego. W module zarządzania zamówieniami widoczna jest lista wszystkich zamówień złożonych przez użytkowników - zarówno nowych, będących w realizacji, jak i już zakończonych. Dzięki elastycznemu zarządzaniu zamówieniami operatorzy mogą łatwo śledzić postęp realizacji produkcji, reagować na pojawiające się zapytania, a także utrzymywać wzorowy porządek w archiwum zamówień - bez konieczności sięgania po zewnętrzne narzędzia czy grzebania w bazie danych.
+
+Moduł został zaprojektowany tak, by jak najwięcej czynności administracyjnych odbywało się z poziomu jednego widoku - bez przeładowywania strony i bez konieczności korzystania z dodatkowych formularzy czy systemów zewnętrznych. Większość powtarzalnych zadań (zmiana statusu, wysyłka powiadomień, generowanie dokumentów) wykonywana jest automatycznie lub za pomocą jednego kliknięcia.
+
+**Tabela z zamówieniami**
+
+Informacje o zamówieniach są przedstawione w formie przejrzystej tabeli. W tabeli prezentowane są takie dane jak: ID zamówienia, użytkownik, wartość netto, aktualny status (np. nowe, opłacone, w realizacji, wysłane, anulowane), data utworzenia, przewidywany lead time oraz informacja o ewentualnej dołączonej notatce od klienta. Ostatnia kolumna przeznaczona jest na akcje dostępne dla operatora.
+
+![admin_panel_zamowienia](/images/projects/automated-quotation-system/admin_panel_zamowienia.jpg "Tabela z zamówieniami")
+
+Tabela zamówień umożliwia filtrowanie i sortowanie według dowolnych pól (status, data, użytkownik, wartość), co pozwala szybko znaleźć interesujące zamówienie lub zidentyfikować priorytety produkcyjne.
+
+**Dodatkowe opcje dla wybranych zamówień**
+
+Pierwsza kolumna tabeli zamówień zawiera checkboxy umożliwiające zaznaczenie pojedynczych lub wielu pozycji jednocześnie. Gdy zostanie zaznaczona co najmniej jedna pozycja, nad tabelą pojawia się dodatkowy pasek z opcjami masowych operacji:
+
+- Kopiuj pliki - przenosi pliki modeli 3D wybranych zamówień ze wskazanego folderu wycen do dedykowanego folderu produkcyjnego na S3. Zapobiega to utracie plików w przypadku automatycznego czyszczenia sesji wycen i zapewnia stabilność archiwum produkcyjnego.
+- Pobierz logi - pozwala pobrać diagnostyczne logi backendu związane z wybraną konfiguracją zamówienia. Funkcja ta pomaga w szybkiej diagnostyce i rozwiązywaniu ewentualnych problemów technicznych zgłoszonych przez klienta (np. nietypowe zachowanie slicera, rozjazdy w konfiguracji, błędy uploadu).
+- Usuń zaznaczone - umożliwia trwałe usunięcie wybranych zamówień z systemu, wraz z powiązanymi plikami i danymi.
+
+![admin_panel_dodatkowe_opcje_zamowien](/images/projects/automated-quotation-system/admin_panel_dodatkowe_opcje_zamowien.jpg "Dodatkowe opcje dla wybranych zamówień")
+
+**Szczegóły zamówienia**
+
+Po wejściu do szczegółów zamówienia operator uzyskuje dostęp do wszystkich kluczowych informacji na temat danej realizacji w jednym miejscu. Dla każdej pozycji prezentowana jest szczegółowa konfiguracja produkcji - materiał, kolor, wypełnienie, opcje specjalne i liczba sztuk - uzupełniona o podgląd 3D modelu oraz możliwość pobrania oryginalnego pliku 3D. Oprócz tego, przy każdej części wyświetlane są informacje operacyjne: przewidywany czas druku i zużycie materiału, będące precyzyjnym wynikiem analizy slicera. Dzięki temu operator ma wszystkie dane niezbędne do sprawnej organizacji i planowania procesu produkcyjnego.
+
+![admin_panel_szczegoly_zamowienia](/images/projects/automated-quotation-system/admin_panel_szczegoly_zamowienia.jpg "Szczegóły zamówienia")
+
+Ponadto, w szczegółach zamówienia znajdują się pełne dane kontaktowe zamawiającego oraz dane do wysyłki, co pozwala na natychmiastowe przygotowanie paczki lub kontakt w razie niejasności. Całość została zaprojektowana tak, by obsługa zamówienia - od weryfikacji plików, przez produkcję, aż po wysyłkę - była możliwa bez opuszczania panelu administracyjnego.
+
+**Akcje operatora**
+
+Wszystkie kluczowe akcje dostępne są kontekstowo, w zależności od etapu zamówienia. Dzięki temu panel prowadzi operatora przez proces krok po kroku, nie pozwalając np. zamknąć realizacji przed wygenerowaniem dokumentów czy uzupełnieniem danych do wysyłki. Automatyczne powiadomienia e-mail wyręczają operatora w kontakcie z klientem i minimalizują ryzyko błędów informacyjnych.
+
+- **Dla statusu "opłacone - weryfikacja techniczna", dostępną akcją jest "zatwierdź realizację"**
+
+![admin_panel_status_oplacone](/images/projects/automated-quotation-system/admin_panel_status_oplacone.jpg "Akcje dla opłaconego zamówienia")
+
+Po kliknięciu "zatwierdź realizację", wyskakuje alert o potwierdzeniu akcji:
+
+![admin_panel_zatwierdzanie_realizacji](/images/projects/automated-quotation-system/admin_panel_zatwierdzanie_realizacji.jpg "Alert o zatwierdzeniu realizacji")
+
+Po zatwierdzeniu, status zlecenia automatycznie zmienia się na "W realizacji", a do klienta wysyłany jest email potwierdzający, że jego pliki 3D zostały zatwierdzone do produkcji.
+
+![email_zatwierdzenie](/images/projects/automated-quotation-system/email_zatwierdzenie.jpg "Email, jakiego otrzymuje klient po zatwierdzeniu plików")
+
+- **Dla statusu "W realizacji", dostępne są trzy akcje: "Dodaj fakturę", "Nadaj paczkę" oraz "Zakończ realizację"**
+
+![admin_panel_status_wrealizacji](/images/projects/automated-quotation-system/admin_panel_status_wrealizacji.jpg "Akcje dla zamówienia w realizacji")
+
+Po kliknięciu "dodaj fakturę" wyświetli się modal dodawania faktury do zamówienia.
+
+![admin_panel_dodaj_fakture](/images/projects/automated-quotation-system/admin_panel_dodaj_fakture.jpg "Modal z opcjami dodania faktury do zlecenia")
+
+W modalu dostępne są dwie opcje - "Wygeneruj fakturę automatycznie" lub "Dodaj link do faktury z Fakturowni". Domyślnie preferowaną opcją jest automatyczne generowanie faktury przez API systemu faktur - panel automatycznie pobiera dane klienta oraz dane do faktury z zamówienia, eliminując konieczność ręcznego przepisywania. Po utworzeniu faktury, klient będzie miał możliwość pobrania jej z poziomu panelu konta.
+
+Po pomyslnym wygenerowaniu faktury przez pierwszą opcję, wyskoczy potwierdzenie:
+
+![admin_panel_potwierdzenie_generowania_faktury](/images/projects/automated-quotation-system/admin_panel_potwierdzenie_generowania_faktury.jpg "Potwierdzenie generowania faktury")
+
+Gdy faktura jest już dodana do zlecenia, otwierając modal z opcją dodania faktury, na dole modala wyświetli się komunikat, że faktura jest już przypisana do zamówienia.
+
+![admin_panel_faktura_dodana](/images/projects/automated-quotation-system/admin_panel_faktura_dodana.jpg "Informacja że faktura już dodana do zamówienia")
+
+Po kliknięciu "Nadaj paczkę" wyświetli się modal dodawania numeru przesyłki do zamówienia. Na tym etapie trzeba już posiadać nr wcześniej przygotowanej przesyłki. Na potrzeby MVP aplikacji ta funkcjonalność się sprawdza, natomiast w następnej wersji panelu administracyjnego zakładam dodanie automatycznego generowania listów przewozowych (automatyczne generowanie listu przewozowego przez API firmy dostarczającej usługi kurierskie na podstawie wprowadznonych danych paczki oraz uzupełnianie nr listu przewozowego)
+
+![admin_panel_nadaj_paczke.jpg](/images/projects/automated-quotation-system/admin_panel_nadaj_paczke.jpg "Modal z opcją dodania nr przesyłki")
+
+Po dodaniu nr przesyłki pojawi się potwierdzenie:
+![admin_panel_paczka_nr_przesylki_nadany.jpg](/images/projects/automated-quotation-system/admin_panel_paczka_nr_przesylki_nadany.jpg "Potwierdzenie zapisania nr przesyłki do bazy")
+
+Gdy nr przesyłki jest już dodany do zlecenia, otwierając modal z opcją uzupełnienia listu przewozowego, na dole modala wyświetli się komunikat, że nr przesyłki jest już przypisany do zamówienia.
+
+![admin_panel_potwierdzony_nr_przesylki](/images/projects/automated-quotation-system/admin_panel_potwierdzony_nr_przesylki.jpg "Informacja że nr przesyłki już przypisany do zamówienia")
+
+Aby kliknąć akcję "Zakończ realizację" niezbędne jest wcześniejsze dodanie faktury oraz nr przesyłki. Jeżeli któraś z wartości nie jest uzupełniona, wyskoczy adekwatny komunikat:
+
+![admin_panel_alert_przez_zakonczeniem](/images/projects/automated-quotation-system/admin_panel_alert_przez_zakonczeniem.jpg "Alert przed zakonczeniem realizacji")
+
+Gdy faktura i nr przesyłki są dodane, przed wykonaniem akcji zakończenia realizacji wyświetli się alert "czy na pewno?":
+
+![admin_panel_zakoncz_realizacje](/images/projects/automated-quotation-system/admin_panel_zakoncz_realizacje.jpg "Alert - czy na pewno chcesz zakonczyc realizacje")
+
+Po zatwierdzeniu akcji, zostanie ona potwierdzona, status realizacji zmieni się na "Zrealizowane" oraz do klienta zostanie wysłany email z informacją o zakończeniu realizacji, gdzie otrzyma link do śledzenia paczki oraz fakturę za zrealizowaną usługę.
+
+![admin_panel_potwierdzenie_zakonczenia.jpg](/images/projects/automated-quotation-system/admin_panel_potwierdzenie_zakonczenia.jpg "Potwierdzenie zakończenia realizacji")
+
+![email_zamowienie_zrealizowane](/images/projects/automated-quotation-system/email_zamowienie_zrealizowane.jpg "Email z informacją o zakończeniu realizacji")
+
 ### Porządek w plikach i statusach
+
+Aby utrzymać porządek na platformie oraz zoptymalizować wykorzystanie przestrzeni dyskowej, panel administracyjny wyposażony jest w dedykowane narzędzia do zarządzania plikami i statusami sesji oraz zamówień. W centralnej części widoku zarządczego znajdują się trzy kluczowe przyciski:
+
+
+
+- **Wyczyść przeterminowane sesje** - Usuwa wszelkie informacje oraz pliki powiązane z wygasłymi sesjami wyceny - zarówno zewnętrznie z S3, jak i z serwera aplikacji. Dzięki temu, niepotrzebne i porzucone wyceny nie zajmują miejsca ani nie pozostawiają "śmieciowych" plików.
+
+- **Sprawdź daty wygaśnięcia** - Automatycznie weryfikuje aktualne sesje i oznacza te, które przekroczyły ustawiony czas ważności, jako "expired". Przeglądanie i manualne wywoływanie tej operacji pozwala na szybkie nadzorowanie stanu systemu zwłaszcza przy dużym wolumenie użytkowników.
+
+- **Wyczyść stare pliki 3D zamówień** - Usuwa pliki 3D z folderów roboczych na S3, które zostały przeniesione do dedykowanego archiwum zamówień. Dzięki temu tymczasowe przestrzenie na pliki wykorzystywane do kalkulacji wycen nie są zapełniane historycznymi danymi, których kopie są już bezpiecznie zarchiwizowane przy zamówieniu.
+
+![panel_porządek](/images/projects/automated-quotation-system/panel_porzadek.jpg "Panel sterowania porządkiem w plikach i statusach")
+
+Każda z tych operacji informuje operatora o swoim wyniku - po wykonaniu zadania system zwraca szczegóły działania z backendu (np. liczba usuniętych plików), które są wyświetlane bezpośrednio w panelu. To pozwala administratorowi łatwo monitorować i potwierdzać bieżący stan platformy oraz skuteczność działań porządkowych.
+
+![wynik_operacji_porządkowej](/images/projects/automated-quotation-system/wynik_operacji_porządkowej.jpg "Przykładowy wynik działania operacji porządkowej")
+
+Dzięki temu pliki przesyłane w ramach wycen są przechowywane tylko przez minimalny czas wymagany do realizacji zamówienia - reszta jest automatycznie, nieodwracalnie usuwana. Takie podejście gwarantuje realną zgodność z RODO i wysoki standard bezpieczeństwa.
+
+
 
 
 
 # Jak to działa pod maską (deep dive techniczny)
-I tu zaczyna się mięso dla devów.
 
-## Działanie backendu po uploadzie pliku
+## Architektura systemu
+### Ogólny schemat przepływu danych
+### Podział na warstwy (frontend, backend, storage, integracje)
 
-### Przechowywanie plików (S3 / MinIO)
-### Generowanie miniaturki (Blender)
-### Analiza geometrii (jeśli chcesz zahaczyć o Three.js/geometrię)
-### Slicing w PrusaSlicer i cache
-### Obsługa kolejek / blokad (race conditions, locki)
+## Backend: przetwarzanie i wycena modeli 3D
+### Upload i walidacja plików 3D
+### Przechowywanie plików i operacje na storage (S3/MinIO)
+### Generowanie miniaturek i analiza geometrii (Blender CLI, Three.js)
+### Slicing modeli (PrusaSlicer CLI)
+### System cache dla operacji czasochłonnych
+### Blokady i ochrona przed race conditions (slicer lock)
 
 ## Algorytm cenowy i walidacja
+### Wyciąganie realnych metryk z G-code (zużycie materiału, czas druku)
+### Rabaty ilościowe i mnożniki (skala logarytmiczna, masa, supporty)
+### Kalkulacja ceny na backendzie vs weryfikacja frontendu
+### Minimalna wartość zamówienia, opłaty dodatkowe
 
-    rabaty ilościowe,
-    mnożniki za wagę / materiał,
-    dopłaty za supporty,
-    walidacja ceny na backendzie.
+## System sesji i bezpieczeństwo
+### Model danych sesji (struktura sesji, powiązania z użytkownikiem/gościem)
+### Mechanizmy przedłużania, transferowania i wygaszania sesji
+### Ochrona dostępu do sesji i danych (JWT, autoryzacja)
+### Wymagania RODO, polityka retencji danych
 
+## Integracje z płatnościami i systemem kont
+### Płatności online (Przelewy24, obsługa webhooków)
+### Powiązanie z systemem kont WordPress (użytkownicy, autoryzacja, sesje)
+### Automatyczne powiadomienia email i generowanie faktur
 
-## Sesje, bezpieczeństwo i integracje
+## Frontend: SPA i interfejs użytkownika
+### React SPA osadzone w WordPress
+### Integracja z API backendu, zarządzanie stanem, debouncing wycen
+### Komponenty: upload, konfigurator, podgląd 3D, podsumowanie, checkout
+### Reaktywność interfejsu i doświadczenie użytkownika
 
-    sesje wycen (model danych, expiracje),
-    integracja płatności (Przelewy24, weryfikacja podpisu),
-    najważniejsze elementy bezpieczeństwa (walidacja uploadów, blokady slicera, ochrona przed manipulacją ceną).
+## Panel administracyjny: operacje dla operatora
+### Architektura panelu admina
+### Operacje masowe oraz zaawansowane akcje na plikach i zamówieniach
+### Narzędzia do utrzymania porządku i raportowania
+
+## Monitoring, diagnostyka, automatyzacja
+### System logów i narzędzia analityczne
+### Cron joby i automatyczne procesy konserwacyjne
+### Utrzymanie i rozbudowa – jak projekt przewiduje rozwój
+
+## Bezpieczeństwo i odporność systemu
+### Ochrona uploadu i walidacja plików
+### Blokady mechanizmu slicera (race conditions, DoS)
+### Ochrona danych osobowych i zgodność z RODO
+### Testy penetracyjne i security review
+
+## Stack technologiczny i narzędzia developerskie
+### Wybór technologii i uzasadnienie
+### AI-assisted development: obszary wsparcia
+### Deployment i CI/CD
+### Lekcje i wyzwania architektoniczne
