@@ -12,10 +12,10 @@ const nextConfig: NextConfig = {
             value: [
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://stats.niel.technology",
-              "style-src 'self' 'unsafe-inline'", // unsafe-inline for Tailwind and highlight.js
+              "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: https:",
               "font-src 'self'",
-              "connect-src 'self'",
+              "connect-src 'self' https://stats.niel.technology",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self'",
