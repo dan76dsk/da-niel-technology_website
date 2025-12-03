@@ -485,8 +485,6 @@ Po zatwierdzeniu akcji, zostanie ona potwierdzona, status realizacji zmieni się
 
 Aby utrzymać porządek na platformie oraz zoptymalizować wykorzystanie przestrzeni dyskowej, panel administracyjny wyposażony jest w dedykowane narzędzia do zarządzania plikami i statusami sesji oraz zamówień. W centralnej części widoku zarządczego znajdują się trzy kluczowe przyciski:
 
-
-
 - **Wyczyść przeterminowane sesje** - Usuwa wszelkie informacje oraz pliki powiązane z wygasłymi sesjami wyceny - zarówno zewnętrznie z S3, jak i z serwera aplikacji. Dzięki temu, niepotrzebne i porzucone wyceny nie zajmują miejsca ani nie pozostawiają "śmieciowych" plików.
 
 - **Sprawdź daty wygaśnięcia** - Automatycznie weryfikuje aktualne sesje i oznacza te, które przekroczyły ustawiony czas ważności, jako "expired". Przeglądanie i manualne wywoływanie tej operacji pozwala na szybkie nadzorowanie stanu systemu zwłaszcza przy dużym wolumenie użytkowników.
@@ -500,9 +498,6 @@ Każda z tych operacji informuje operatora o swoim wyniku - po wykonaniu zadan
 ![wynik_operacji_porządkowej](/images/projects/automated-quotation-system/wynik_operacji_porządkowej.jpg "Przykładowy wynik działania operacji porządkowej")
 
 Dzięki temu pliki przesyłane w ramach wycen są przechowywane tylko przez minimalny czas wymagany do realizacji zamówienia - reszta jest automatycznie, nieodwracalnie usuwana. Takie podejście gwarantuje realną zgodność z RODO i wysoki standard bezpieczeństwa.
-
-
-
 
 
 ---
@@ -659,5 +654,4 @@ Ten projekt pokazuje, że mając “systemowy” mindset i gotowość do ekspery
 # Jak to działa pod maską (deep dive techniczny)
 
 treść w tworzeniu
-
 
