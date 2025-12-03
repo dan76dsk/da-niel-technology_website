@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval'", // unsafe-inline for lang switcher, unsafe-eval for Next.js dev
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' http://192.168.0.17:3000'",
               "style-src 'self' 'unsafe-inline'", // unsafe-inline for Tailwind and highlight.js
               "img-src 'self' data: https:",
               "font-src 'self'",
