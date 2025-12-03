@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://stats.niel.technology'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://stats.niel.technology",
               "style-src 'self' 'unsafe-inline'", // unsafe-inline for Tailwind and highlight.js
               "img-src 'self' data: https:",
               "font-src 'self'",
