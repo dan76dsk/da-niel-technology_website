@@ -20,11 +20,7 @@ export default function RootLayout({
         })();
       `}} />
       {/* UMAMI TRACKING */}
-      <script
-        defer
-        src="http://192.168.0.17:3000/script.js"
-        data-website-id="31c59025-d209-49de-b863-793768420412"
-      />
+    <script defer src="https://stats.niel.technology/script.js" data-website-id="31c59025-d209-49de-b863-793768420412"></script>
     </head>
     <body className="antialiased">
     <LanguageProvider>
