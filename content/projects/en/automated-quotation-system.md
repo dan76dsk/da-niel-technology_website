@@ -638,3 +638,11 @@ This is not just a programming project—it’s a showcase of how combining engi
 Everything, from idea through architecture, development, to final technological deployment, was created with the mindset: seek points for optimization, automate repeatability, document every decision stage, and continuously engage with real business problems.
 It’s precisely this approach—focusing on automation, tying everything into a clear system, and constantly searching for new value—that I believe is crucial for any CTO, founder, or manager thinking about building a business resilient to chaos and ready for rapid scaling.
 This project demonstrates that with a “system” mindset and a readiness to experiment, you can—even as a solo founder—turn a company into a self-driving mechanism, ready for further development and efficient expansion.
+
+---
+
+# How It Works Under the Hood (Technical Deep Dive)
+
+content in progress
+
+---
