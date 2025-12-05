@@ -41,16 +41,30 @@ export const translations = {
     // Bio paragraph
     bioPara1: 'My experience is a unique synergy of running my own company, implementing solutions in R&D projects, DevOps practice, and cybersecurity.\n\nI am an IT solutions architect with an entrepreneurial edge and a broad, systemic perspective – I thrive at the intersection of IT, business, R&D, and cybersecurity. I can understand the entire system - I see not only technology, but the whole business context: from strategy, through processes and risks, to growth potential.\n\nI build end-to-end solutions: I design architecture that eliminates bottlenecks, automates routine tasks, and ensures cybersecurity - so that systems "live their own life" and drive organizational advantage.\n\nI take full responsibility for the entire project lifecycle – from needs analysis, through design and implementation, to long-term optimization. I iterate solutions, eliminate risks, and focus on what truly matters in business: value that remains in the organization long after implementation.',
 
-    // Mindset bullets
-    mindsetPara1: 'I move freely between business, IT, automation, and R&D. I naturally serve as a bridge, facilitating communication and shared goals for all project stakeholders.',
-    mindsetPara2: 'I combine systems thinking with repeatable processes - I design solutions that minimize manual work, ensuring predictable results and creating space for growth.',
-    mindsetPara3: 'Everything I know comes from practice - I test, prototype, and implement only what actually works.',
-    mindsetPara4: 'I build advantage by challenging assumptions and the status quo - I don\'t recognize authorities if real data and results lead in a different direction.',
-    mindsetPara5: 'Consistency is my foundation, but when I see room for better results, I redesign my own patterns and adapt quickly.',
-    mindsetPara6: 'My greatest growth comes from challenges - difficult moments are a catalyst for growth, and pressure and new situations strengthen my focus and creativity. I treat development as a foundation, which is why I constantly push my own boundaries.',
-    mindsetPara7: 'I believe that anything can be learned, and consistency and practice allow me to quickly acquire new skills.',
-    mindsetPara8: 'Trust in the process and systematic learning are key to my development. I believe that anything can be learned, and consistency and practice enable rapid skill acquisition.',
+    // Mindset bullets - EN
+    mindsetTitle1: 'Fluid navigation between business, IT, automation, and R&D',
+    mindsetPara1: 'This is my daily reality – I naturally serve as a bridge, facilitating communication and shared goals for all project stakeholders.',
 
+    mindsetTitle2: 'Combining systems thinking with repeatable processes',
+    mindsetPara2: 'Allows me to design solutions that minimize manual work, ensure predictable results, and create space for growth.',
+
+    mindsetTitle3: 'Everything I know comes from practice',
+    mindsetPara3: 'That\'s why I test, prototype, and implement only what actually works.',
+
+    mindsetTitle4: 'Building advantage by challenging assumptions',
+    mindsetPara4: 'I don\'t recognize authorities if real data and results lead in a different direction.',
+
+    mindsetTitle5: 'Consistency paired with flexible adaptation',
+    mindsetPara5: 'Forms my foundation, but when I see room for better results, I redesign my own patterns and adapt quickly.',
+
+    mindsetTitle6: 'Growth driven by challenges',
+    mindsetPara6: 'Difficult moments are a catalyst for my growth, and pressure and new situations strengthen my focus and creativity - that\'s why I treat development as a foundation and constantly push my own boundaries.',
+
+    mindsetTitle7: 'Belief that anything can be learned',
+    mindsetPara7: 'Makes consistency and practice enable me to quickly acquire new skills.',
+
+    mindsetTitle8: 'Trust in the process and systematic learning',
+    mindsetPara8: 'This is my key to development. I believe that anything can be learned, and consistency and practice allow rapid skill acquisition.',
     // Skills sections
     skillsArchitecture: 'IT Solutions Architecture',
     skillsInnovation: 'Innovation & R&D',
@@ -174,16 +188,30 @@ export const translations = {
     // Bio paragraph
     bioPara1: 'Moje doświadczenie to unikalna synergia prowadzenia własnej firmy, wdrażania rozwiązań w projektach badawczo-rozwojowych (R&D), praktyki DevOps i cyberbezpieczeństwa.\n\nJestem architektem rozwiązań technologicznych z przedsiębiorczym zacięciem i szeroką, systemową perspektywą – doskonale odnajduję się na styku IT, biznesu, R&D i cyberbezpieczeństwa. Potrafię zrozumieć cały system - widzę nie tylko technologię, ale cały kontekst biznesowy: od strategii, przez procesy i ryzyka, po potencjały rozwojowe.\n\nBuduję rozwiązania end-to-end: projektuję architekturę eliminującą wąskie gardła, automatyzującą rutynę i dbającą o cyberbezpieczeństwo - tak, by systemy "żyły własnym życiem" i napędzały przewagę organizacji.\n\nPrzejmuję pełną odpowiedzialność za cały cykl projektu – od analizy potrzeb, przez projektowanie i wdrożenie, po długofalową optymalizację. Iteruję rozwiązania, eliminuję ryzyka i koncentruję się na tym, co naprawdę liczy się w biznesie: wartości, która zostaje w organizacji na długo po wdrożeniu.',
 
-    // Mindset bullets
-    mindsetPara1: 'Swobodnie poruszam się pomiędzy biznesem, IT, automatyzacją i R&D. Naturalnie pełnię rolę mostu, ułatwiając komunikację i wspólne cele wszystkich stron projektu.',
-    mindsetPara2: 'Łączę systemowe myślenie z powtarzalnymi procesami - projektuję rozwiązania, które minimalizują manualną pracę, zapewniając przewidywalne efekty i tworząc przestrzeń na rozwój.',
-    mindsetPara3: 'Wszystko, co umiem, wynika z praktyki - testuję, prototypuję i wdrażam tylko to, co faktycznie działa.',
-    mindsetPara4: 'Buduję przewagę, kwestionując oczywistości i status quo - nie uznaję autorytetów, jeśli rzeczywiste dane i efekty prowadzą w inną stronę.',
-    mindsetPara5: 'Systematyczność jest moją bazą, ale gdy widzę przestrzeń na lepsze rezultaty, przeprojektowuję własne schematy i szybko się adaptuję.',
-    mindsetPara6: 'Największy rozwój rodzi się u mnie z wyzwań - trudne momenty są katalizatorem wzrostu, a presja i nowe sytuacje wzmacniają moją koncentrację oraz kreatywność. Traktuję rozwój jako fundament, dlatego nieustannie przesuwam własne granice.',
-    mindsetPara7: 'Wierzę, że wszystkiego można się nauczyć, a konsekwencja i praktyka sprawiają, że szybko przyswajam nowe umiejętności.',
-    mindsetPara8: 'Zaufanie do procesu i systematyczna nauka są dla mnie kluczem do rozwoju. Wierzę, że wszystkiego można się nauczyć, a konsekwencja i praktyka pozwalają szybko przyswajać nowe umiejętności.',
+    // Mindset bullets - PL
+    mindsetTitle1: 'Swobodne poruszanie się pomiędzy biznesem, IT, automatyzacją i R&D',
+    mindsetPara1: 'To dla mnie codzienność – naturalnie pełnię rolę mostu, ułatwiając komunikację i wspólne cele wszystkich stron projektu.',
 
+    mindsetTitle2: 'Łączenie systemowego myślenia z powtarzalnymi procesami',
+    mindsetPara2: 'Pozwala mi projektować rozwiązania, które minimalizują manualną pracę, zapewniają przewidywalne efekty i tworzą przestrzeń na rozwój.',
+
+    mindsetTitle3: 'Wszystko, co umiem, wynika z praktyki',
+    mindsetPara3: 'To dlatego testuję, prototypuję i wdrażam wyłącznie to, co faktycznie działa.',
+
+    mindsetTitle4: 'Buduję przewagę, kwestionując oczywistości',
+    mindsetPara4: 'Nie uznaję autorytetów, jeśli rzeczywiste dane i efekty prowadzą w inną stronę.',
+
+    mindsetTitle5: 'Systematyczność, połączona z elastyczną adaptacją',
+    mindsetPara5: 'Stanowi moją bazę, natomiast gdy widzę przestrzeń na lepsze rezultaty, przeprojektowuję własne schematy i szybko się dostosowuję.',
+
+    mindsetTitle6: 'Rozwój napędzany wyzwaniami',
+    mindsetPara6: 'Trudne momenty są dla mnie katalizatorem wzrostu, a presja i nowe sytuacje wzmacniają koncentrację i kreatywność - właśnie dlatego traktuję rozwój jako fundament i nieustannie przesuwam własne granice.',
+
+    mindsetTitle7: 'Przekonanie, że wszystkiego można się nauczyć',
+    mindsetPara7: 'Sprawia, że konsekwencja i praktyka pozwalają mi szybko przyswajać nowe umiejętności.',
+
+    mindsetTitle8: 'Zaufanie do procesu i systematyczna nauka',
+    mindsetPara8: 'To mój klucz rozwoju. Wierzę, że wszystkiego można się nauczyć, a konsekwencja i praktyka pozwalają szybko przyswajać nowe umiejętności.',
     // Skills sections
     skillsArchitecture: 'Architektura rozwiązań IT',
     skillsInnovation: 'Innowacja i R&D',

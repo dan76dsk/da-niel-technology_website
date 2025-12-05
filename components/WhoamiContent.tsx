@@ -26,22 +26,46 @@ export default function WhoamiContent() {
         </div>
         </section>
 
-        {/* Mindset & Approach */}
-        <section>
-        <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-        <span className="text-terminal-accent">&gt;</span> {t('whoamiMindset')}
-        </h2>
-        <ul className="space-y-3 text-terminal-muted leading-relaxed">
-        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('mindsetPara1')}</span></li>
-        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('mindsetPara2')}</span></li>
-        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('mindsetPara3')}</span></li>
-        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('mindsetPara4')}</span></li>
-        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('mindsetPara5')}</span></li>
-        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('mindsetPara6')}</span></li>
-        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('mindsetPara7')}</span></li>
-        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('mindsetPara8')}</span></li>
-        </ul>
-        </section>
+{/* Mindset & Approach */}
+<section>
+  <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+    <span className="text-terminal-accent">&gt;</span> {t('whoamiMindset')}
+  </h2>
+  <div className="space-y-3 text-terminal-muted leading-relaxed">
+    <div>
+      <p className="font-medium text-white mb-1">{t('mindsetTitle1')}</p>
+      <p className="text-sm">{t('mindsetPara1')}</p>
+    </div>
+    <div>
+      <p className="font-medium text-white mb-1">{t('mindsetTitle2')}</p>
+      <p className="text-sm">{t('mindsetPara2')}</p>
+    </div>
+    <div>
+      <p className="font-medium text-white mb-1">{t('mindsetTitle3')}</p>
+      <p className="text-sm">{t('mindsetPara3')}</p>
+    </div>
+    <div>
+      <p className="font-medium text-white mb-1">{t('mindsetTitle4')}</p>
+      <p className="text-sm">{t('mindsetPara4')}</p>
+    </div>
+    <div>
+      <p className="font-medium text-white mb-1">{t('mindsetTitle5')}</p>
+      <p className="text-sm">{t('mindsetPara5')}</p>
+    </div>
+    <div>
+      <p className="font-medium text-white mb-1">{t('mindsetTitle6')}</p>
+      <p className="text-sm">{t('mindsetPara6')}</p>
+    </div>
+    <div>
+      <p className="font-medium text-white mb-1">{t('mindsetTitle7')}</p>
+      <p className="text-sm">{t('mindsetPara7')}</p>
+    </div>
+    <div>
+      <p className="font-medium text-white mb-1">{t('mindsetTitle8')}</p>
+      <p className="text-sm">{t('mindsetPara8')}</p>
+    </div>
+  </div>
+</section>
 
 {/* Skills */}
 <section>
