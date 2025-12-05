@@ -91,13 +91,26 @@ export const translations = {
 
     // Background sections
     bg1Title: 'Geometry Hustlers (Founder, 2022-present)',
-    bg1Desc: 'Full responsibility for automated 3D printing quotation system - backend, frontend, own infrastructure, business integrations (n8n, CRM, payments). This experience taught me to run IT projects from scratch, automate processes, and solve real entrepreneurial challenges.',
+    bg1Desc: 'I founded a 3D printing services company as my practical university of business-technology solutions architecture. I went through the entire development cycle – from independently acquiring clients, through experiments and process optimizations, to building an end-to-end digital platform for order handling and production on my own machines. While creating and growing the company, I encountered the world of parts manufacturing and the specifics of large enterprise operations - from purchasing procedures, through order fulfillment, to requirements related to quality, data security, and B2B communication.',
+    bg1Point1: 'Built from scratch a custom system for automatic quotation and order handling, transforming the business into an e-commerce platform with full digital customer service.',
+    bg1Point2: 'Implemented automation of key processes: sales, prospecting with follow-ups, entering inquiries into CRM, invoicing, order handling, and customer communication.',
+    bg1Point3: 'Independently managed the entire business architecture: online marketing (B2B/B2C advertising and sales), creation and integration of digital tools, IT implementations, monitoring, and data security.',
+    bg1Point4: 'Each phase of the company was a practical learning experience in automation, systems integration, and workflow optimization – technology always serving business and real production.',
 
-    bg2Title: 'Motion Capture & 3D Graphics (2017-2021)',
-    bg2Desc: 'Work on R&D projects at the intersection of hardware and software (Vicon, Manus, Faceware, streaming to Unity/Unreal). Working in an interdisciplinary R&D environment taught me to create unconventional solutions and handle complex processes.',
+    bg2Title: 'VRTechnology, Silesian University of Technology, PJATK (R&D and Innovation, Motion Capture, VR and 3D Graphics)',
+    bg2Desc: 'Experience at the intersection of science and technology, where I had the opportunity to co-author custom implementations that went beyond market standards. Working in an R&D project environment taught me to understand the specifics of scientific institutions and implement innovations in a demanding, multidisciplinary team.',
+    bg2Point1: 'End-to-end building and development: from building custom hardware, through software integration and deployment.',
+    bg2Point2: 'Development of a custom full performance capture pipeline (body, hands, facial expressions) - creative use of equipment (Vicon, Manus, Faceware), achieving standards of top global studios.',
+    bg2Point3: 'Large-scale project execution - work for universities, research institutions, and companies; specific requirements, high investment outlays, and expectation of practical, innovative implementations.',
+    bg2Point4: 'Hardware/software/data integration; developing own methods of connections, workflow automation, and protocols for real production systems.',
+    bg2Point5: 'Solving non-standard technological problems - creating custom methods, rapid iterations, and project execution from concept to fully operational installation.',
 
-    bg3Title: 'Silesian University of Technology',
-    bg3Desc: 'Telecommunications (BSc)',
+    bg3Title: 'Silesian University of Technology - Faculty of Automatic Control, Electronics and Computer Science (Telecommunications (ICT), BSc)',
+    bg3Desc: 'ICT studies were for me a period of intensive exploration of the entire IT and telecommunications cross-section, allowing me to build a deep theoretical and practical foundation on which I base my later specializations.',
+    bg3Point1: 'Cross-sectional IT knowledge: operating systems, computer and wireless networks, digital technology (logic circuit design in VHDL), microprocessors, algorithms, analog and digital signal processing (coding, modulations – QAM, OFDM, work in Matlab), etc.',
+    bg3Point2: 'Passion for digital technology and deep understanding of information flow: from physical states at logic gates, through operating system architecture to advanced data processing and transmission systems.',
+    bg3Point3: 'Developed passion for cybersecurity (red team) - own practice, honing cross-sectional technical competencies necessary for effective IT security.',
+    bg3Point4: 'Studies became for me a pretext for translating theory into practice and a motivator for independently exploring new technologies.',
 
     // Meta tags
     metaHomeTitle: 'd@niel.technology | Security & DevOps Engineer',
@@ -211,13 +224,28 @@ export const translations = {
 
     // Background sections
     bg1Title: 'Geometry Hustlers (Założyciel, 2022-obecnie)',
-    bg1Desc: 'Pełna odpowiedzialność za system do automatycznej wyceny druku 3D – backend, frontend, własna infrastruktura, integracje biznesowe (n8n, CRM, płatności). To doświadczenie nauczyło mnie prowadzić projekty IT od zera, automatyzować procesy i rozwiązywać realne wyzwania przedsiębiorców.',
+    bg1Desc: 'Założyłem firmę świadczącej usługi druku 3D, jako mój praktyczny uniwersytet architektury rozwiązań biznesowo-technologicznych. Przechodziłem cały cykl rozwoju – od samodzielnego zdobywania klientów, przez eksperymenty i optymalizacje procesów, po budowę cyfrowej platformy end-to-end do obsługi zamówień i produkcji na własnych maszynach. Tworząc i rozwijając firmę, zetknąłem się ze światem produkcji części oraz specyfiką funkcjonowania dużych przedsiębiorstw - od procedur zakupowych, przez realizację zamówień, po wymagania związane z jakością, bezpieczeństwem danych i komunikacją B2B.',
+    bg1Point1: 'Zbudowałem od podstaw autorski system do automatycznej wyceny i obsługi zamówień, przekształcając działalność w platformę e-commerce z pełną cyfrową obsługą klienta.',
+    bg1Point2: 'Wdrożyłem automatyzacje kluczowych procesów: sprzedaży, prospectingu z follow-upami, wprowadzania zapytań do CRM, wystawiania faktur, obsługi zamówień i komunikacji z klientami.',
+    bg1Point3: 'Samodzielnie odpowiadałem za całą architekturę biznesu: marketing online (reklama i sprzedaż B2B/B2C), tworzenie i integracje narzędzi cyfrowych, wdrożenia IT, monitoring oraz bezpieczeństwo danych.',
+    bg1Point4: 'Każda faza firmy była dla mnie praktyczną nauką automatyzacji, integracji systemów i optymalizacji workflow – technologii zawsze w służbie biznesu i realnej produkcji.',
 
-    bg2Title: 'Motion Capture i grafika 3D (2017-2021)',
-    bg2Desc: 'Praca w projektach badawczo-rozwojowych na styku hardware i software (Vicon, Manus, Faceware, streaming do Unity/Unreal). Działanie w interdyscyplinarnym środowisku R&D nauczyło mnie tworzyć nietypowe rozwiązania i ogarniać złożone procesy.',
+    bg2Title: 'VRTechnology, Politechnika Śląska, PJATK (R&D i innowacje, Motion Capture, VR i Grafika 3D)',
+    bg2Desc: 'Doświadczenie na styku nauki i technologii, gdzie miałem okazję być współautorem customowych wdrożeń, które wykraczały poza standardy rynkowe. Praca w środowisku projektów R&D nauczyła mnie rozumieć specyfikę działania instytucji naukowych oraz wdrażać innowacje w wymagającym, multidyscyplinarnym zespole.',
+    bg2Point1: 'Budowa i rozwój end-to-end: od budowania customowego hardware, przez integrację software\'u i deployment.',
+    bg2Point2: 'Opracowanie autorskiego pipeline\'u full performance capture (ciało, ręce, mimika) - kreatywne wykorzystanie sprzętu (Vicon, Manus, Faceware), osiągające standardy topowych światowych studiów.',
+    bg2Point3: 'Realizacja projektów na dużą skalę - prace dla uczelni, instytucji badawczych i firm; specyficzne wymagania, wysokie nakłady inwestycyjne i oczekiwanie praktycznych, innowacyjnych wdrożeń.',
+    bg2Point4: 'Integracja hardware/software/danych; rozwijanie własnych metod połączeń, automatyzacji przepływów i protokołów dla realnych systemów produkcyjnych.',
+    bg2Point5: 'Rozwiązywanie nietypowych problemów technologicznych - tworzenie autorskich metod, szybkie iteracje i realizacja projektów od koncepcji po w pełni działającą instalację.',
 
-    bg3Title: 'Politechnika Śląska',
-    bg3Desc: 'Teleinformatyka (Inż.)',
+    bg3Title: 'Politechnika Śląska ‑ Wydział Automatyki, Elektroniki i Informatyki (Teleinformatyka (ICT), Inż.)',
+    bg3Desc: 'Studia ICT były dla mnie okresem intensywnej eksploracji całego przekroju IT i telekomunikacji, pozwalając zbudować głęboką bazę teoretyczną i praktyczną, na której opieram późniejsze specjalizacje.',
+    bg3Point1: 'Przekrojowa wiedza IT: systemy operacyjne, sieci komputerowe i bezprzewodowe, technika cyfrowa (projektowanie układów logicznych w VHDL), mikroprocesory, algorytmy, przetwarzanie sygnałów analogowych i cyfrowych (kodowanie, modulacje – QAM, OFDM, praca na Matlabie) itp.',
+    bg3Point2: 'Zamiłowanie do techniki cyfrowej i głębokiego rozumienia przepływu informacji: od fizycznych stanów na bramce logicznej, przez architekturę systemów operacyjnych po zaawansowane systemy przetwarzania i przesyłu danych.',
+    bg3Point3: 'Rozwinięta zajawka na cyberbezpieczeństwo (red team) - własna praktyka, szlifowanie przekrojowych kompetencji technicznych niezbędnych do skutecznego bezpieczeństwa IT.',
+    bg3Point4: 'Studia stały się dla mnie pretekstem do przekładania teorii na praktykę i motywatorem do samodzielnego zgłębiania nowych technologii.',
+
+
 
     // Meta tags
     metaHomeTitle: 'd@niel.technology | Security & DevOps Engineer',

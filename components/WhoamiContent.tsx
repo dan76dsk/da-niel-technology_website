@@ -116,31 +116,50 @@ export default function WhoamiContent() {
         </div>
         </section>
 
-        {/* Background */}
-        <section>
-        <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-        <span className="text-terminal-accent">&gt;</span> {t('whoamiBackground')}
-        </h2>
-        <div className="space-y-3 text-sm text-terminal-muted">
-        {/* Geometry Hustlers */}
-        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-        <p className="font-medium text-white mb-2">{t('bg1Title')}</p>
-        <p className="text-xs leading-relaxed">{t('bg1Desc')}</p>
-        </div>
+{/* Background */}
+<section>
+  <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+    <span className="text-terminal-accent">&gt;</span> {t('whoamiBackground')}
+  </h2>
+  <div className="space-y-4 text-sm text-terminal-muted">
+    {/* Geometry Hustlers */}
+    <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+      <p className="font-medium text-white mb-2">{t('bg1Title')}</p>
+      <p className="text-xs leading-relaxed mb-3">{t('bg1Desc')}</p>
+      <ul className="text-xs space-y-1.5 ml-2">
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg1Point1')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg1Point2')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg1Point3')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg1Point4')}</span></li>
+      </ul>
+    </div>
 
-        {/* Motion Capture */}
-        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-        <p className="font-medium text-white mb-2">{t('bg2Title')}</p>
-        <p className="text-xs leading-relaxed">{t('bg2Desc')}</p>
-        </div>
+    {/* Motion Capture */}
+    <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+      <p className="font-medium text-white mb-2">{t('bg2Title')}</p>
+      <p className="text-xs leading-relaxed mb-3">{t('bg2Desc')}</p>
+      <ul className="text-xs space-y-1.5 ml-2">
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg2Point1')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg2Point2')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg2Point3')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg2Point4')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg2Point5')}</span></li>
+      </ul>
+    </div>
 
-        {/* University */}
-        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-        <p className="font-medium text-white mb-1">{t('bg3Title')}</p>
-        <p className="text-xs">{t('bg3Desc')}</p>
-        </div>
-        </div>
-        </section>
+    {/* University */}
+    <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+      <p className="font-medium text-white mb-2">{t('bg3Title')}</p>
+      <p className="text-xs leading-relaxed mb-3">{t('bg3Desc')}</p>
+      <ul className="text-xs space-y-1.5 ml-2">
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg3Point1')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg3Point2')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg3Point3')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg3Point4')}</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
         {/* Links */}
         <section>
