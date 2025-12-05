@@ -31,38 +31,45 @@ export default function WhoamiContent() {
   <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
     <span className="text-terminal-accent">&gt;</span> {t('whoamiMindset')}
   </h2>
-  <div className="space-y-3 text-terminal-muted leading-relaxed">
-    <div>
-      <p className="font-medium text-white mb-1">{t('mindsetTitle1')}</p>
-      <p className="text-sm">{t('mindsetPara1')}</p>
+  <div className="space-y-3 text-sm text-terminal-muted">
+    <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+      <p className="font-medium text-white mb-2">{t('mindsetTitle1')}</p>
+      <p className="text-xs leading-relaxed">{t('mindsetPara1')}</p>
     </div>
-    <div>
-      <p className="font-medium text-white mb-1">{t('mindsetTitle2')}</p>
-      <p className="text-sm">{t('mindsetPara2')}</p>
+    
+    <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+      <p className="font-medium text-white mb-2">{t('mindsetTitle2')}</p>
+      <p className="text-xs leading-relaxed">{t('mindsetPara2')}</p>
     </div>
-    <div>
-      <p className="font-medium text-white mb-1">{t('mindsetTitle3')}</p>
-      <p className="text-sm">{t('mindsetPara3')}</p>
+    
+    <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+      <p className="font-medium text-white mb-2">{t('mindsetTitle3')}</p>
+      <p className="text-xs leading-relaxed">{t('mindsetPara3')}</p>
     </div>
-    <div>
-      <p className="font-medium text-white mb-1">{t('mindsetTitle4')}</p>
-      <p className="text-sm">{t('mindsetPara4')}</p>
+    
+    <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+      <p className="font-medium text-white mb-2">{t('mindsetTitle4')}</p>
+      <p className="text-xs leading-relaxed">{t('mindsetPara4')}</p>
     </div>
-    <div>
-      <p className="font-medium text-white mb-1">{t('mindsetTitle5')}</p>
-      <p className="text-sm">{t('mindsetPara5')}</p>
+    
+    <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+      <p className="font-medium text-white mb-2">{t('mindsetTitle5')}</p>
+      <p className="text-xs leading-relaxed">{t('mindsetPara5')}</p>
     </div>
-    <div>
-      <p className="font-medium text-white mb-1">{t('mindsetTitle6')}</p>
-      <p className="text-sm">{t('mindsetPara6')}</p>
+    
+    <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+      <p className="font-medium text-white mb-2">{t('mindsetTitle6')}</p>
+      <p className="text-xs leading-relaxed">{t('mindsetPara6')}</p>
     </div>
-    <div>
-      <p className="font-medium text-white mb-1">{t('mindsetTitle7')}</p>
-      <p className="text-sm">{t('mindsetPara7')}</p>
+    
+    <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+      <p className="font-medium text-white mb-2">{t('mindsetTitle7')}</p>
+      <p className="text-xs leading-relaxed">{t('mindsetPara7')}</p>
     </div>
-    <div>
-      <p className="font-medium text-white mb-1">{t('mindsetTitle8')}</p>
-      <p className="text-sm">{t('mindsetPara8')}</p>
+    
+    <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+      <p className="font-medium text-white mb-2">{t('mindsetTitle8')}</p>
+      <p className="text-xs leading-relaxed">{t('mindsetPara8')}</p>
     </div>
   </div>
 </section>
