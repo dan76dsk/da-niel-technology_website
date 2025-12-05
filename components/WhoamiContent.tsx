@@ -36,6 +36,10 @@ export default function WhoamiContent() {
         <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('mindsetPara2')}</span></li>
         <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('mindsetPara3')}</span></li>
         <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('mindsetPara4')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('mindsetPara5')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('mindsetPara6')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('mindsetPara7')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('mindsetPara8')}</span></li>
         </ul>
         </section>
 
@@ -45,52 +49,68 @@ export default function WhoamiContent() {
         <span className="text-terminal-accent">&gt;</span> {t('whoamiSkills')}
         </h2>
         <div className="space-y-3 text-sm text-terminal-muted">
-        {/* DevSecOps & Automation */}
+        {/* IT Solutions Architecture */}
         <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-        <p className="font-medium text-white mb-2">{t('skillsDevSecOps')}</p>
+        <p className="font-medium text-white mb-2">{t('skillsArchitecture')}</p>
         <ul className="text-xs space-y-1">
-        <li>• {t('devsecops1')}</li>
-        <li>• {t('devsecops2')}</li>
-        <li>• {t('devsecops3')}</li>
-        <li>• {t('devsecops4')}</li>
+        <li>• {t('architecture1')}</li>
+        <li>• {t('architecture2')}</li>
+        <li>• {t('architecture3')}</li>
         </ul>
         </div>
 
-        {/* IT Security */}
+        {/* Innovation & R&D */}
+        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+        <p className="font-medium text-white mb-2">{t('skillsInnovation')}</p>
+        <ul className="text-xs space-y-1">
+        <li>• {t('innovation1')}</li>
+        <li>• {t('innovation2')}</li>
+        <li>• {t('innovation3')}</li>
+        </ul>
+        </div>
+
+        {/* DevOps */}
+        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+        <p className="font-medium text-white mb-2">{t('skillsDevOps')}</p>
+        <ul className="text-xs space-y-1">
+        <li>• {t('devops1')}</li>
+        <li>• {t('devops2')}</li>
+        <li>• {t('devops3')}</li>
+        </ul>
+        </div>
+
+        {/* Cybersecurity */}
         <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
         <p className="font-medium text-white mb-2">{t('skillsSecurity')}</p>
         <ul className="text-xs space-y-1">
         <li>• {t('security1')}</li>
         <li>• {t('security2')}</li>
+        <li>• {t('security3')}</li>
+        <li>• {t('security4')}</li>
+        <li>• {t('security5')}</li>
         </ul>
         </div>
 
-        {/* Development */}
+        {/* Automation & Business Process Tools */}
+        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+        <p className="font-medium text-white mb-2">{t('skillsAutomation')}</p>
+        <ul className="text-xs space-y-1">
+        <li>• {t('automation1')}</li>
+        <li>• {t('automation2')}</li>
+        <li>• {t('automation3')}</li>
+        <li>• {t('automation4')}</li>
+        <li>• {t('automation5')}</li>
+        </ul>
+        </div>
+
+        {/* Development & Programming */}
         <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
         <p className="font-medium text-white mb-2">{t('skillsDev')}</p>
         <ul className="text-xs space-y-1">
         <li>• {t('dev1')}</li>
         <li>• {t('dev2')}</li>
         <li>• {t('dev3')}</li>
-        </ul>
-        </div>
-
-        {/* Networks & Systems */}
-        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-        <p className="font-medium text-white mb-2">{t('skillsNetwork')}</p>
-        <ul className="text-xs space-y-1">
-        <li>• {t('network1')}</li>
-        <li>• {t('network2')}</li>
-        </ul>
-        </div>
-
-        {/* Cross-domain / Innovation */}
-        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-        <p className="font-medium text-white mb-2">{t('skillsCross')}</p>
-        <ul className="text-xs space-y-1">
-        <li>• {t('cross1')}</li>
-        <li>• {t('cross2')}</li>
-        <li>• {t('cross3')}</li>
+        <li>• {t('dev4')}</li>
         </ul>
         </div>
         </div>
