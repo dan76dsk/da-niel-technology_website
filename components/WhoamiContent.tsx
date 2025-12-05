@@ -43,78 +43,78 @@ export default function WhoamiContent() {
         </ul>
         </section>
 
-        {/* Skills */}
-        <section>
-        <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-        <span className="text-terminal-accent">&gt;</span> {t('whoamiSkills')}
-        </h2>
-        <div className="space-y-3 text-sm text-terminal-muted">
-        {/* IT Solutions Architecture */}
-        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-        <p className="font-medium text-white mb-2">{t('skillsArchitecture')}</p>
-        <ul className="text-xs space-y-1">
-        <li>• {t('architecture1')}</li>
-        <li>• {t('architecture2')}</li>
-        <li>• {t('architecture3')}</li>
-        </ul>
-        </div>
+{/* Skills */}
+<section>
+  <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+    <span className="text-terminal-accent">&gt;</span> {t('whoamiSkills')}
+  </h2>
+  <div className="space-y-3 text-sm text-terminal-muted">
+    {/* IT Solutions Architecture */}
+    <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+      <p className="font-medium text-white mb-2">{t('skillsArchitecture')}</p>
+      <ul className="text-xs space-y-1.5 ml-2">
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('architecture1')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('architecture2')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('architecture3')}</span></li>
+      </ul>
+    </div>
 
-        {/* Innovation & R&D */}
-        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-        <p className="font-medium text-white mb-2">{t('skillsInnovation')}</p>
-        <ul className="text-xs space-y-1">
-        <li>• {t('innovation1')}</li>
-        <li>• {t('innovation2')}</li>
-        <li>• {t('innovation3')}</li>
-        </ul>
-        </div>
+    {/* Innovation & R&D */}
+    <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+      <p className="font-medium text-white mb-2">{t('skillsInnovation')}</p>
+      <ul className="text-xs space-y-1.5 ml-2">
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('innovation1')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('innovation2')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('innovation3')}</span></li>
+      </ul>
+    </div>
 
-        {/* DevOps */}
-        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-        <p className="font-medium text-white mb-2">{t('skillsDevOps')}</p>
-        <ul className="text-xs space-y-1">
-        <li>• {t('devops1')}</li>
-        <li>• {t('devops2')}</li>
-        <li>• {t('devops3')}</li>
-        </ul>
-        </div>
+    {/* DevOps */}
+    <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+      <p className="font-medium text-white mb-2">{t('skillsDevOps')}</p>
+      <ul className="text-xs space-y-1.5 ml-2">
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('devops1')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('devops2')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('devops3')}</span></li>
+      </ul>
+    </div>
 
-        {/* Cybersecurity */}
-        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-        <p className="font-medium text-white mb-2">{t('skillsSecurity')}</p>
-        <ul className="text-xs space-y-1">
-        <li>• {t('security1')}</li>
-        <li>• {t('security2')}</li>
-        <li>• {t('security3')}</li>
-        <li>• {t('security4')}</li>
-        <li>• {t('security5')}</li>
-        </ul>
-        </div>
+    {/* Cybersecurity */}
+    <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+      <p className="font-medium text-white mb-2">{t('skillsSecurity')}</p>
+      <ul className="text-xs space-y-1.5 ml-2">
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('security1')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('security2')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('security3')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('security4')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('security5')}</span></li>
+      </ul>
+    </div>
 
-        {/* Automation & Business Process Tools */}
-        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-        <p className="font-medium text-white mb-2">{t('skillsAutomation')}</p>
-        <ul className="text-xs space-y-1">
-        <li>• {t('automation1')}</li>
-        <li>• {t('automation2')}</li>
-        <li>• {t('automation3')}</li>
-        <li>• {t('automation4')}</li>
-        <li>• {t('automation5')}</li>
-        </ul>
-        </div>
+    {/* Automation & Business Process Tools */}
+    <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+      <p className="font-medium text-white mb-2">{t('skillsAutomation')}</p>
+      <ul className="text-xs space-y-1.5 ml-2">
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('automation1')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('automation2')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('automation3')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('automation4')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('automation5')}</span></li>
+      </ul>
+    </div>
 
-        {/* Development & Programming */}
-        <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-        <p className="font-medium text-white mb-2">{t('skillsDev')}</p>
-        <ul className="text-xs space-y-1">
-        <li>• {t('dev1')}</li>
-        <li>• {t('dev2')}</li>
-        <li>• {t('dev3')}</li>
-        <li>• {t('dev4')}</li>
-        </ul>
-        </div>
-        </div>
-        </section>
+    {/* Development & Programming */}
+    <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+      <p className="font-medium text-white mb-2">{t('skillsDev')}</p>
+      <ul className="text-xs space-y-1.5 ml-2">
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('dev1')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('dev2')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('dev3')}</span></li>
+        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('dev4')}</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
 {/* Background */}
 <section>
