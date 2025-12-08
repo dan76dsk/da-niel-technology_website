@@ -187,7 +187,7 @@ export const translations = {
     // Bio paragraph
     bioPara1: 'Moje doświadczenie to unikalna synergia prowadzenia własnej firmy, wdrażania rozwiązań w projektach badawczo-rozwojowych (R&D), praktyki DevOps i cyberbezpieczeństwa.\n\nJestem architektem rozwiązań technologicznych z przedsiębiorczym zacięciem i szeroką, systemową perspektywą – doskonale odnajduję się na styku IT, biznesu, R&D i cyberbezpieczeństwa. Potrafię zrozumieć cały system - widzę nie tylko technologię, ale cały kontekst biznesowy: od strategii, przez procesy i ryzyka, po potencjały rozwojowe.\n\nBuduję rozwiązania end-to-end: projektuję architekturę eliminującą wąskie gardła, automatyzującą rutynę i dbającą o cyberbezpieczeństwo - tak, by systemy "żyły własnym życiem" i napędzały przewagę organizacji.\n\nPrzejmuję pełną odpowiedzialność za cały cykl projektu – od analizy potrzeb, przez projektowanie i wdrożenie, po długofalową optymalizację. Iteruję rozwiązania, eliminuję ryzyka i koncentruję się na tym, co naprawdę liczy się w biznesie: wartości, która zostaje w organizacji na długo po wdrożeniu.',
 
-        // Mindset bullets - PL
+        // Mindset bullets -PL
     mindsetTitle1: 'Swobodne poruszanie się pomiędzy biznesem, IT, automatyzacją i R&D',
     mindsetPara1: 'To dla mnie codzienność – naturalnie pełnię rolę mostu, ułatwiając komunikację i wspólne cele wszystkich stron projektu.',
 

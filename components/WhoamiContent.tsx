@@ -173,7 +173,7 @@ export default function WhoamiContent() {
       </ul>
     </div>
 
-      {/* University */}
+      {/* Universityy */}
       <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
         <p className="font-medium text-white mb-2">{t('bg3Title')}</p>
         <p className="text-xs leading-relaxed mb-3">{t('bg3Desc')}</p>
