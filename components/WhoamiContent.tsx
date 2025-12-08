@@ -66,11 +66,6 @@ export default function WhoamiContent() {
       <p className="font-medium text-white mb-2">{t('mindsetTitle7')}</p>
       <p className="text-xs leading-relaxed">{t('mindsetPara7')}</p>
     </div>
-    
-    <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-      <p className="font-medium text-white mb-2">{t('mindsetTitle8')}</p>
-      <p className="text-xs leading-relaxed">{t('mindsetPara8')}</p>
-    </div>
   </div>
 </section>
 
@@ -178,17 +173,19 @@ export default function WhoamiContent() {
       </ul>
     </div>
 
-    {/* University */}
-    <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
-      <p className="font-medium text-white mb-2">{t('bg3Title')}</p>
-      <p className="text-xs leading-relaxed mb-3">{t('bg3Desc')}</p>
-      <ul className="text-xs space-y-1.5 ml-2">
-        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg3Point1')}</span></li>
-        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg3Point2')}</span></li>
-        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg3Point3')}</span></li>
-        <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg3Point4')}</span></li>
-      </ul>
-    </div>
+      {/* University */}
+      <div className="bg-terminal-bg-card border border-terminal-border rounded-md p-4">
+        <p className="font-medium text-white mb-2">{t('bg3Title')}</p>
+        <p className="text-xs leading-relaxed mb-3">{t('bg3Desc')}</p>
+        <ul className="text-xs space-y-1.5 ml-2">
+          <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg3Point1')}</span></li>
+          <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg3Point2')}</span></li>
+          <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg3Point3')}</span></li>
+          <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg3Point4')}</span></li>
+          <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg3Point5')}</span></li>
+          <li className="flex gap-2"><span className="text-terminal-accent">•</span><span>{t('bg3Point6')}</span></li>
+        </ul>
+      </div>
   </div>
 </section>
 

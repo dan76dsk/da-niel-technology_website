@@ -60,12 +60,10 @@ export const translations = {
     mindsetTitle6: 'Growth driven by challenges',
     mindsetPara6: 'Difficult moments are a catalyst for my growth, and pressure and new situations strengthen my focus and creativity - that\'s why I treat development as a foundation and constantly push my own boundaries.',
 
-    mindsetTitle7: 'Belief that anything can be learned',
-    mindsetPara7: 'Makes consistency and practice enable me to quickly acquire new skills.',
+    mindsetTitle7: 'Conscious trust in the process',
+    mindsetPara7: 'This is my key to development. Consistency and patient work on each stage mean that over time I achieve deep proficiency in a given field.',
 
-    mindsetTitle8: 'Trust in the process and systematic learning',
-    mindsetPara8: 'This is my key to development. I believe that anything can be learned, and consistency and practice allow rapid skill acquisition.',
-    // Skills sections
+        // Skills sections
     skillsArchitecture: 'IT Solutions Architecture',
     skillsInnovation: 'Innovation & R&D',
     skillsDevOps: 'DevOps',
@@ -98,10 +96,9 @@ export const translations = {
     automation5: 'Implementing analytics solutions and SEO monitoring tools (Google Analytics 4, Google Search Console)',
 
     dev1: 'Designing and implementing web applications (React, Node.js, TypeScript, Express, REST API)',
-    dev2: 'Programming and automation in Bash, Python, C++, dev tools and utility scripts for cybersecurity/DevOps/automation needs',
+    dev2: 'Programming and automation in C++, Python, Bash - wherever there\'s a need to create useful tools',
     dev3: 'API integrations with external systems (payments, CRM, databases, automation, custom and third-party)',
-    dev4: 'Designing and optimizing websites and landing pages (WordPress, HTML, CSS, JS) according to SEO best practices',
-
+    dev4: 'Designing and optimizing websites (WordPress, HTML, CSS, JS) according to SEO best practices',
 
     // Background sections
     bg1Title: 'Geometry Hustlers (Founder, 2022-present)',
@@ -125,6 +122,8 @@ export const translations = {
     bg3Point2: 'Passion for digital technology and deep understanding of information flow: from physical states at logic gates, through operating system architecture to advanced data processing and transmission systems.',
     bg3Point3: 'Developed passion for cybersecurity (red team) - own practice, honing cross-sectional technical competencies necessary for effective IT security.',
     bg3Point4: 'Studies became for me a pretext for translating theory into practice and a motivator for independently exploring new technologies.',
+    bg3Point5: 'During my studies, I realized that creating practically any device is a matter of thoughtfully designing cooperating hardware and software.',
+    bg3Point6: 'Dozens of lab reports taught me precise technical documentation and clear description of work results.',
 
     // Meta tags
     metaHomeTitle: 'd@niel.technology | Security & DevOps Engineer',
@@ -188,7 +187,7 @@ export const translations = {
     // Bio paragraph
     bioPara1: 'Moje doświadczenie to unikalna synergia prowadzenia własnej firmy, wdrażania rozwiązań w projektach badawczo-rozwojowych (R&D), praktyki DevOps i cyberbezpieczeństwa.\n\nJestem architektem rozwiązań technologicznych z przedsiębiorczym zacięciem i szeroką, systemową perspektywą – doskonale odnajduję się na styku IT, biznesu, R&D i cyberbezpieczeństwa. Potrafię zrozumieć cały system - widzę nie tylko technologię, ale cały kontekst biznesowy: od strategii, przez procesy i ryzyka, po potencjały rozwojowe.\n\nBuduję rozwiązania end-to-end: projektuję architekturę eliminującą wąskie gardła, automatyzującą rutynę i dbającą o cyberbezpieczeństwo - tak, by systemy "żyły własnym życiem" i napędzały przewagę organizacji.\n\nPrzejmuję pełną odpowiedzialność za cały cykl projektu – od analizy potrzeb, przez projektowanie i wdrożenie, po długofalową optymalizację. Iteruję rozwiązania, eliminuję ryzyka i koncentruję się na tym, co naprawdę liczy się w biznesie: wartości, która zostaje w organizacji na długo po wdrożeniu.',
 
-    // Mindset bullets - PL
+        // Mindset bullets - PL
     mindsetTitle1: 'Swobodne poruszanie się pomiędzy biznesem, IT, automatyzacją i R&D',
     mindsetPara1: 'To dla mnie codzienność – naturalnie pełnię rolę mostu, ułatwiając komunikację i wspólne cele wszystkich stron projektu.',
 
@@ -207,11 +206,9 @@ export const translations = {
     mindsetTitle6: 'Rozwój napędzany wyzwaniami',
     mindsetPara6: 'Trudne momenty są dla mnie katalizatorem wzrostu, a presja i nowe sytuacje wzmacniają koncentrację i kreatywność - właśnie dlatego traktuję rozwój jako fundament i nieustannie przesuwam własne granice.',
 
-    mindsetTitle7: 'Przekonanie, że wszystkiego można się nauczyć',
-    mindsetPara7: 'Sprawia, że konsekwencja i praktyka pozwalają mi szybko przyswajać nowe umiejętności.',
+    mindsetTitle7: 'Świadome zaufanie do procesu',
+    mindsetPara7: 'To mój klucz rozwoju. Konsekwencja i cierpliwa praca nad każdym etapem sprawiają, że z czasem osiągam głęboką biegłość w danej dziedzinie.',
 
-    mindsetTitle8: 'Zaufanie do procesu i systematyczna nauka',
-    mindsetPara8: 'To mój klucz rozwoju. Wierzę, że wszystkiego można się nauczyć, a konsekwencja i praktyka pozwalają szybko przyswajać nowe umiejętności.',
     // Skills sections
     skillsArchitecture: 'Architektura rozwiązań IT',
     skillsInnovation: 'Innowacja i R&D',
@@ -245,10 +242,9 @@ export const translations = {
     automation5: 'Wdrażanie rozwiązań analitycznych i narzędzi monitorujących skuteczność SEO (Google Analytics 4, Google Search Console)',
 
     dev1: 'Projektowanie i wdrażanie aplikacji webowych (React, Node.js, TypeScript, Express, REST API)',
-    dev2: 'Programowanie i automatyzacja w Bash, Python, C++, dev tools i utility scripts na potrzebę cybersecurity/DevOps/automatyzacji',
+    dev2: 'Programowanie i automatyzacja w C++, Python, Bash - wszędzie tam, gdzie potrzeba stworzyć użyteczne narzędzia',
     dev3: 'Integracje API zewnętrznych systemów (płatności, CRM, bazy danych, automatyzacje, własne i third-party)',
-    dev4: 'Projektowanie i optymalizacja stron oraz landing pages (WordPress, HTML, CSS, JS) zgodnie z dobrymi praktykami SEO',
-
+    dev4: 'Projektowanie i optymalizacja stron internetowych (WordPress, HTML, CSS, JS) zgodnie z dobrymi praktykami SEO',
 
     // Background sections
     bg1Title: 'Geometry Hustlers (Założyciel, 2022-obecnie)',
@@ -272,8 +268,8 @@ export const translations = {
     bg3Point2: 'Zamiłowanie do techniki cyfrowej i głębokiego rozumienia przepływu informacji: od fizycznych stanów na bramce logicznej, przez architekturę systemów operacyjnych po zaawansowane systemy przetwarzania i przesyłu danych.',
     bg3Point3: 'Rozwinięta zajawka na cyberbezpieczeństwo (red team) - własna praktyka, szlifowanie przekrojowych kompetencji technicznych niezbędnych do skutecznego bezpieczeństwa IT.',
     bg3Point4: 'Studia stały się dla mnie pretekstem do przekładania teorii na praktykę i motywatorem do samodzielnego zgłębiania nowych technologii.',
-
-
+    bg3Point5: 'W toku studiów uświadomiłem sobie, że stworzenie praktycznie dowolnego urządzenia to kwestia przemyślanego zaprojektowania współpracującego hardware i software.',
+    bg3Point6: 'Dziesiątki sprawozdań z laboratoriów nauczyły mnie precyzyjnej dokumentacji technicznej i jasnego opisywania efektów pracy.',
 
     // Meta tags
     metaHomeTitle: 'd@niel.technology | Security & DevOps Engineer',
