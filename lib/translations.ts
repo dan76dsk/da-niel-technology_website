@@ -8,8 +8,8 @@ export const translations = {
 
     // Homepage
     heroTitle: 'Daniel Litwin',
-    heroTagline: 'Security & DevOps - driving business advantage through technology, automation, and security.',
-    heroBio: 'DevSecOps practitioner - combining technology, automation, and security. Experience spanning from running my own 3D printing business, through motion capture projects, to building a custom homelab and HackTheBox challenges. Looking for projects where technology translates into real business value.',
+    heroTagline: 'Driving business advantage through technology, automation, and security.',
+    heroBio: 'I am an IT solutions architect specializing in automation and cybersecurity. I design and implement end-to-end solutions – eliminating bottlenecks, automating processes, and ensuring security at every system level. I understand the full business context: from strategy and processes, through risk management, to measurable results. My experience spans designing and growing my own 3D printing business, innovative R&D projects, system integrations, process automation, designing and testing infrastructure in lab environments (homelab), as well as infrastructure protection and pentesting practices (including CTF challenges like HackTheBox). I seamlessly bridge the worlds of technology, business, and cybersecurity, always focusing on delivering lasting value.',
 
     // Sections
     sectionProjects: 'Projects',
@@ -126,8 +126,8 @@ export const translations = {
     bg3Point6: 'Dozens of lab reports taught me precise technical documentation and clear description of work results.',
 
     // Meta tags
-    metaHomeTitle: 'd@niel.technology | Security & DevOps Engineer',
-    metaHomeDesc: 'Security & DevOps - driving business advantage through technology, automation, and security. DevSecOps practitioner with experience in infrastructure, pentesting, and business process automation.',
+    metaHomeTitle: 'd@niel.technology | IT Solutions Architect | Automation & Cybersecurity',
+    metaHomeDesc: 'IT solutions architect specializing in automation and cybersecurity. I design and implement end-to-end solutions – eliminating bottlenecks, automating processes, and ensuring security at every system level. Experience in 3D printing business, R&D projects, system integrations, homelab infrastructure, and pentesting (HackTheBox CTF).',
 
     metaProjectsTitle: 'Projects | d@niel.technology',
     metaProjectsDesc: 'Case studies and technical explorations - from 3D printing automation to homelab infrastructure and integrations.',
@@ -140,7 +140,6 @@ export const translations = {
 
     metaWhoamiTitle: 'whoami | d@niel.technology',
     metaWhoamiDesc: 'Daniel Litwin - IT Solutions Architect | Automation & Cybersecurity. Unique synergy of running own company, R&D project implementations, DevOps practice, and cybersecurity. Building end-to-end solutions at the intersection of IT, business, and innovation.',
-    
 
     // Footer
     footerCopyright: '© 2025 d@niel.technology',
@@ -154,8 +153,8 @@ export const translations = {
 
     // Homepage
     heroTitle: 'Daniel Litwin',
-    heroTagline: 'Security & DevOps - napędzam przewagę biznesu technologią, automatyzacją i bezpieczeństwem.',
-    heroBio: 'Praktyk DevSecOps - łączę technologię, automatyzację i bezpieczeństwo. Mam doświadczenie od własnego biznesu druku 3D, przez projekty motion capture, po budowę autorskiego homelabu i wyzwania HackTheBox. Szukam projektów, w których technologia przekłada się na realną wartość dla biznesu.',
+    heroTagline: 'Napędzam przewagę biznesu technologią, automatyzacją i bezpieczeństwem.',
+    heroBio: 'Jestem architektem rozwiązań IT, specjalizuję się w automatyzacjach i cyberbezpieczeństwie. Projektuję i wdrażam rozwiązania end-to-end – eliminuję wąskie gardła, automatyzuję procesy i dbam o bezpieczeństwo na każdym etapie systemu. Rozumiem cały kontekst biznesowy: od strategii i procesów, przez zarządzanie ryzykiem, po mierzalne efekty. Moje doświadczenie obejmuje zarówno projektowanie i rozwijanie własnego biznesu w obszarze druku 3D, innowacyjne projekty R&D, integracje systemów, automatyzacje procesów, projektowanie i testowanie infrastruktury w środowiskach laboratoryjnych (homelab), jak i ochronę infrastruktury oraz praktyki pentesterskie (również przez wyzwania typu CTF, np. HackTheBox). Sprawnie łączę świat technologii, biznesu i cyberbezpieczeństwa, zawsze koncentrując się na dostarczaniu trwałej wartości.',
 
     // Sections
     sectionProjects: 'Projekty',
@@ -271,9 +270,9 @@ export const translations = {
     bg3Point5: 'W toku studiów uświadomiłem sobie, że stworzenie praktycznie dowolnego urządzenia to kwestia przemyślanego zaprojektowania współpracującego hardware i software.',
     bg3Point6: 'Dziesiątki sprawozdań z laboratoriów nauczyły mnie precyzyjnej dokumentacji technicznej i jasnego opisywania efektów pracy.',
 
-    // Meta tags
-    metaHomeTitle: 'd@niel.technology | Security & DevOps Engineer',
-    metaHomeDesc: 'Security & DevOps - napędzam przewagę biznesu technologią, automatyzacją i bezpieczeństwem. Praktyk DevSecOps z doświadczeniem w infrastrukturze, pentestingu i automatyzacji procesów biznesowych.',
+   // Meta tags
+    metaHomeTitle: 'd@niel.technology | Architekt rozwiązań IT | Automatyzacje i Cyberbezpieczeństwo',
+    metaHomeDesc: 'Architekt rozwiązań IT specjalizujący się w automatyzacjach i cyberbezpieczeństwie. Projektuję i wdrażam rozwiązania end-to-end – eliminuję wąskie gardła, automatyzuję procesy i dbam o bezpieczeństwo. Doświadczenie w biznesie druku 3D, projektach R&D, integracjach systemów, infrastrukturze homelab oraz pentestingu (HackTheBox CTF).',
 
     metaProjectsTitle: 'Projekty | d@niel.technology',
     metaProjectsDesc: 'Case studies i eksploracje techniczne - od automatyzacji druku 3D po infrastrukturę homelab i integracje.',
