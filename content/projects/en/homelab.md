@@ -1,5 +1,5 @@
 ---
-title: "Homelab – Business‑grade IT Infrastructure"
+title: "Homelab - Business‑grade IT Infrastructure"
 excerpt: "I’ve designed and built my own homelab from scratch, serving as a production environment for business projects—such as hosting a 3D print quoting application, company website, and service automation. It’s a testbed for learning virtualization, resource management, and DevSecOps practices."
 tech: ["Proxmox", "Linux", "LXC", "Docker", "Grafana", "Prometheus", "Cloudflare", "Reverse proxy", "Firewall"]
 ---
