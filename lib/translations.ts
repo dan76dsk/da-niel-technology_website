@@ -101,7 +101,7 @@ export const translations = {
     dev4: 'Designing and optimizing websites (WordPress, HTML, CSS, JS) according to SEO best practices',
 
     // Background sections
-    bg1Title: 'Geometry Hustlers (Founder) [05.2022-present]',
+    bg1Title: 'Geometry Hustlers (Founder & Tech lead) [05.2022-present]',
     bg1Desc: 'I founded a 3D printing services company as my practical university of business-technology solutions architecture. I went through the entire development cycle – from independently acquiring clients, through experiments and process optimizations, to building an end-to-end digital platform for order handling and production on my own machines. While creating and growing the company, I encountered the world of parts manufacturing and the specifics of large enterprise operations - from purchasing procedures, through order fulfillment, to requirements related to quality, data security, and B2B communication.',
     bg1Point1: 'Built from scratch a custom system for automatic quotation and order handling, transforming the business into an e-commerce platform with full digital customer service.',
     bg1Point2: 'Implemented automation of key processes: sales, prospecting with follow-ups, entering inquiries into CRM, invoicing, order handling, and customer communication.',
@@ -246,7 +246,7 @@ export const translations = {
     dev4: 'Projektowanie i optymalizacja stron internetowych (WordPress, HTML, CSS, JS) zgodnie z dobrymi praktykami SEO',
 
     // Background sections
-    bg1Title: 'Geometry Hustlers (Założyciel) [05.2022-obecnie]',
+    bg1Title: 'Geometry Hustlers (Założyciel & Tech Lead) [05.2022-obecnie]',
     bg1Desc: 'Założyłem firmę świadczącej usługi druku 3D, jako mój praktyczny uniwersytet architektury rozwiązań biznesowo-technologicznych. Przechodziłem cały cykl rozwoju – od samodzielnego zdobywania klientów, przez eksperymenty i optymalizacje procesów, po budowę cyfrowej platformy end-to-end do obsługi zamówień i produkcji na własnych maszynach. Tworząc i rozwijając firmę, zetknąłem się ze światem produkcji części oraz specyfiką funkcjonowania dużych przedsiębiorstw - od procedur zakupowych, przez realizację zamówień, po wymagania związane z jakością, bezpieczeństwem danych i komunikacją B2B.',
     bg1Point1: 'Zbudowałem od podstaw autorski system do automatycznej wyceny i obsługi zamówień, przekształcając działalność w platformę e-commerce z pełną cyfrową obsługą klienta.',
     bg1Point2: 'Wdrożyłem automatyzacje kluczowych procesów: sprzedaży, prospectingu z follow-upami, wprowadzania zapytań do CRM, wystawiania faktur, obsługi zamówień i komunikacji z klientami.',
