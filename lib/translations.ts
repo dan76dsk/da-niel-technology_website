@@ -66,7 +66,7 @@ export const translations = {
     // Skills sections
     skillsArchitecture: 'IT Solutions Architecture',
     skillsInnovation: 'Innovation & R&D',
-    skillsDevOps: 'DevOps',
+    skillsDevOps: 'DevOps / Cloud / Self-hosting',
     skillsSecurity: 'Cybersecurity',
     skillsAutomation: 'Automation & Business Process Tools',
     skillsDev: 'Development & Programming',
@@ -211,7 +211,7 @@ export const translations = {
     // Skills sections
     skillsArchitecture: 'Architektura rozwiązań IT',
     skillsInnovation: 'Innowacja i R&D',
-    skillsDevOps: 'DevOps',
+    skillsDevOps: 'DevOps / Cloud / Self-hosting',
     skillsSecurity: 'Cyberbezpieczeństwo',
     skillsAutomation: 'Automatyzacja i narzędzia dla procesów biznesowych',
     skillsDev: 'Development i programowanie',
